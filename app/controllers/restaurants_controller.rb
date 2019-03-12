@@ -1,7 +1,7 @@
 class RestaurantsController < ApplicationController
   def index
-    @meals = Meal.all
-
+    @category = Category.find()
+    @meals = Meal.search_by_cat_by_city()
   end
 
   def show
