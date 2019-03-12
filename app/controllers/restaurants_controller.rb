@@ -1,8 +1,7 @@
 class RestaurantsController < ApplicationController
   def index
-    @restaurants = Restaurant.all
-    @rest_by_cat_by_city = Restaurant.search_by_cat(params[:category].name).where(params[:city])
-    raise
+    @meals = Meal.all
+
   end
 
   def show
