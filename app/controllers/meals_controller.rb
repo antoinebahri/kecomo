@@ -13,6 +13,7 @@ class MealsController < ApplicationController
 
   def show
     @meal = Meal.find(params[:id])
+    @full_score = @meal.awards
   end
 
   def new
