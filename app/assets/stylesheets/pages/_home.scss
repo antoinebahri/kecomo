@@ -1,1 +1,46 @@
 // Specific CSS for your home-page
+
+.banner {
+  position: relative;
+}
+
+.triangle-top-left {
+  width: 0px;
+  height: 0px;
+  border-right: 210px solid transparent;
+  border-top: 210px solid #51EAEA;
+  border-left: 210px solid #51EAEA;
+  border-bottom: 210px solid transparent;
+  position: absolute;
+  left: 0%;
+  right: 35.33%;
+  top: 0%;
+  bottom: 0%;
+}
+
+.rectangle h1 {
+  font-size: 25px;
+  font-weight: bolder;
+  color: #FB3569;
+  position: absolute;
+  z-index: 2;
+  top: 30px;
+  left: 120px;
+}
+
+.rectangle h2 {
+  font-size: 40px;
+  font-weight: bolder;
+  color: black;
+  position: absolute;
+  z-index: 2;
+  bottom: 120px;
+  right: 120px;
+}
+
+.rectangle {
+  width: auto;
+  height: 70vh;
+  background: #FB3569;
+}
+
