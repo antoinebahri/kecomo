@@ -4,6 +4,8 @@ class Restaurant < ApplicationRecord
   belongs_to :user, optional: true
   validates :name, presence: true, uniqueness: { scope: :address }
   validates :city, presence: true
-  validates :name, presence: true
 
+
+  include PgSearch
+  pg_search_scope :search_by_cat, against: :category
 end
