@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     get '/meals', to: 'meals#index'
   end
 
+  get '/meals/:id', to: 'meals#show', as: 'meal_path'
+
   resources :restaurants do
     resources :meals
   end
