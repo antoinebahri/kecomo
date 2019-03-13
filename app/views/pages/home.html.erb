@@ -13,15 +13,15 @@
       </ul>
     <% end %>
     <h2>Looking for the best voted food in town?</h2>
-    <%= render 'shared/search_bar' %>
+    <%= render 'shared/search-bar' %>
   </div>
 </div>
 
 <h3>Discover your new favourite</h3>
 <div class="card-grid">
-  <div class="row">
-    <div class="cards">
-      <% @categories.each do |category| %>
+  <div class="cards">
+    <div class="row">
+      <% @random_categories.each do |category| %>
       <div class="col-sm-4">
         <div class="card">
           <div class="card-img">
@@ -36,17 +36,4 @@
       <% end %>
     </div>
   </div>
-</div>
-
-<!-- the search bar and submit button-->
-<div id="search_bar">
-  <%= form_tag meals_path_url, method: :get do %>
-    <%= text_field_tag :query, params[:query], placeholder: "Enter a category or meal's name" , id: 'searchbar' %>
-    <%= submit_tag 'Search!' %>
-  <% end %>
-</div>
-<!-- the autocomplete suggestions results dropdown -->
-<div id="autocomplete_results">
-  <ul id="results">
-  </ul>
 </div>

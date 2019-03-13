@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
 require 'json'
 require 'open-uri'
 require "httparty"
@@ -48,20 +47,19 @@ end
 puts "Destroying all meal categories.."
 Category.destroy_all
 
-meal_categories = ["Dessert", "Cookie", "Cupcake", "Salad", "French fries", "Burger", "Brownie", "Cheesecake", "Muffin", "Croissant", "Ice cream", "Chili", "Cinnamon rolls", "Garlic bread", "Bread", "Coffee", "Tea", "Crepe", "Waffle", "Meatloaf", "Pasta", "Risotto", "Ravioli", "Chicken", "Chicken wings", "Soup", "Stew", "Sandwich", "Naan", "Curry", "Pad thai", "Wok", "Egg", "Hot dog", "Tapas", "Cocktail", "Sushi", "Poke bowl",]
+meal_categories = ["Dessert", "Cookie", "Cupcake", "Salad", "French Fries", "Burger", "Brownie", "Cheesecake", "Muffin", "Croissant", "Ice Cream", "Chili", "Cinnamon Rolls", "Garlic Bread", "Bread", "Coffee", "Tea", "Crepe", "Waffle", "Meatloaf", "Pasta", "Risotto", "Ravioli", "Chicken", "Chicken Wings", "Soup", "Stew", "Sandwich", "Naan", "Curry", "Pad Thai", "Wok", "Egg", "Hot Dog", "Tapas", "Cocktail", "Sushi", "Poke Powl"]
 
 puts "Creating meal categories..."
 c = 0
 meal_categories.each do |category|
   Category.create!(name: category)
-  c = c+ + 1
+  c = c + 1
 end
 
 puts "#{r} restaurants have been created"
 puts "#{c} meal categories have been created"
 
 # ======= Previous seed
-
 
 # puts 'Deleting seeds...'
 # Award.delete_all
