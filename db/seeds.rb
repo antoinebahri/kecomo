@@ -19,7 +19,7 @@ places_serialized = HTTParty.get(url).body
 places_list = JSON.parse(places_serialized)
 
 puts "Creating restaurants"
-n = 0
+r = 0
 places_list["response"]["groups"][0]["items"].each do |place|
   url_photo = "https://api.foursquare.com/v2/venues/#{place["venue"]["id"]}/photos?client_id=#{ENV["FOURSQUARE_CLIENT_ID"]}&client_secret=#{ENV["FOURSQUARE_SECRET_ID"]}&v=20180323"
 
@@ -39,6 +39,22 @@ places_list["response"]["groups"][0]["items"].each do |place|
     resto.picture = "#{photo_json["response"]["photos"]["items"][0]["prefix"]}500x500#{photo_json["response"]["photos"]["items"][0]["suffix"]}"
     resto.save
   end
-  n = n + 1
+  r = r + 1
 end
-puts "#{n} restaurants have been created"
+
+# Meals categories have been created using the website bettycroker.com
+
+puts "Destroying all meal categories"
+Category.destroy_all
+
+meal_categories = ["Dessert", "Cookie", "Cupcake", "Salad", "French fries", "Burger", "Brownie", "Cheesecake", "Muffin", "Croissant", "Ice cream", "Chili", "Cinnamon rolls", "Garlic bread", "Bread", "Coffee", "Tea", "Crepe", "Waffle", "Meatloaf", "Pasta", "Risotto", "Ravioli", "Chicken", "Chicken wings", "Soup", "Stew", "Sandwich", "Naan", "Curry", "Pad thai", "Wok", "Egg", "Hot dog", "Tapas", "Cocktail", "Sushi", "Poke bowl",]
+
+puts "Creating meal categories"
+c = 0
+meal_categories.each do |category|
+  Category.create!(name: category)
+  c = c+ + 1
+end
+
+puts "#{r} restaurants have been created"
+puts "#{c} meal categories have been created"
