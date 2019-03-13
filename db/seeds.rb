@@ -62,6 +62,9 @@ puts "#{c} meal categories have been created"
 
 # ======= Previous seed
 
+puts "creating meal instances..."
+
+Meal.create! ()
 
 # puts 'Deleting seeds...'
 # Award.delete_all
