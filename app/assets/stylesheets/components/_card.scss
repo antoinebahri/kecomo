@@ -1,15 +1,15 @@
 .card-grid {
-  margin: 20px 200px;
+  margin: 20px 150px;
 }
 
 .cards {
-  width: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .card {
+  margin-bottom: 20px;
   width: 300px;
   height: 150px;
 }
