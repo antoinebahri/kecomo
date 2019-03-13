@@ -4,4 +4,15 @@ class Category < ApplicationRecord
 
   include PgSearch
   multisearchable against: [:name]
+
+  # index = Algolia::Index.new('categories')
+
+  # index.set_settings(
+  #   searchableAttributes: [
+  #     'name'
+  #   ],
+  #   customRanking: [
+  #     'desc(score)'
+  #   ]
+  # )
 end
