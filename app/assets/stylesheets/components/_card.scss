@@ -1,5 +1,5 @@
 .card-grid {
-  margin: 20px 150px;
+  margin: 0px 300px;
 }
 
 .cards {
@@ -12,13 +12,29 @@
   margin-bottom: 20px;
   width: 300px;
   height: 150px;
+  position: relative;
+  background-color: #f4f4f4;
+  border: none;
 }
 
+.card .card-img {
+  position: absolute;
+  left: 47px;
+  top: 20px;
+}
+
+.card-img img {
+  width: 100px;
+  height: 100px;
+}
+
+/*
 .card-txt {
-  text-align: center;
-  vertical-align: middle;
-  line-height: 150px;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #440063;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 150px;
 }
+*/

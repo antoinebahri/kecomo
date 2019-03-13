@@ -24,11 +24,7 @@
       <div class="col-sm-4">
         <div class="card">
           <div class="card-img">
-            <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-            </div>
-            <div class="card-txt">
-              <p><strong><%= category.name %></strong></p>
-            </div>
+            <%= image_tag (category.icon) %>
           </div>
         </div>
       </div>
@@ -36,3 +32,7 @@
     </div>
   </div>
 </div>
+
+<!-- <div class="card-txt">
+  <p><strong><%#= category.name %></strong></p>
+</div> -->
