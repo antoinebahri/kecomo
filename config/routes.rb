@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   get '/meals/:id', to: 'meals#show', as: 'meal_path'
+  get '/meals', to: 'meals#index', as: 'meals_path'
 
   resources :restaurants do
     resources :meals
