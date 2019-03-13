@@ -8,8 +8,8 @@
   width: 0px;
   height: 0px;
   border-right: 210px solid transparent;
-  border-top: 210px solid #51EAEA;
-  border-left: 210px solid #51EAEA;
+  border-top: 210px solid #48d6d6;
+  border-left: 210px solid #48d6d6;
   border-bottom: 210px solid transparent;
   position: absolute;
   left: 0%;
@@ -18,29 +18,27 @@
   bottom: 0%;
 }
 
-.rectangle h1 {
-  font-size: 25px;
-  font-weight: bolder;
-  color: #FB3569;
-  position: absolute;
-  z-index: 2;
-  top: 30px;
-  left: 120px;
-}
-
-.rectangle h2 {
-  font-size: 40px;
-  font-weight: bolder;
-  color: black;
-  position: absolute;
-  z-index: 2;
-  bottom: 120px;
-  right: 120px;
-}
-
 .rectangle {
   width: auto;
   height: 70vh;
   background: #FB3569;
 }
 
+.rectangle h1 {
+  font-size: 25px;
+  color: white;
+  position: absolute;
+  z-index: 2;
+  top: 30px;
+  left: 500px;
+}
+
+.rectangle h2 {
+  font-size: 40px;
+  font-weight: bolder;
+  color: #440063;
+  position: absolute;
+  z-index: 2;
+  bottom: 120px;
+  right: 120px;
+}
