@@ -16,3 +16,24 @@
     <%= render 'shared/search_bar' %>
   </div>
 </div>
+
+<h3>Discover your new favourite</h3>
+<div class="card-grid">
+  <div class="row">
+    <div class="cards">
+      <% @categories.each do |category| %>
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-img">
+            <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+            </div>
+            <div class="card-txt">
+              <p><strong><%= category.name %></strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
