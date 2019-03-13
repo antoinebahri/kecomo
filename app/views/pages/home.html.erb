@@ -1,6 +1,16 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= form_tag meals_path_url, method: :get do %>
-  <%= text_field_tag 'query', params[:query], placeholder: "Enter a category or meal's name" %>
-  <%= submit_tag 'Search!' %>
-<% end %>
+<h1>This is the Home page</h1>
+<!-- the search bar and submit button-->
+<div id="search_bar">
+  <%= form_tag meals_path_url, method: :get do %>
+    <%= text_field_tag :query, params[:query], placeholder: "Enter a category or meal's name" , id: 'searchbar' %>
+    <%= submit_tag 'Search!' %>
+  <% end %>
+</div>
+<!-- the autocomplete suggestions results dropdown -->
+<div id="autocomplete_results">
+  <ul id="results">
+  </ul>
+</div>
+
+
+

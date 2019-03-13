@@ -2,7 +2,7 @@ class MealsController < ApplicationController
   def index
     if params[:query].present?
       @results = PgSearch.multisearch(params[:query])
-      raise
+      # raise
     elsif params[:category_id].present?
       @meals = Meal.all.where(category_id: params[:category_id]).first(10)
       @meals.sort_by! do |meal|
