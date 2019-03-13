@@ -1,0 +1,24 @@
+.card-grid {
+  margin: 20px 150px;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card {
+  margin-bottom: 20px;
+  width: 300px;
+  height: 150px;
+}
+
+.card-txt {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 150px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #440063;
+}
