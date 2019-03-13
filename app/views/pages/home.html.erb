@@ -1,4 +1,7 @@
 <h1>Pages#home</h1>
+
+<img src="<%= image_path Category.first.icon %>" alt="<%= Category.first.icon %>">
+
 <p>Find me in app/views/pages/home.html.erb</p>
 <%= form_tag meals_path_url, method: :get do %>
   <%= text_field_tag 'query', params[:query], placeholder: "Enter a category or meal's name" %>

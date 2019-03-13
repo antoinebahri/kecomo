@@ -48,14 +48,16 @@ end
 puts "Destroying all meal categories.."
 Category.destroy_all
 
-meal_categories = ["Dessert", "Cookie", "Cupcake", "Salad", "French fries", "Burger", "Brownie", "Cheesecake", "Muffin", "Croissant", "Ice cream", "Chili", "Cinnamon rolls", "Garlic bread", "Bread", "Coffee", "Tea", "Crepe", "Waffle", "Meatloaf", "Pasta", "Risotto", "Ravioli", "Chicken", "Chicken wings", "Soup", "Stew", "Sandwich", "Naan", "Curry", "Pad thai", "Wok", "Egg", "Hot dog", "Tapas", "Cocktail", "Sushi", "Poke bowl",]
+meal_categories = ["Dessert", "Cookie", "Cupcake", "Salad", "French fries", "Burger", "Brownie", "Muffin", "Croissant", "Ice cream", "Cinnamon rolls", "Bread", "Pie", "Cake", "Coffee", "Tea", "Pasta", "Chicken", "Sandwich", "Curry", "Wok", "Egg", "Hot dog", "Tapas", "Cocktail", "Sushi", "Taco", "Noodles", "Meat", "Donut", "Pizza"]
 
 puts "Creating meal categories..."
 c = 0
 meal_categories.each do |category|
-  Category.create!(name: category)
+  Category.create!(name: category, icon: "#{category.downcase.tr(" ", "_")}.png")
   c = c+ + 1
 end
+
+
 
 puts "#{r} restaurants have been created"
 puts "#{c} meal categories have been created"
