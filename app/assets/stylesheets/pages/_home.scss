@@ -8,8 +8,8 @@
   width: 0px;
   height: 0px;
   border-right: 210px solid transparent;
-  border-top: 210px solid #48d6d6;
-  border-left: 210px solid #48d6d6;
+  border-top: 210px solid #00ccbc;
+  border-left: 210px solid #00ccbc;
   border-bottom: 210px solid transparent;
   position: absolute;
   left: 0%;
@@ -20,17 +20,18 @@
 
 .rectangle {
   width: auto;
-  height: 70vh;
+  height: 75vh;
   background: #FB3569;
 }
 
-.rectangle h1 {
-  font-size: 25px;
+.rectangle .kecomo-logo img {
+  height:40px;
+  width:110px;
   color: white;
   position: absolute;
   z-index: 2;
   top: 30px;
-  left: 500px;
+  left: 450px;
 }
 
 .rectangle h2 {

@@ -1,10 +1,9 @@
 
 <div class="banner">
   <div class="triangle-top-left">
-
   </div>
   <div class="rectangle">
-    <h1>kecomo</h1>
+    <%= link_to image_tag("kecomo-logo.png"), root_path, class: "kecomo-logo" %>
     <% if user_signed_in? %>
       <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
     <% else %>
