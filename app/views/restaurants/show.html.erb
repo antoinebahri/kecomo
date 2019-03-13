@@ -1,2 +1,24 @@
 <h1>Restaurants#show</h1>
 <p>Find me in app/views/restaurants/show.html.erb</p>
+<!-- pic of meal -->
+<%= @restaurant.picture %>
+<%= "---------" %>
+<!-- restaurant name -->
+<%= @restaurant.name %>
+<%= "---------" %>
+<!-- restaurant category -->
+<%= @restaurant.restaurant_category %>
+<%= "---------" %>
+<!-- rest address -->
+<%= @restaurant.address %>
+<%= "---------" %>
+<!-- rest horario -->
+<%= @restaurant.opening_hour %>
+<%= "---------" %>
+<%= @restaurant.closing_hour %>
+<%= "---------" %>
+
+<!-- an array of meals to be fed into cards, like in the index of all meals; can reuse the component -->
+
+<% @restaurant.meals %>
+
