@@ -1,38 +1,27 @@
 <div class="navbar-wagon">
-  <!-- Logo -->
-  <a href="/" class="navbar-wagon-brand">
-    <img src="<%= image_path "kecomo_logo.png" %>" alt="kecomo_logo.png">
-  </a>
-
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Host</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Trips</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a>
-
-    <!-- Profile picture with dropdown list -->
-    <div class="navbar-wagon-item">
-      <div class="dropdown">
-        <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Log Out</a></li>
-        </ul>
-      </div>
-    </div>
+  <!-- Logo, link to home at topleft-->
+  <%= link_to image_tag("kecomo-logo.png"), root_path, class: "kecomo-logo-navbar" %>
+  <div class="triangle-navbar-top-left">
   </div>
 
   <!-- Dropdown appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
+  <div class="navbar-wagon-item">
+
+     <!-- navbar, when user not signed in yet
+    <div class="navbar-wagon-right">
+      <a href="" class="navbar-wagon-item navbar-wagon-link">Login</a>
+      <a href="" class="navbar-wagon-item navbar-wagon-link">Sign Up</a>
+    </div> -->
+
+    <!-- Navbar with user avatar at topright-->
     <div class="dropdown">
-      <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
+      <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li><a href="#">Host</a></li>
         <li><a href="#">Trips</a></li>
         <li><a href="#">Messagese</a></li>
       </ul>
     </div>
+
   </div>
 </div>
