@@ -1,6 +1,9 @@
 class MealsController < ApplicationController
   def index
-    if params[:category_id].present?
+    if params[:query].present?
+      @results = PgSearch.multisearch(params[:query])
+      # raise
+    elsif params[:category_id].present?
       @meals = Meal.all.where(category_id: params[:category_id]).first(10)
       @meals.sort_by! do |meal|
         meal.awards.count
@@ -13,6 +16,7 @@ class MealsController < ApplicationController
 
   def show
     @meal = Meal.find(params[:id])
+    @full_score = @meal.awards
   end
 
   def new
@@ -40,7 +44,7 @@ class MealsController < ApplicationController
 
   private
 
-  def meal_params
-    params.require(:meal).permit(:name, :description, :picture)
-  end
+  # def meal_params
+  #   params.require(:meal).permit(:name, :description, :picture)
+  # end
 end

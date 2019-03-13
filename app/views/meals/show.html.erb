@@ -1,0 +1,24 @@
+<!-- pic of meal -->
+<%= @meal.picture %>
+<%= "---------" %>
+<!-- name of meal -->
+<%= @meal.name %>
+<%= "---------" %>
+<!-- name of meal category -->
+<%= Category.find(@meal.category_id).name %>
+<%= "---------" %>
+<!-- awards count -->
+<%= @meal.awards.count %>
+<%= "---------" %>
+<!-- name with link, leading to the show of the particular restaurant -->
+<%= link_to Restaurant.find(@meal.restaurant_id).name, restaurant_path(Restaurant.find(@meal.restaurant_id)) %>
+<!-- meal reviews array -->
+<% @full_score.each do |award| %>
+  <ul>
+    <li>
+      <%= award.review %>
+      <!-- meal reviews printed as lis -->
+    </li>
+  </ul>
+<% end %>
+

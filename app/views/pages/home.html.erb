@@ -37,3 +37,16 @@
     </div>
   </div>
 </div>
+
+<!-- the search bar and submit button-->
+<div id="search_bar">
+  <%= form_tag meals_path_url, method: :get do %>
+    <%= text_field_tag :query, params[:query], placeholder: "Enter a category or meal's name" , id: 'searchbar' %>
+    <%= submit_tag 'Search!' %>
+  <% end %>
+</div>
+<!-- the autocomplete suggestions results dropdown -->
+<div id="autocomplete_results">
+  <ul id="results">
+  </ul>
+</div>

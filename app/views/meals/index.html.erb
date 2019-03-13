@@ -1,6 +1,28 @@
-<br>
-<% @meals.each do |meal| %>
-<%= meal.name %>
-<%= meal.awards.count %>
-<br>
+<% unless @meals == nil %>
+  <br>
+    <% @meals.each do |meal| %>
+    <%= meal.name %>
+    <%= meal.awards.count %>
+  <br>
+  <% end %>
+<% end %>
+
+
+
+<% unless @results == nil %>
+  <ul>
+    <% @results.each do |result| %>
+      <% if result.searchable_type == "Restaurant" %>
+        <li>
+          <%= "restaurants" %>
+          <%= Restaurant.find_by(name: result.content).name %>
+        </li>
+      <% elsif result.searchable_type == "Category" %>
+        <li>
+          <%= "category" %>
+          <%= Category.find_by(name: result.content).name %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
 <% end %>
