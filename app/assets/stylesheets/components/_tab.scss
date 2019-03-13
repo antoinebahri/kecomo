@@ -1,0 +1,24 @@
+.tabs-underlined {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    justify-content: flex-end;
+    padding-top: 25px;
+    padding-right: 15px;
+  }
+
+  .tabs-underlined .tab-underlined {
+    padding: 8px;
+    margin: 8px 16px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  .tab-underlined:hover {
+    opacity: 1;
+    color: white;
+    border-bottom: 3px solid white;
+  }
