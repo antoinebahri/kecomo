@@ -60,7 +60,6 @@ puts "#{r} restaurants have been created"
 puts "#{c} meal categories have been created"
 
 # ======= Previous seed
-
 # puts 'Deleting seeds...'
 # Award.delete_all
 # Meal.delete_all
