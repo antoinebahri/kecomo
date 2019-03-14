@@ -32,7 +32,7 @@
   padding: 16px;
 }
 
-.card-meal-vote {
+.card-meal-voting {
   padding: 16px;
 }
 
@@ -58,3 +58,48 @@
   font-size: 0.6em;;
   font-weight: bold
 }
+
+.card-meal-vote-button {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 60px;
+  width: 60px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  p {
+    font-size: 0.6em !important;
+    margin: 0 !important;
+  }
+}
+
+.card-meal-vote-img {
+  height: 40px !important;
+  width: 40px !important;
+}
+
+.card-meal-restaurant-button {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.card-meal-restaurant-button:hover {
+  opacity: 1;
+}
+
+
+.card-meal-category-button {
+  color: #FB3569;
+  border: 1px solid #FB3569;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
