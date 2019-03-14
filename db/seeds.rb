@@ -9,6 +9,16 @@
 require 'json'
 require 'open-uri'
 require "httparty"
+puts "Destroying all users"
+User.destroy_all
+
+puts "creating team-member users in format: d.penev@lewagon.com, pass: 123123"
+User.create(email: "a.bahri@lewagon.com", password: "123123")
+User.create(email: "f.ordeig@lewagon.com", password: "123123")
+User.create(email: "n.michel@lewagon.com", password: "123123")
+User.create(email: "d.penev@lewagon.com", password: "123123")
+puts "Team users created"
+
 
 puts "Destroying all restaurants..."
 Restaurant.destroy_all
@@ -47,7 +57,7 @@ end
 puts "Destroying all meal categories.."
 Category.destroy_all
 
-meal_categories = ["Dessert", "Cookie", "Cupcake", "Salad", "French Fries", "Burger", "Brownie", "Muffin", "Croissant", "Ice Cream", "Cinnamon Rolls", "Bread", "Pie", "Cake", "Coffee", "Tea", "Pasta", "Chicken", "Sandwich", "Curry", "Wok", "Egg", "Hot Dog", "Tapas", "Cocktail", "Sushi", "Taco", "Noodles", "Meat", "Donut", "Pizza"]
+meal_categories = ["Dessert", "Cookie", "Cupcake", "Salad", "French Fries", "Burger", "Brownie", "Muffin", "Croissant", "Ice Cream", "Cinnamon Roll", "Bread", "Pie", "Cake", "Coffee", "Tea", "Pasta", "Chicken", "Sandwich", "Curry", "Wok", "Egg", "Hot Dog", "Tapas", "Cocktail", "Sushi", "Taco", "Noodles", "Meat", "Donut", "Pizza"]
 
 puts "Creating meal categories..."
 c = 0
@@ -58,6 +68,32 @@ end
 
 puts "#{r} restaurants have been created"
 puts "#{c} meal categories have been created"
+
+puts "Destroying all meals"
+Meal.destroy_all
+puts "Creating 200 new meals"
+meal_counter = 1
+200.times do
+  meal = Meal.new(name: "meal N:#{meal_counter}")
+  meal_counter += 1
+  meal.restaurant = Restaurant.all.sample
+  meal.category = Category.all.sample
+  meal.picture = "images/bread.png"
+  meal.save!
+end
+puts "200 meals created"
+
+puts "Destroying all awards"
+Award.destroy_all
+puts "Creating 400 awards"
+400.times do
+  award = Award.new
+  award.meal = Meal.all.sample
+  award.user = User.all.sample
+  award.save!
+end
+puts '400 awards distributed'
+
 
 # ======= Previous seed
 # puts 'Deleting seeds...'

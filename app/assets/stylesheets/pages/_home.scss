@@ -1,4 +1,8 @@
 // Specific CSS for your home-page
+body {
+  background-color: #fffde1;
+}
+
 .banner {
   position: relative;
 }
@@ -13,7 +17,7 @@ h3 {
   font-size: 30px;
   font-weight: bolder;
   color: #440063;
-  margin: 40px 80px;
+  margin: 40px 80px 20px 80px;
 }
 
 .triangle-top-left {
@@ -53,7 +57,7 @@ h3 {
   right: 120px;
 }
 
-.rectangle #search-bar {
+.banner .rectangle #search-bar {
   position: absolute;
   bottom: 50px;
   right: 300px;

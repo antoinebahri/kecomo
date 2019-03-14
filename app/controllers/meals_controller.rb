@@ -7,13 +7,15 @@ class MealsController < ApplicationController
       @meals.sort_by! do |meal|
         meal.awards.count
       end
-      @meals.reverse!
+      @meals = @meals.reverse
+      # raise
     else
       @meals = Meal.all
     end
   end
 
   def show
+    category = Category.find(params[:category_id])
     @meal = Meal.find(params[:id])
     @full_score = @meal.awards
   end
