@@ -3,7 +3,6 @@
     <% @meals.each do |meal| %>
     <%= meal.name %>
     <%= meal.awards.count %>
-    <%= link_to 'show me the foooood@!', category_meal_path(meal.category.id, meal.id) %>
   <br>
   <% end %>
 <% end %>
@@ -38,5 +37,3 @@
     <% end %>
   </ul>
 <% end %>
-
-
