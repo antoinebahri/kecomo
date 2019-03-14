@@ -1,5 +1,5 @@
 <div action="" id="search-bar" class="form-inline">
-  <%= form_tag meals_path_url, method: :get do %>
+  <%= form_tag all_meals_url, method: :get do %>
     <%= text_field_tag :query, params[:query], size: "50", placeholder: "Try 'burger' or 'bacoa'", class: "form-control", id: 'searchbar' %>
   <button type="submit" name="commit" value="search" class="btn btn-info btn-fill">GO!</button>
   <% end %>
