@@ -21,17 +21,16 @@
   <div class="cards">
     <div class="row">
       <% @random_categories.each do |category| %>
-      <div class="col-sm-4">
-        <div class="card">
-          <div class="card-img">
-            <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-img">
+              <%= link_to (image_tag (category.icon)), category_meals_path(category.id) %>
             </div>
             <div class="card-txt">
-              <p><strong><%= category.name %></strong></p>
+              <h5><strong><%= link_to (category.name), category_meals_path(category.id) %></strong></h5>
             </div>
           </div>
         </div>
-      </div>
       <% end %>
     </div>
   </div>
