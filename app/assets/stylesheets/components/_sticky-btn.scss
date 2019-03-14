@@ -1,0 +1,52 @@
+
+.sticky-btn {
+  background-color: transparent;
+  position: fixed;
+  bottom: 80px;
+  right: 50px;
+  z-index: 3;
+  border-radius: 50%;
+  box-shadow: 5px 5px 15px -5px rgba(0,0,0,0.7);
+}
+
+.sticky-btn img {
+  height: 90px;
+  width: 90px;
+  opacity: 0.8;
+}
+
+.sticky-btn img:hover {
+  opacity: 1;
+  height: 110px;
+  width: 110px;
+}
+
+/*
+// BUTTON IN PINK
+.sticky-btn {
+  background-color: #FB3569;
+  position: fixed;
+  bottom: 80px;
+  right: 40px;
+  z-index: 2;
+  border-radius: 50%;
+  box-shadow: 5px 5px 15px -5px rgba(0,0,0,0.7);
+  height: 90px;
+  width: 90px;
+  opacity: 0.9;
+}
+
+.sticky-btn:hover {
+  opacity: 1;
+}
+
+.txt-sticky-btn {
+  color: white;
+  font-weight: bolder;
+  font-size: 110px;
+  z-index: 3;
+  position: fixed;
+  bottom: 52px;
+  right: 52px;
+}
+ */
