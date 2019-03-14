@@ -1,4 +1,6 @@
-<h1>Meals#index</h1>
+<%= render "shared/navbar" %>
+<%= render "shared/filter-bar" %>
+
 <% unless @meals == nil %>
   <br>
     <% @meals.each do |meal| %>
