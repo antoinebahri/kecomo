@@ -1,18 +1,18 @@
 <%= render 'shared/navbar' %>
-<br>
-<br>
 <%= link_to (image_tag "add.png"), root_path, class: "sticky-btn" %>
+<%= render 'shared/meal-card' %>
 <br>
-<br>
-<% unless @meals == nil %>
+
+<!--
+<%# unless @meals == nil %>
   <br>
-    <% @meals.each do |meal| %>
-    <%= meal.name %>
-    <%= meal.awards.count %>
-    <%= link_to 'show me the foooood@!', category_meal_path(meal.category.id, meal.id) %>
+    <%# @meals.each do |meal| %>
+    <%#= meal.name %>
+    <%#= meal.awards.count %>
+    <%#= link_to 'show me the foooood@!', category_meal_path(meal.category.id, meal.id) %>
   <br>
-  <% end %>
-<% end %>
+  <%# end %>
+<%# end %> -->
 
 <% unless @results == nil %>
   <ul>

@@ -8,14 +8,13 @@ class MealsController < ApplicationController
         meal.awards.count
       end
       @meals = @meals.reverse
-      # raise
     else
       @meals = Meal.all
     end
   end
 
   def show
-    category = Category.find(params[:category_id])
+    @category = Category.find(params[:category_id])
     @meal = Meal.find(params[:id])
     @full_score = @meal.awards
   end
