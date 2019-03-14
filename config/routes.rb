@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :categories, only: [:show] do
   end
 
+  get '/meals', to: 'meals#index', as: 'meals_path'
+
   resources :restaurants do
     resources :meals
   end
