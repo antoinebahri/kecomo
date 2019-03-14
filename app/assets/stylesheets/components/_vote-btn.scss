@@ -1,7 +1,8 @@
 
 .vote-btn {
+  background-color: transparent;
   position: fixed;
-  bottom: 40px;
+  bottom: 80px;
   right: 40px;
   z-index: 3;
   border-radius: 50%;
@@ -11,4 +12,16 @@
 .vote-btn img {
   height: 90px;
   width: 90px;
+  opacity: 0.8;
 }
+
+.vote-btn img:hover {
+  opacity: 1;
+  height: 130px;
+  width: 130px;
+}
+
+/*
+// THIS GOES IN THE .HTML FILE
+<%= link_to (image_tag "gold-medal.png"), root_path, class: "vote-btn" %>
+ */
