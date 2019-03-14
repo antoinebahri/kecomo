@@ -9,6 +9,16 @@
 require 'json'
 require 'open-uri'
 require "httparty"
+puts "Destroying all users"
+User.destroy_all
+
+puts "creating team-member users in format: d.penev@lewagon.com, pass: 123123"
+User.create(email: "a.bahri@lewagon.com", password: "123123")
+User.create(email: "f.ordeig@lewagon.com", password: "123123")
+User.create(email: "n.michel@lewagon.com", password: "123123")
+User.create(email: "d.penev@lewagon.com", password: "123123")
+puts "Team users created"
+
 
 puts "Destroying all restaurants..."
 Restaurant.destroy_all
@@ -79,7 +89,8 @@ puts "Creating 400 awards"
 400.times do
   award = Award.new
   award.meal = Meal.all.sample
-  award.create!
+  award.user = User.all.sample
+  award.save!
 end
 puts '400 awards distributed'
 

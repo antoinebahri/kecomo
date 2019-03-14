@@ -3,18 +3,19 @@ class MealsController < ApplicationController
     if params[:query].present?
       @results = PgSearch.multisearch(params[:query])
     elsif params[:category_id].present?
-      raise
       @meals = Meal.all.where(category_id: params[:category_id]).first(10)
       @meals.sort_by! do |meal|
         meal.awards.count
       end
-      @meals.reverse!
+      @meals = @meals.reverse
+      # raise
     else
       @meals = Meal.all
     end
   end
 
   def show
+    category = Category.find(params[:category_id])
     @meal = Meal.find(params[:id])
     @full_score = @meal.awards
   end
