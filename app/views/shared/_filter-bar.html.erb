@@ -1,16 +1,25 @@
 <div class="filter-bar">
+
   <div class="filter-bar-tags">
-    <div class="filter-bar-tag">
-      <div>
+
+    <div class="filter-bar-tags-cities">
+      <div class="result">
         <i class="fas fa-map-pin"></i>
-        <%= "meals first restaurant city" %>
+        Barcelona
       </div>
     </div>
-    <div class="filter-bar-tag">
-      <p> <%= "category name" %> </p>
+
+    <div class="filter-bar-tags-cities">
+      <%= form_tag all_meals_path, method: :get do %>
+      <%= text_field_tag :query, params[:query], placeholder: "Search Category", class: "form-control", id: 'searchbar' %>
+     <% end %>
     </div>
+
   </div>
+
   <div class="filter-bar-map">
-     <%= "link_to map_pages_path(@meals_located), class: map-icon "%>
+     <i class="far fa-map fa-2x"></i> </p>
+
   </div>
+
 </div>
