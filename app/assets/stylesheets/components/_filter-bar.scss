@@ -1,0 +1,18 @@
+.filter-bar {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid black;
+}
+
+.filter-bar > .filter-bar-tags {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filter-bar > .filter-bar-tags > .filter-bar-tag {
+  border: 1px solid black;
+  border-radius: 2px;
+}
+

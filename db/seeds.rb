@@ -59,6 +59,31 @@ end
 puts "#{r} restaurants have been created"
 puts "#{c} meal categories have been created"
 
+puts "Destroying all meals"
+Meal.destroy_all
+puts "Creating 200 new meals"
+meal_counter = 1
+200.times do
+  meal = Meal.new(name: "meal N:#{meal_counter}")
+  meal_counter += 1
+  meal.restaurant = Restaurant.all.sample
+  meal.category = Category.all.sample
+  meal.picture = "images/bread.png"
+  meal.save!
+end
+puts "200 meals created"
+
+puts "Destroying all awards"
+Award.destroy_all
+puts "Creating 400 awards"
+400.times do
+  award = Award.new
+  award.meal = Meal.all.sample
+  award.create!
+end
+puts '400 awards distributed'
+
+
 # ======= Previous seed
 # puts 'Deleting seeds...'
 # Award.delete_all
