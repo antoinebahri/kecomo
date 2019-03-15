@@ -1,22 +1,28 @@
 <div class="navbar-wagon">
   <!-- Logo, link to home at topleft-->
+  
   <%= link_to image_tag("kecomo-logo.png"), root_path, class: "kecomo-logo-navbar" %>
+  
   <div class="navbar-wagon-item">
 
-     <!-- navbar, when user not signed in yet
-    <div class="navbar-wagon-right">
-      <a href="" class="navbar-wagon-item navbar-wagon-link">Login</a>
-      <a href="" class="navbar-wagon-item navbar-wagon-link">Sign Up</a>
-    </div> -->
+    <% if user_signed_in? == false %>
 
-    <!-- Navbar with user avatar at topright-->
+     <!-- navbar, when user not signed in yet -->
+    <div class="navbar-wagon-right">
+      <%= link_to "Register and pick your best!", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Log in", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    </div>
+
+    <% else %>
+    <!-- Navbar with user avatar (dropdown) at topright, user signed in -->
     <div class="dropdown">
       <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar-large dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Vote!</a></li>
-        <li><a href="#">Log out</a></li>
+        <li><%= link_to "Profile", profile_path(current_user), class: "tab-underlined" %></li>
+        <li><%= link_to "Vote your top dish!", new_award_path, class: "tab-underlined" %></li>
+        <li><%= link_to "Log out", destroy_user_session_path, class: "tab-underlined" %></li>
       </ul>
     </div>
+    <% end %>
   </div>
 </div>

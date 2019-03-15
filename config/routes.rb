@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+
   devise_for :users
   root to: 'pages#home'
+
+  get '/profile/:id', to: 'pages#profile', as: 'profile'
 
   resources :awards, except: [:show]
 

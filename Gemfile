@@ -6,6 +6,7 @@ gem 'bootsnap', require: false
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 gem 'hogan_assets'
 gem 'pg', '~> 0.21'
 gem 'puma'
