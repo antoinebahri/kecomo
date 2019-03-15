@@ -1,3 +1,5 @@
+
+<%= render 'shared/navbar' %>
 <div class="container">
 
   <%= image_tag @meal.picture, class: "meal-page-img" %>
@@ -27,7 +29,7 @@
   <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
   <div class="meal-page-reviews-content">
     <p><%= award.user.first_name%> <%= award.user.last_name%></p>
-    <p style="font-style: italic;">"<%= award.review %>"</p>
+    <p style="font-style: italic;">"<%= award.review.first(120) %>"</p>
   </div>
 
 </div>
