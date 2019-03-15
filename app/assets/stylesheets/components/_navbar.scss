@@ -3,7 +3,7 @@
   background: #FB3569;
   transition: all 0.3s ease;
   height: 70px;
-  padding: 0px 30px;
+  padding: 0px 0px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -103,6 +103,7 @@ padding: 0.9rem 0;
   border-top: 70px solid #00ccbc;
   border-left: 420px solid #00ccbc;
   border-bottom: 0px solid transparent;
+  // flex: 0 1 30em;
   position: absolute;
   left: 0%;
   right: 35.33%;
@@ -117,4 +118,5 @@ padding: 0.9rem 0;
   z-index: 2;
   position: absolute;
   top: 15px;
+  left: 15px;
 }
