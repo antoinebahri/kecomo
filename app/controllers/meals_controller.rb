@@ -2,6 +2,14 @@ class MealsController < ApplicationController
   def index
     if params[:query].present?
       @results = PgSearch.multisearch(params[:query])
+      unless @results == nil
+        @results.each do |result|
+          if @results.searchable_type == "Restaurant"
+            redirect_to restaurant_meals_path(result.restaurant)
+          elsif @results.searchable_type == "Category"
+            redirect_to category_meals_path(result.restaurant)
+
+
     elsif params[:category_id].present?
       @meals = Meal.all.where(category_id: params[:category_id]).first(10)
       @meals.sort_by! do |meal|
