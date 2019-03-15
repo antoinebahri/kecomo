@@ -26,6 +26,9 @@
   </div>
 </div>
 
+<form>
+  <input type="button" value="Go back!" onclick="history.back()">
+</form>
 
 <% @full_score.each do |award| %>
       <!-- meal reviews printed as lis -->
@@ -33,7 +36,7 @@
       <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
       <div class="reviews-content">
         <p><%= award.user.first_name%> <%= award.user.last_name%></p>
-        <p><%= award.review %></p>
+        <p><%= award.review.first(43) %></p>
       </div>
 
       <div class="date-posted">
