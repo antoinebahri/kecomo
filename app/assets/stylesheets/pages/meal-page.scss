@@ -1,0 +1,95 @@
+.meal-page-img {
+  height: 400px;
+  width: 100%;
+  img-fit: cover;
+}
+
+.meal-page-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.meal-page-tags {
+  width: 100%;
+  display: flex;
+  margin-bottom: 15px;
+
+}
+
+
+.page-meal-restaurant-tag {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 4px 15px;
+  border-radius: 10px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  margin-right: 5px;
+}
+
+.page-meal-restaurant-tag:hover {
+  opacity: 1;
+}
+
+.page-meal-category-tag {
+  color: #FB3569;
+  border: 1px solid #FB3569;
+  padding: 4px 15px;
+  border-radius: 10px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.page-meal-category-tag a {
+  color: #FB3569;
+}
+
+.page-meal-category-tag:hover {
+  opacity: 1;
+}
+
+
+.meal-page-reviews {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  background: white;
+  padding: 8px 16px;
+  border: 1px solid rgb(235,235,235);
+}
+
+.meal-page-reviews .meal-page-reviews-content {
+  flex-grow: 1;
+  padding: 0 24px;
+}
+
+.meal-page-reviews p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.meal-page-reviews small {
+  color: black;
+  font-weight: bold;
+}
+.meal-page-reviews .meal-page-reviews-actions {
+  opacity: 1;
+  display: flex;
+  transition: ease .3s;
+}
+
+.meal-page-reviews:hover .meal-page-reviews-actions {
+  opacity: 1;
+}
+
+.meal-page-reviews .meal-page-reviews-actions a {
+  color: black;
+  margin-left: 16px;
+  font-size: 14px;
+}
+
+.meal-page-reviews .meal-page-reviews-actions a:hover {
+  color: #555555;
+}
