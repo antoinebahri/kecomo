@@ -1,6 +1,15 @@
 <div class="banner">
   <div class="triangle-top-left"></div>
-  <div class="rectangle">
+    <div class="rectangle">
+    <%= link_to image_tag("kecomo-logo.png"), root_path, class: "kecomo-logo" %>
+    <% if user_signed_in? %>
+      <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+    <% else %>
+      <ul class="list-inline tabs-underlined">
+      <li><%= link_to "Register", new_user_registration_path, class: "tab-underlined" %></li>
+      <li><%= link_to "Log in", new_user_session_path, class: "tab-underlined" %></li>
+      </ul>
+    <% end %>
     <h2>Looking for the best voted food in town?</h2>
     <%= render 'shared/search-bar' %>
   </div>
