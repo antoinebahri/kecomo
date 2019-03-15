@@ -106,7 +106,8 @@ meal_counter = 1
   meal_counter += 1
   meal.restaurant = Restaurant.all.sample
   meal.category = Category.all.sample
-  meal.picture = "images/bread.png"
+  meal.picture = "https://www.tasteofhome.com/wp-content/uploads/2017/10/exps28800_UG143377D12_18_1b_RMS-696x696.jpg"
+
   meal.save!
 end
 puts "200 fake meals created"
