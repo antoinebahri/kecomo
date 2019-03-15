@@ -99,18 +99,18 @@ puts "-----------------------------------"
 puts "Destroying all meals"
 Meal.destroy_all
 
-puts "Creating 200 fake new meals"
-meal_counter = 1
-200.times do
-  meal = Meal.new(name: "meal N:#{meal_counter}")
-  meal_counter += 1
-  meal.restaurant = Restaurant.all.sample
-  meal.category = Category.all.sample
-  meal.picture = "https://www.tasteofhome.com/wp-content/uploads/2017/10/exps28800_UG143377D12_18_1b_RMS-696x696.jpg"
+# puts "Creating 200 fake new meals"
+# meal_counter = 1
+# 200.times do
+#   meal = Meal.new(name: "meal N:#{meal_counter}")
+#   meal_counter += 1
+#   meal.restaurant = Restaurant.all.sample
+#   meal.category = Category.all.sample
+#   meal.picture = "https://www.tasteofhome.com/wp-content/uploads/2017/10/exps28800_UG143377D12_18_1b_RMS-696x696.jpg"
 
-  meal.save!
-end
-puts "200 fake meals created"
+#   meal.save!
+# end
+# puts "200 fake meals created"
 
 puts "creating real meals data"
 meal1 = Meal.new(name: "Pizza Stracciatella")
