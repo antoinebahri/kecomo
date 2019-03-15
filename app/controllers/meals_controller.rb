@@ -8,6 +8,9 @@ class MealsController < ApplicationController
             redirect_to restaurant_meals_path(result.restaurant)
           elsif @results.searchable_type == "Category"
             redirect_to category_meals_path(result.restaurant)
+          end
+        end
+      end
 
 
     elsif params[:category_id].present?
