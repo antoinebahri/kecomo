@@ -1,6 +1,6 @@
 .card-meal {
-  height: 120px;
-  width: 600px;
+  height: 12vh;
+  width: 100vw;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -11,7 +11,7 @@
 
 .card-meal img {
   height: 100%;
-  width: 120px;
+  width: 100px;
   object-fit: cover;
 }
 
@@ -19,11 +19,11 @@
   color: black;
   font-size: 16px;
   font-weight: bold;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
 .card-meal p {
-  font-size: 12px;
+  font-size: 10px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -44,11 +44,11 @@
 }
  */
 .card-meal .card-meal-infos {
-  padding: 16px;
+  padding: 10px;
 }
 
 .card-meal-voting {
-  padding: 16px;
+  padding: 10px;
 }
 
 .card-meal-button-wrapper {
@@ -96,7 +96,7 @@
 .card-meal-restaurant-button {
   color: #4A4A4A;
   border: 1px solid #4A4A4A;
-  padding: 8px 20px;
+  padding: 4px 15px;
   border-radius: 10px;
   opacity: 0.7;
   transition: opacity 0.3s ease;
@@ -109,12 +109,16 @@
 .card-meal-category-button {
   color: #FB3569;
   border: 1px solid #FB3569;
-  padding: 8px 20px;
+  padding: 4px 15px;
   border-radius: 10px;
   opacity: 0.7;
   transition: opacity 0.3s ease;
 }
 
-.card-meal-category-button {
+.card-meal-category-button a {
+  color: #FB3569;
+}
+
+.card-meal-category-button:hover {
   opacity: 1;
 }
