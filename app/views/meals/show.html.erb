@@ -1,11 +1,13 @@
-<%= render 'shared/navbar' %>
-<div class="wrapper-image">
 
-</div>
+<%= render 'shared/navbar' %>
+<div class="container">
+
+  <%= image_tag @meal.picture, class: "meal-page-img" %>
+
       <!-- meal cloudinary image -->
-<div class="card-meal-infos-meal-page">
+<div class="meal-page-info">
         <!-- meal.name -->
-  <h2><%= @meal.name %></h2>
+  <h2 style="font-color: black;"><%= @meal.name %></h2>
         <!-- meal.award.review -->
     <div class="card-meal-voting">
       <div class="card-meal-vote-button">
@@ -15,35 +17,22 @@
     </div>
 </div>
 
-<div class="card-meal-button-wrapper-show-page">
-  <div class="card-meal-restaurant-button-show-page">
-    <!-- meal.restaurant -->
-    <p><%= link_to @meal.restaurant.name, restaurant_meals_path(@meal.restaurant.id) %></p>
-  </div>
-  <div class="card-meal-category-button-show-page">
-    <!-- meal.category -->
-    <p><%= link_to @meal.category.name, category_meals_path(@meal.category.id, @meal.id) %></p>
+<div class="meal-page-tags">
+    <%= link_to @meal.restaurant.name, restaurant_meals_path(@meal.restaurant.id), class: "page-meal-restaurant-tag" %>
+    <%= link_to @meal.category.name, category_meals_path(@meal.category.id, @meal.id), class: "page-meal-category-tag" %>
 
-  </div>
 </div>
 
 
 <% @full_score.each do |award| %>
-      <!-- meal reviews printed as lis -->
-    <div class="reviews">
-      <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
-      <div class="reviews-content">
-        <p><%= award.user.first_name%> <%= award.user.last_name%></p>
-        <p><%= award.review %></p>
-      </div>
+<div class="meal-page-reviews">
+  <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
+  <div class="meal-page-reviews-content">
+    <p><%= award.user.first_name%> <%= award.user.last_name%></p>
+    <p style="font-style: italic;">"<%= award.review.first(120) %>"</p>
+  </div>
 
-      <div class="date-posted">
-        <p><%="empty"%></p>
-      </div>
-
-      <div class="reviews-actions">
-        <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
-        <a href="#">Delete <i class="far fa-trash-alt"></i></a>
-      </div>
-    </div>
+</div>
 <% end %>
+</div>
+
