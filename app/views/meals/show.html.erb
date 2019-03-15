@@ -1,18 +1,15 @@
-
-
-
 <div class="wrapper-image">
-  <%= image_tag @meal.picture %>
+
 </div>
       <!-- meal cloudinary image -->
 <div class="card-meal-infos-meal-page">
         <!-- meal.name -->
-  <h2>The widow maker</h2>
+  <h2><%= @meal.name %></h2>
         <!-- meal.award.review -->
     <div class="card-meal-voting">
       <div class="card-meal-vote-button">
         <%= image_tag "vote.png", :class => " card-meal-vote-img"%>
-        <p>223 votes</p>
+        <p><%= @meal.awards.count %></p>
       </div>
     </div>
 </div>
@@ -20,27 +17,27 @@
 <div class="card-meal-button-wrapper-show-page">
   <div class="card-meal-restaurant-button-show-page">
     <!-- meal.restaurant -->
-    <p>Big Al's</p>
+    <p><%= link_to @meal.restaurant.name, restaurant_meals_path(@meal.restaurant.id) %></p>
   </div>
   <div class="card-meal-category-button-show-page">
     <!-- meal.category -->
-    <p>#burger</p>
+    <p><%= link_to @meal.category.name, category_meals_path(@meal.category.id, @meal.id) %></p>
+
   </div>
 </div>
 
 
 <% @full_score.each do |award| %>
-      <%= award.review %>
       <!-- meal reviews printed as lis -->
     <div class="reviews">
       <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
       <div class="reviews-content">
-        <p><strong>Username</strong></p>
-        <p>Lorem ipsum dolor sit amet, adipisicing elit.</p>
+        <p><%= award.user.first_name%> <%= award.user.last_name%></p>
+        <p><%= award.review %></p>
       </div>
 
       <div class="date-posted">
-        <p><small>14th January</small></p>
+        <p><%="empty"%></p>
       </div>
 
       <div class="reviews-actions">
@@ -49,30 +46,3 @@
       </div>
     </div>
 <% end %>
-
-<!-- pic of meal -->
-<%= @meal.picture %>
-<%= "---------" %>
-<!-- name of meal -->
-<%= @meal.name %>
-<%= "---------" %>
-<!-- name of meal category -->
-<%= Category.find(@meal.category_id).name %>
-<%= "---------" %>
-<!-- awards count -->
-<%= @meal.awards.count %>
-<%= "---------" %>
-<!-- name with link, leading to the show of the particular restaurant -->
-<%= link_to Restaurant.find(@meal.restaurant_id).name, restaurant_path(Restaurant.find(@meal.restaurant_id)) %>
-<!-- meal reviews array -->
-<% @meal.awards.each do |award| %>
-  <ul>
-    <li>
-      <%= award.review %>
-      <%= award.user.first_name %>
-      <%= award.user.email %>
-      <!-- meal reviews printed as lis -->
-    </li>
-  </ul>
-<% end %>
-
