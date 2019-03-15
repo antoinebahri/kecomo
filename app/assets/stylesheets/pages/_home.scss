@@ -8,13 +8,13 @@ body {
 }
 
 h2 {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: bolder;
   color: #440063;
 }
 
 h3 {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bolder;
   color: #440063;
   margin: 20px 20px 10px 20px;
@@ -22,17 +22,21 @@ h3 {
 
 .rectangle {
   width: 100vw;
-  height: 50vh;
+  height: 55vh;
   background: #FB3569;
-  border-right: 50vw solid transparent;
-  border-top: 50vh solid #00ccbc;
-  border-left: 50vw solid #00ccbc;
-  border-bottom: 50vh solid transparent;
 }
 
+.triangle-top-left {
+  border-right: 200px solid transparent;
+  border-top: 200px solid #00ccbc;
+  border-left: 200px solid #00ccbc;
+  border-bottom: 200px solid transparent;
+  position: absolute;
+ }
+
 .rectangle .kecomo-logo img {
-  height:40px;
-  width:110px;
+  height: 40px;
+  width: 110px;
   position: absolute;
   color: white;
   z-index: 2;
@@ -43,14 +47,14 @@ h3 {
 .rectangle h2 {
   position: absolute;
   z-index: 2;
-  bottom: 350px;
+  bottom: 150px;
   right: 5px;
   text-align: center;
 }
 
 .banner .rectangle #search-bar {
   position: absolute;
-  bottom: 200px;
+  bottom: 75px;
   right: 25px;
 }
 
