@@ -1,4 +1,4 @@
-.card-grid {
+/* .card-grid {
   margin: 0px 150px;
 }
 
@@ -38,8 +38,52 @@
   height: 140px;
 }
 
-.card .card-txt h5 {
+.card .card-txt h5 {<h3>Discover your new favourite</h3>
   font-size: 17px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  bottom: 3px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #440063;
+} */
+
+.card {
+/*   margin-bottom: 25px; */
+  width: 125px;
+  height: 100px;
+  position: relative;
+  background-color: #fffde1;
+  border: none;
+}
+
+.card .card-img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-img img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+}
+
+.card-img img:hover {
+  width: 55px;
+  height: 55px;
+}
+
+.card .card-txt h5 {
+  font-size: 10px;
   position: absolute;
   margin-left: auto;
   margin-right: auto;
