@@ -7,19 +7,46 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'json'
+require 'faker'
 require 'open-uri'
 require "httparty"
+
+puts "-----------------------------------"
 puts "Destroying all users"
 User.destroy_all
-
 puts "creating team-member users in format: d.penev@lewagon.com, pass: 123123"
 User.create(email: "a.bahri@lewagon.com", password: "123123")
 User.create(email: "f.ordeig@lewagon.com", password: "123123")
 User.create(email: "n.michel@lewagon.com", password: "123123")
 User.create(email: "d.penev@lewagon.com", password: "123123")
 puts "Team users created"
+puts "-----------------------------------"
+# puts "-----------------------------------"
+# puts "creating 30 faker profiles"
+# 30.times do
+# User.create(email: Faker::Internet.email, password: "123123")
+# puts "30 faker profiles created"
+# end
+# puts "-----------------------------------"
+puts "-----------------------------------"
+puts "creating 30 real profiles"
+puts "Creating users..."
+30.times do
+  url = 'https://randomuser.me/api/'
+  users_serialized = HTTParty.get(url).body
+  users_list = JSON.parse(users_serialized)
+  user = User.create!(
+    first_name: users_list["results"][0]["name"]["first"].capitalize!,
+    last_name: users_list["results"][0]["name"]["last"].capitalize!,
+    email: users_list["results"][0]["email"],
+    password: "123123",
+    picture: users_list["results"][0]["picture"]["large"],
+  )
+end
+puts "-----------------------------------"
 
 
+puts "-----------------------------------"
 puts "Destroying all restaurants..."
 Restaurant.destroy_all
 
@@ -51,14 +78,12 @@ places_list["response"]["groups"][0]["items"].each do |place|
   end
   r = r + 1
 end
-
+puts "-----------------------------------"
 # Meals categories have been created using the website bettycroker.com
-
+puts "-----------------------------------"
 puts "Destroying all meal categories.."
 Category.destroy_all
-
 meal_categories = ["Dessert", "Cookie", "Cupcake", "Salad", "French Fries", "Burger", "Brownie", "Muffin", "Croissant", "Ice Cream", "Cinnamon Roll", "Bread", "Pie", "Cake", "Coffee", "Tea", "Pasta", "Chicken", "Sandwich", "Curry", "Wok", "Egg", "Hot Dog", "Tapas", "Cocktail", "Sushi", "Taco", "Noodles", "Meat", "Donut", "Pizza"]
-
 puts "Creating meal categories..."
 c = 0
 meal_categories.each do |category|
@@ -69,9 +94,12 @@ end
 puts "#{r} restaurants have been created"
 puts "#{c} meal categories have been created"
 
+puts "-----------------------------------"
+puts "-----------------------------------"
 puts "Destroying all meals"
 Meal.destroy_all
-puts "Creating 200 new meals"
+
+puts "Creating 200 fake new meals"
 meal_counter = 1
 200.times do
   meal = Meal.new(name: "meal N:#{meal_counter}")
@@ -81,8 +109,47 @@ meal_counter = 1
   meal.picture = "images/bread.png"
   meal.save!
 end
-puts "200 meals created"
+puts "200 fake meals created"
 
+puts "creating real meals data"
+meal = Meal.new
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+puts "-----------------------------------"
+puts "-----------------------------------"
 puts "Destroying all awards"
 Award.destroy_all
 puts "Creating 400 awards"
