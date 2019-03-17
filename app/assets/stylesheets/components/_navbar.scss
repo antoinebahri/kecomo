@@ -29,42 +29,34 @@
   height: 50px;
 }
 
-/* Right section */
-.navbar-wagon-right {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  // letter-spacing: 0.07em;
-  font-style: bolder;
-}
-
-.navbar-wagon-right a {
-  color:white;
-  padding: 8px;
-  margin: 7px;
-}
-
-.navbar-wagon-right a:hover {
-  color:#FB3569;
-  background-color: white;
-}
-
-
 /* Basic navbar item */
 .navbar-wagon-item {
-  cursor: pointer;
-  padding: 0 0px;
-  display:flex;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: #616668;
   font-size: 11px;
-}
-.navbar-wagon-link:hover {
-  color: #da552f;
+  cursor: pointer;
   text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  padding: 8px 15px;
+  color: white;
+  z-index: 2;
+  position: relative;
+  top: 30px;
+  right: 50px;
+}
+
+.navbar-wagon-link:hover {
+  text-decoration: none;
+  opacity: 1;
+  color: white;
+  border-bottom: 3px solid white;
 }
 
 .dropdown-menu .dropdown-menu-right .navbar-wagon-dropdown-menu .show > ul{
