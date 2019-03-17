@@ -1,2 +1,32 @@
-<h1>Awards#new</h1>
-<p>Find me in app/views/awards/new.html.erb</p>
+<div class="container">
+  <div class="wrapper-new">
+    <div class="form-new">
+      <h1 style="color: #ff5b60;">Give your award</h1>
+
+      <h2>Award details</h2>
+
+      <h3><%= "The award in the catagory:"%></h3>
+      <h3><%= @meal.category.name %></h3>
+      <h3><%= "goes to:"%></h3>
+
+      <h3><%= @meal.restaurant.name %></h3>
+      <h3><%= "and their"%></h3>
+
+      <h3><%= @meal.name %></h3>
+
+      <%= simple_form_for [@meal,@award] do |f| %>
+
+            <%= f.input :review, as: :text %>
+
+            <div class="bottom">
+
+      <%= link_to 'Home', root_path %>
+      <%= f.submit "Award", class: "button" %>
+      <br>
+
+      <% end %>
+
+        </div>
+    </div>
+  </div>
+</div>

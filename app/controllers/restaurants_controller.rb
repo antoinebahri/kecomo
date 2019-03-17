@@ -5,6 +5,9 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    @meals = @restaurant.meals
+    @meals.sort_by {|meal| meal.awards.count}
+    # raise
   end
 
   def new
