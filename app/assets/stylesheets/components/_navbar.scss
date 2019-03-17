@@ -3,11 +3,25 @@
   background: #FB3569;
   transition: all 0.3s ease;
   height: 60px;
-  padding: 0px 15px;
+  // padding: 0px 0px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100vw;
+  border-right: 0px solid transparent;
+  border-top: 0px solid #00ccbc;
+  border-left: 350px solid #00ccbc;
+  border-bottom: 60px solid transparent;
+  position: relative;
+}
+
+/* Avatar */
+.navbar-wagon-item .avatar-large {
+  width: 40px;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  right: 15px;
 }
 
 /* Logo */
@@ -15,44 +29,34 @@
   height: 50px;
 }
 
-/* Right section */
-.navbar-wagon-right {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  // letter-spacing: 0.07em;
-  font-style: bolder;
-}
-
-.navbar-wagon-right a {
-  color:white;
-  border: 1px solid white;
-  border-radius:20px;
-  padding: 8px;
-  margin: 7px;
-}
-
-.navbar-wagon-right a:hover {
-  color:#FB3569;
-  background-color: white;
-}
-
-
 /* Basic navbar item */
 .navbar-wagon-item {
-  cursor: pointer;
-  padding: 0 20px;
-  display:flex;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: #616668;
-  font-size: 14px;
-}
-.navbar-wagon-link:hover {
-  color: #da552f;
+  font-size: 11px;
+  cursor: pointer;
   text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  padding: 8px 15px;
+  color: white;
+  z-index: 2;
+  position: relative;
+  top: 30px;
+  right: 50px;
+}
+
+.navbar-wagon-link:hover {
+  text-decoration: none;
+  opacity: 1;
+  color: white;
+  border-bottom: 3px solid white;
 }
 
 .dropdown-menu .dropdown-menu-right .navbar-wagon-dropdown-menu .show > ul{
@@ -89,21 +93,6 @@ padding: 0.9rem 0;
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
-/*
-.triangle-navbar-top-left {
-  width: 0px;
-  height: 0px;
-  border-right: 70px solid transparent;
-  border-top: 70px solid #00ccbc;
-  border-left: 420px solid #00ccbc;
-  border-bottom: 0px solid transparent;
-  // flex: 0 1 30em;
-  position: absolute;
-  left: 0%;
-  right: 35.33%;
-  top: 0%;
-  bottom: 0%;
-} */
 
 .kecomo-logo-navbar img {
   height: 40px;
@@ -112,5 +101,5 @@ padding: 0.9rem 0;
   z-index: 2;
   position: absolute;
   top: 10px;
-  left: 10px;
+  left: -330px;
 }
