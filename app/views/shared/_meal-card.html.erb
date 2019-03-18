@@ -4,9 +4,17 @@
     <br>
   <div class="row">
     <div class="card-meal">
-      <div class="card-meal-rank">
         <% counter = counter + 1 %>
-        <%= counter %>st
+        <% if counter == 1 %>
+          <div class="card-meal-rank-1">
+        <% elsif counter == 2 %>
+          <div class="card-meal-rank-2">
+        <% elsif counter == 3 %>
+          <div class="card-meal-rank-3">
+        <% else %>
+          <div class="card-meal-rank">
+        <% end %>
+          <%= counter %>st
       </div>
       <!-- meal cloudinary image -->
       <img src="https://www.tasteofhome.com/wp-content/uploads/2017/10/exps28800_UG143377D12_18_1b_RMS-696x696.jpg">
@@ -28,9 +36,10 @@
       </div>
       <div class="card-meal-voting">
         <div class="card-meal-vote-button">
-          <%= image_tag "vote.png", class: "card-meal-vote-img"%>
-          <p><%= meal.awards.count %> votes</p>
-            <p><%= link_to "Vote", new_restaurant_meal_award_path(meal.restaurant, meal)%></p>
+          <%= link_to new_restaurant_meal_award_path(meal.restaurant, meal) do %>
+            <%= image_tag "vote.png", class: "card-meal-vote-img"%>
+          <% end %>
+          <p style="text-align: center;"><%= meal.awards.count %> upvotes</p>
         </div>
       </div>
     </div>
