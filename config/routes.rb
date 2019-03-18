@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :awards, except: [:show, :edit, :patch]
 
   resources :categories, only: [:show] do
+    get '/map', to: 'meals#map'
     resources :meals, only: [:show, :index] do
       resources :awards, only: [:new, :create]
     end
@@ -19,8 +20,10 @@ Rails.application.routes.draw do
   end
 
   resources :restaurants do
+    get '/map', to: 'restaurants#map'
     resources :meals do
       resources :awards, only: [:new, :create]
     end
   end
+
 end

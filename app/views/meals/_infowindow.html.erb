@@ -1,0 +1,8 @@
+
+<p style="font-weight: bolder;"><%= restaurant.name %></p>
+<p><%= restaurant.address %></p>
+<p>TOTAL VOTES: <%= restaurant.awards.count %></p>
+<% restaurant.meals.each do |meal| %>
+<p style="font-weight: bolder;"><%= meal.name %></p>
+<p>Votes: <%= meal.awards.count %></p>
+<% end %>

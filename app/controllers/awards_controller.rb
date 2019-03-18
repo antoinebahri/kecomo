@@ -24,12 +24,13 @@ class AwardsController < ApplicationController
     @award.meal = @meal
     # @award.category = @category
     @award.save
-    # redirect_to somewhere
+    # redirect_to somwhere
   end
 
   def destroy
-    @award = Award.find(params[:award_id])
+    @award = Award.find(params[:id])
     @award.destroy
+    redirect_to profile_path
   end
 
   private
