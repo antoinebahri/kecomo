@@ -87,6 +87,9 @@
   opacity: 1;
   display: flex;
   transition: ease .3s;
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
 
 .meal-page-reviews-date {
@@ -107,8 +110,8 @@
 
 .meal-page-reviews .meal-page-reviews-actions a {
   color: black;
-  margin-left: 16px;
-  font-size: 14px;
+  margin-left: 10px;
+  font-size: 8px;
 }
 
 .meal-page-reviews .meal-page-reviews-actions a:hover {

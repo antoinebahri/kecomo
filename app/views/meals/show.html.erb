@@ -31,6 +31,12 @@
         <div class="meal-page-reviews-date">
           <p><%= award.created_at %></p>
         </div>
+        <%  if current_user == true %>
+        <div class="meal-page-reviews-actions">
+    <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+    <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+  </div>
+  <% end %>
       </div>
 
     </div>
