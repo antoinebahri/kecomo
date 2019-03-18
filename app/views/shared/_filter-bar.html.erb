@@ -14,12 +14,9 @@
       <%= text_field_tag :query, params[:query], placeholder: "Search Category", class: "form-control", id: 'searchbar' %>
      <% end %>
     </div>
-
   </div>
 
   <div class="filter-bar-map">
-     <i class="far fa-map fa-2x"></i> </p>
-
+    <%= link_to "", category_map_path(params[:category_id]), class: "far fa-map fa-2x" %>
   </div>
-
 </div>

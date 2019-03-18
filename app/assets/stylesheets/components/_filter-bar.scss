@@ -5,13 +5,23 @@
   background: #E7E7E2;
 }
 
+.filter-bar a {
+  text-decoration: none;
+  color: black;
+}
+
+.filter-bar a:hover {
+  text-decoration: none;
+  opacity: 0.8;
+  color: black;
+}
+
 .filter-bar-tags {
   display: flex;
   align-items: center;
   flex-direction: row;
-  margin-bottom: 10px;
-  margin-top: 10px;
-
+  margin-bottom: 4px;
+  margin-top: 4px;
 }
 
 .filter-bar-tags-cities {
@@ -51,7 +61,7 @@
 
 .filter-bar-map {
   display: flex;
-  margin-right: 30px;
+  margin-right: 20px;
   align-items: center;
 }
 

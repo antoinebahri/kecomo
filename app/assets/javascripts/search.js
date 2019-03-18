@@ -1,4 +1,4 @@
-const searchBar = document.querySelector("#searchbar");
+/*const searchBar = document.querySelector("#searchbar");
 const resultsList = document.querySelector("#results");
 
 searchBar.addEventListener('keyup', (event) => {
@@ -12,3 +12,4 @@ searchBar.addEventListener('keyup', (event) => {
       });
     });
 });
+*/
