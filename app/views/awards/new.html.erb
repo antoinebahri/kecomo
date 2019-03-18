@@ -5,28 +5,41 @@
 
       <h2>Award details</h2>
 
-      <h3><%= "The award in the catagory:"%></h3>
-      <h3><%= @meal.category.name %></h3>
-      <h3><%= "goes to:"%></h3>
+      <% if @meal.id.nil? %>
+        <div class="choose-details">
+          <%= simple_form_for (@meal) do |f| %>
 
-      <h3><%= @meal.restaurant.name %></h3>
-      <h3><%= "and their"%></h3>
+              <%= f.association :category %>
 
-      <h3><%= @meal.name %></h3>
+              <%= f.association :restaurant %>
 
-      <%= simple_form_for [@meal,@award] do |f| %>
+              <%= f.input :name %>
 
-            <%= f.input :review, as: :text %>
-
-            <div class="bottom">
-
-      <%= link_to 'Home', root_path %>
-      <%= f.submit "Award", class: "button" %>
-      <br>
-
-      <% end %>
-
+              <div class="bottom">
+                  <%= link_to 'Home', root_path %>
+                  <%= f.submit "Award", class: "button" %>
+              <br>
+              </div>
+          <% end %>
         </div>
+      <% else %>
+        <h3><%= "The award in the catagory:"%></h3>
+        <h2><%= @meal.category.name %></h3>
+        <h3><%= "goes to:"%></h3>
+        <h2><%= @meal.name %></h3>
+        <h3><%= "@"%></h3>
+        <h3><%= @meal.restaurant.name %></h3>
+        <%= simple_form_for [@meal,@award] do |f| %>
+
+              <%= f.input :review, as: :text %>
+
+              <div class="bottom">
+                  <%= link_to 'Home', root_path %>
+                  <%= f.submit "Award", class: "button" %>
+              <br>
+              </div>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>

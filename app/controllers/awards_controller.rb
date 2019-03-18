@@ -1,8 +1,19 @@
 class AwardsController < ApplicationController
   def new
-    @award = Award.new()
-    @restaurant = Restaurant.find(params[:restaurant_id])
-    @meal = Meal.find(params[:meal_id])
+    @award = Award.new
+    if params[:restaurant_id].nil?
+      @restaurant = Restaurant.new
+    else
+      @restaurant = Restaurant.find(params[:restaurant_id])
+    end
+    # the case when the meal is not defined; award given from home or restaurant index
+    if params[:meal_id].nil?
+      @meal = Meal.new
+    else
+      @meal = Meal.find(params[:meal_id])
+    end
+    name = @meal.name
+    # raise
   end
 
   def create
@@ -14,6 +25,11 @@ class AwardsController < ApplicationController
     # @award.category = @category
     @award.save
     # redirect_to somewhere
+  end
+
+  def destroy
+    @award = Award.find(params[:award_id])
+    @award.destroy
   end
 
   private
