@@ -1,0 +1,79 @@
+.restaurant-page-no-image {
+  height: 100px;
+  width: 100px;
+}
+
+.restaurant-page-no-hero {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: white;
+  p {
+    margin-top: 15px;
+    text-align: center;
+  }
+}
+
+.restaurant-page-hero {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+.restaurant-page-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 15px;
+  h2 {
+    margin: 0;
+    color: black;
+  }
+}
+
+.restaurant-page-details {
+
+  p {
+    margin: 0;
+  }
+}
+
+
+.restaurant-page-map {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  border-style: solid;
+  height: 60px;
+  width: 60px;
+  padding: 2px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  p {
+    font-size: 0.6em !important;
+    margin: 0 !important;
+  }
+}
+
+.restaurant-page-meals {
+  border-top-style: solid;
+  margin-top: 15px;
+  p {
+    margin-bottom: 0;
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: grey;
+  }
+}
