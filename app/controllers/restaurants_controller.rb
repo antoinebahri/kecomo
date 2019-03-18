@@ -6,7 +6,8 @@ class RestaurantsController < ApplicationController
   def show
     @restaurant = Restaurant.find(params[:id])
     @meals = @restaurant.meals
-    @meals.sort_by {|meal| meal.awards.count}
+    @meals = @meals.sort_by {|meal| meal.awards.count}
+    @meals = @meals.reverse
     # raise
   end
 
