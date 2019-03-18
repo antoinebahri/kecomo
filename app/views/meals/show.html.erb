@@ -5,29 +5,32 @@
       <!-- meal cloudinary image -->
   <div class="meal-page-info">
         <!-- meal.name -->
-    <h2 style="font-color: black;"><%= @meal.name %></h2>
-        <!-- meal.award.review -->
-    <div class="card-meal-voting">
-      <div class="card-meal-vote-button">
-        <%= image_tag "vote.png", :class => " card-meal-vote-img"%>
-        <p><%= @meal.awards.count %></p>
-        <%= link_to "Vote", new_restaurant_meal_award_path(@meal.restaurant, @meal)%>
-      </div>
-    </div>
-  </div>
+  <div>
+    <h2><%= @meal.name %></h2>
   <div class="meal-page-tags">
     <%= link_to @meal.restaurant.name, restaurant_meals_path(@meal.restaurant.id), class: "page-meal-restaurant-tag" %>
     <%= link_to @meal.category.name, category_meals_path(@meal.category.id, @meal.id), class: "page-meal-category-tag" %>
   </div>
-  <form>
-    <input type="button" value="Go back!" onclick="history.back()">
-  </form>
+  </div>
+        <!-- meal.award.review -->
+     <div class="card-meal-voting">
+        <div class="card-meal-vote-button">
+          <%= link_to new_restaurant_meal_award_path(@meal.restaurant, @meal) do %>
+            <%= image_tag "vote.png", class: "card-meal-vote-img"%>
+          <% end %>
+          <p style="text-align: center;"><%= @meal.awards.count %> upvotes</p>
+        </div>
+      </div>
+  </div>
   <% @full_score.each do |award| %>
     <div class="meal-page-reviews">
       <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
       <div class="meal-page-reviews-content">
         <p><%= award.user.first_name%> <%= award.user.last_name%></p>
-        <p style="font-style: italic;">"<%= award.review.first(120) %>"</p>
+        <h6 style="font-style: italic;">"<%= award.review.first(80) %>..."</h6>
+        <div class="meal-page-reviews-date">
+          <p><%= award.created_at %></p>
+        </div>
       </div>
 
     </div>
