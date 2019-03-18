@@ -1,13 +1,15 @@
 <%= render "shared/navbar" %>
 
 <div class="container">
-  <div class="row-award">
+  <div class="row-award-congrats">
     <h1>Congratulations, now you have your best <%= "#{@meal.category.name}" %></h1>
-  </div>
-  <%= image_tag "fireworks.png", class: "fireworks-img" %>
-
-  <div class="button">
-    <button type="submit" name="commit" value="search" class="btn btn-info btn-fill">GO!</button>
+      <%= image_tag "fireworks.png", class: "fireworks-img" %>
+      <div class="button">
+         <%= link_to "Vote for another category", new_award_path, class: "main-button-congrats" %>
+      </div>
+      <div class="button-home">
+        <%= link_to "No, thank you", category_meals_path(@meal.category), class: "link" %>
+      </div>
   </div>
 </div>
-<%= link_to 'Home', root_path %>
+
