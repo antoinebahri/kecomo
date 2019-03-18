@@ -1,25 +1,35 @@
 <%= render 'shared/navbar' %>
-<h1>Restaurants#show</h1>
+  <% if @restaurant.picture == nil %>
+  <div class="restaurant-page-no-hero">
+    <%= image_tag "default-restaurant.png", class: "restaurant-page-no-image" %>
+    <p> Sorry we don't have any picture of the place yet :(</p>
+  </div>
+  <% else %>
+  <div class="restaurant-page-hero" style="linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), background-image: url(<%= cl_image_path @restaurant.picture %>)">
+  </div>
+<% end %>
 <div class="container">
-  <%#= image_tag @restaurant.picture, class: "restaurant-page-img" %>
-  <!-- pic of meal -->
-  <h3><%= "---------" %></h3>
-  <!-- restaurant name -->
-  <%= @restaurant.name %>
-  <h3><%= "---------" %></h3>
-  <!-- restaurant category -->
-  <%= @restaurant.restaurant_category %>
-  <h3><%= "---------" %></h3>
-  <!-- rest address -->
-  <%= @restaurant.address %>
-  <h3><%= "---------" %></h3>
-  <!-- rest horario -->
-  <%= @restaurant.opening_hour %>
-  <h3><%= "---------" %></h3>
-  <%= @restaurant.closing_hour %>
-  <h3><%= "---------" %></h3>
 
-  <!-- an array of meals to be fed into cards, like in the index of all meals; can reuse the component -->
+  <div class="restaurant-page-info">
+   <div>
+      <h2><%= @restaurant.name %></h2>
+      <div class="restaurant-page-details">
+        <p><%= @restaurant.address %></p>
+        <p><%= @restaurant.city %></p>
+        <% if @restaurant.opening_hour == true && @restaurant.closing_hour == true  %>
+        <p>Opens from <%= @restaurant.opening_hour %> to <%= @restaurant.closing_hour %></p>
+        <% end %>
+      </div>
+  </div>
+    <div class="restaurant-page-map">
+      <i class="far fa-map fa-2x"></i>
+        <p style="text-align: center;">Get there</p>
+      </div>
+</div>
 
+
+<div class="restaurant-page-meals">
+<p>The best voted meals in this restaurant</p>
+</div>
   <%= render 'shared/meal-card' %>
 </div>
