@@ -8,37 +8,6 @@
   </div>
 <% end %>
 
-<% unless @results == nil %>
-  <ul>
-    <% @results.each do |result| %>
-      <% if result.searchable_type == "Restaurant" %>
-        <li>
-          <%= "restaurants" %>
-          <%= rest = Restaurant.find_by(name: result.content) %>
-          <ul>
-              <% rest.meals.sort_by do |meal| %>
-                <li> <% meal.name %> </li>
-                <li> <% meal.awards.count %> </li>
-              <% end %>
-            </ul>
-        </li>
-      <% elsif result.searchable_type == "Category" %>
-        <li>
-          <%= "category" %>
-          <%= cat = Category.find_by(name: result.content) %>
-          <%= cat.meals.count %>
-            <ul>
-              <% cat.meals.sort_by do |meal| %>
-                <li> <% meal.name %> </li>
-                <li> <% meal.awards.count %> </li>
-              <% end %>
-            </ul>
-        </li>
-      <% end %>
-    <% end %>
-  </ul>
-<% end %>
-
 <form>
   <input type="button" value="Go back!" onclick="history.back()">
 </form>
