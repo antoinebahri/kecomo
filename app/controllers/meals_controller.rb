@@ -1,4 +1,6 @@
 class MealsController < ApplicationController
+  skip_before_action :authenticate_user!
+
   def index
     if params[:query].present?
       @results = PgSearch.multisearch(params[:query])
@@ -25,6 +27,7 @@ class MealsController < ApplicationController
     else
       @meals = Meal.all
     end
+    # raise
   end
 
   def show
@@ -34,31 +37,52 @@ class MealsController < ApplicationController
   end
 
   def new
-    @meal = Meal.new
+    if user_signed_in?
+      @meal = Meal.new
+    else
+      redirect_to new_user_session_path, notice: 'You need to be logged in to add a new meal.'
+    end
   end
 
   def create
-    @meal = Meal.create(meal_params)
+    @meal = Meal.new(meal_params)
+    if @meal.save
+      redirect_to meal_path(@meal)
+    else
+      render :new
+    end
   end
 
   def edit
-    @meal = Meal.find(params[:restaurant_id])
+    if user_signed_in?
+      @meal = Meal.find(params[:restaurant_id])
+    else
+      redirect_to new_user_session_path, notice: 'You need to be logged in to edit a meal.'
+    end
   end
 
   def update
     @meal = Meal.find(params[:restaurant_id])
-    @meal = Meal.update(meal_params)
+    if @meal.update(meal_params)
+      redirect_to meal_path(@meal)
+    else
+      render :edit
+    end
   end
 
   def destroy
-    @meal = Meal.find(params[:restaurant_id])
-    @meal.destroy
+    if user_signed_in?
+      @meal = Meal.find(params[:restaurant_id])
+      @meal.destroy
+    else
+      redirect_to new_user_session_path, notice: 'You need to be logged in to delete a meal.'
+    end
     redirect_to root_path
   end
 
   private
 
-  # def meal_params
-  #   params.require(:meal).permit(:name, :description, :picture)
-  # end
+  def meal_params
+    params.require(:meal).permit(:name, :description, :picture)
+  end
 end

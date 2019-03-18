@@ -1,0 +1,15 @@
+<h1>These are my awards:</h1>
+<% @awards.each do |award| %>
+  <ul>
+    <li>
+      <%= award.meal.category.name %>
+      <br>
+      <%= award.meal.name%>
+      <%= award.review %>
+      <%= link_to 'Delete',
+             award_path(award),
+                         method: :delete,
+                         data: { confirm: 'Are you sure?' } %>
+    </li>
+  </ul>
+<% end %>

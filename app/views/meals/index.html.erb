@@ -1,21 +1,12 @@
 <%= render "shared/navbar" %>
 <%= render "shared/filter-bar" %>
 
-<div class="container">
-  <%= link_to (image_tag "add.png"), root_path, class: "sticky-btn" %>
-  <%= render 'shared/meal-card' %>
-</div>
-
-<!--
-<%# unless @meals == nil %>
-  <br>
-    <%# @meals.each do |meal| %>
-    <%#= meal.name %>
-    <%#= meal.awards.count %>
-    <%#= link_to 'show me the foooood@!', category_meal_path(meal.category.id, meal.id) %>
-  <br>
-  <%# end %>
-<%# end %> -->
+<% unless @meals == nil %>
+  <div class="container">
+    <%= link_to (image_tag "add.png"), root_path, class: "sticky-btn" %>
+    <%= render 'shared/meal-card' %>
+  </div>
+<% end %>
 
 <% unless @results == nil %>
   <ul>
