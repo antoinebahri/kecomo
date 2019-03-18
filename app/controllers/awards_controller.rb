@@ -24,7 +24,7 @@ class AwardsController < ApplicationController
     @award.meal = @meal
     # @award.category = @category
     @award.save
-    # redirect_to somewhere
+    # redirect_to somwhere
   end
 
   def destroy
