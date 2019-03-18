@@ -9,7 +9,7 @@ class Restaurant < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   include PgSearch
-  multisearchable against: [:name]
+  multisearchable against: [:name, :city]
 
   # include PgSearch
   # pg_search_scope :search_by_cat, against: :category
