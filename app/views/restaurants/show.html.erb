@@ -1,24 +1,26 @@
+<%= render 'shared/navbar' %>
 <h1>Restaurants#show</h1>
-<p>Find me in app/views/restaurants/show.html.erb</p>
-<!-- pic of meal -->
-<%= @restaurant.picture %>
-<%= "---------" %>
-<!-- restaurant name -->
-<%= @restaurant.name %>
-<%= "---------" %>
-<!-- restaurant category -->
-<%= @restaurant.restaurant_category %>
-<%= "---------" %>
-<!-- rest address -->
-<%= @restaurant.address %>
-<%= "---------" %>
-<!-- rest horario -->
-<%= @restaurant.opening_hour %>
-<%= "---------" %>
-<%= @restaurant.closing_hour %>
-<%= "---------" %>
+<div class="container">
+  <%= image_tag @restaurant.picture, class: "restaurant-page-img" %>
+  <!-- pic of meal -->
+  <h3><%= "---------" %></h3>
+  <!-- restaurant name -->
+  <%= @restaurant.name %>
+  <h3><%= "---------" %></h3>
+  <!-- restaurant category -->
+  <%= @restaurant.restaurant_category %>
+  <h3><%= "---------" %></h3>
+  <!-- rest address -->
+  <%= @restaurant.address %>
+  <h3><%= "---------" %></h3>
+  <!-- rest horario -->
+  <%= @restaurant.opening_hour %>
+  <h3><%= "---------" %></h3>
+  <%= @restaurant.closing_hour %>
+  <h3><%= "---------" %></h3>
 
-<!-- an array of meals to be fed into cards, like in the index of all meals; can reuse the component -->
+  <!-- an array of meals to be fed into cards, like in the index of all meals; can reuse the component -->
 
-<% @restaurant.meals %>
+  <%= render 'shared/meal-card' %>
+</div>
 
