@@ -11,7 +11,7 @@
 
     <div class="filter-bar-tags-cities">
       <%= form_tag all_meals_path, method: :get do %>
-      <%= text_field_tag :query, params[:query], placeholder: "Search Category", class: "form-control", id: 'searchbar' %>
+      <%= text_field_tag :searchquery, params[:searchquery], placeholder: "Search Category", class: "form-control", id: 'searchbar' %>
      <% end %>
     </div>
 
