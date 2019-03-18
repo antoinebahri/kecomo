@@ -1,24 +1,26 @@
+<%= render "shared/navbar" %>
+
 <div class="container">
   <div class="wrapper-new">
     <div class="form-new">
-      <h1 style="color: #ff5b60;">Give your award</h1>
-
-      <h2>Award details</h2>
 
       <% if @meal.id.nil? %>
 
         <div class="choose-details-blank">
+
+          <h1>Vote for a new meal</h1>
+
           <%= simple_form_for (@meal) do |f| %>
 
-              <%= f.association :category %>
+              <%= f.association :category, :label => "What do you want to vote for:" %>
 
-              <%= f.association :restaurant %>
+              <%= f.association :restaurant, :label => "In which restaurant is that meal you want to vote for?" %>
 
-              <%= f.input :name %>
+              <%= f.input :name, :label => "What’s the name of that meal in the menu?" %>
 
-              <div class="bottom">
-                  <%= link_to 'Home', root_path %>
-                  <%= f.submit "Award", class: "button" %>
+
+              <div class="button-award">
+                  <%= f.submit "Confirm", class: "main-button" %>
               <br>
               </div>
           <% end %>
@@ -27,19 +29,17 @@
       <% else %>
 
         <div class="choose-details">
-          <h3><%= "The award in the catagory:"%></h3>
-          <h2><%= @meal.category.name %></h3>
-          <h3><%= "goes to:"%></h3>
-          <h2><%= @meal.name %></h3>
-          <h3><%= "@"%></h3>
-          <h3><%= @meal.restaurant.name %></h3>
+          <div class="row-award">
+          <h1>You only have one vote for each category, choose wisely!</h2>
+            </div>
+            <h2>You are about to vote for <%= @meal.name %> at <%= @meal.restaurant.name %> as the best <%= @meal.category.name %> </h2>
+
           <%= simple_form_for [@meal,@award] do |f| %>
 
-                <%= f.input :review, as: :text %>
+                <%= f.input :review, :label => "Give a review (optional)", as: :text, class: "review" %>
 
-                <div class="bottom">
-                    <%= link_to 'Home', root_path %>
-                    <%= f.submit "Award", class: "button" %>
+                <div class="button-award">
+                    <%= f.submit "Confirm", class: "main-button" %>
                 <br>
                 </div>
           <% end %>
