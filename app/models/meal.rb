@@ -4,8 +4,8 @@ class Meal < ApplicationRecord
   has_many :awards
   validates :name, presence: true
 
-  # include PgSearch
-  # multisearchable against: [:name]
+  include PgSearch
+  multisearchable against: [:name]
 
   # index = Algolia::Index.new('meals')
 

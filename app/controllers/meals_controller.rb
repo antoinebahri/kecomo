@@ -2,38 +2,71 @@ class MealsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
-    if params[:query].present?
-      @results = PgSearch.multisearch(params[:query])
-      unless @results == nil
+    if params[:searchquery].present?
+      @results = PgSearch.multisearch(params[:searchquery])
+      unless @results.nil?
+        all_results_array = []
         @results.each do |result|
-          # if result.searchable_type == "Restaurant"
-          #   resto = Restaurant.where(name: result.content)
-          #   redirect_to restaurant_meals_path(resto.first.name)
-          if result.searchable_type == "Category"
-            catego_name = result.content
-            catego = Category.where(name: catego_name)
-            redirect_to category_meals_path(catego.first.id)
+          if result.searchable_type == "Restaurant"
+            resto = result.searchable
+            all_results_array << resto.meals
+          elsif result.searchable_type == "Category"
+            catego = result.searchable
+            all_results_array << catego.meals
+          elsif result.searchable_type == "Meal"
+            meal = result.searchable
+            all_results_array << meal
           end
+          flattened_array = all_results_array.flatten
+          sorted_array = flattened_array.sort_by {|meal| meal.awards.count}
+          @meals = sorted_array.reverse!
         end
-        # raise
       end
-
     elsif params[:category_id].present?
-      @meals = Meal.all.where(category_id: params[:category_id]).first(10)
-      @meals.sort_by! do |meal|
+      @meals = Meal.all.where(category_id: params[:category_id])
+      @sorted_meals = @meals.sort_by do |meal|
         meal.awards.count
       end
-      @meals = @meals.reverse
+      @sorted_meals.first(10)
+      @meals = @sorted_meals.reverse
     else
       @meals = Meal.all
     end
-    # raise
   end
 
   def show
     @category = Category.find(params[:category_id])
     @meal = Meal.find(params[:id])
     @full_score = @meal.awards
+
+    @markers =
+      [{
+        lat: @meal.restaurant.latitude,
+        lng: @meal.restaurant.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { restaurant: @meal.restaurant })
+      }]
+  end
+
+  def map
+    if params[:id].present?
+    @category = Category.find(params[:category_id]).first(10)
+    @meal = Meal.find(params[:id])
+    @markers =
+      [{
+        lat: @meal.restaurant.latitude,
+        lng: @meal.restaurant.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { restaurant: @meal.restaurant })
+      }]
+    else
+    @meals = Meal.all.where(category_id: params[:category_id])
+    @markers = @meals.map do |meal|
+      {
+        lat: meal.restaurant.latitude,
+        lng: meal.restaurant.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { restaurant: meal.restaurant })
+      }
+    end
+    end
   end
 
   def new
