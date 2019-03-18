@@ -5,6 +5,7 @@
   <div class="row">
     <div class="card-meal">
         <% counter = counter + 1 %>
+        <%= counter %>
         <% if counter == 1 %>
           <div class="card-meal-rank-1">
         <% elsif counter == 2 %>
@@ -20,6 +21,7 @@
       <img src="https://www.tasteofhome.com/wp-content/uploads/2017/10/exps28800_UG143377D12_18_1b_RMS-696x696.jpg">
       <div class="card-meal-infos">
         <!-- meal.name -->
+
         <h2><%= link_to meal.name, category_meal_path(meal.category_id, meal.id) %></h2>
         <!-- meal.award.review -->
         <p style="font-style: italic;"><%= meal.description %></p>

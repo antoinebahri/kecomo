@@ -6,7 +6,7 @@ class Restaurant < ApplicationRecord
   validates :city, presence: true
 
   include PgSearch
-  multisearchable against: [:name]
+  multisearchable against: [:name, :city]
 
   # include PgSearch
   # pg_search_scope :search_by_cat, against: :category
