@@ -2,6 +2,7 @@ class MealsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
+    @award = Award.new
     if params[:searchquery].present?
       @results = PgSearch.multisearch(params[:searchquery])
       unless @results.nil?

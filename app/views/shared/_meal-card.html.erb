@@ -45,7 +45,7 @@
               <div class="card-meal-vote-button">
                 <%= link_to new_restaurant_meal_award_path(@meal.restaurant, @meal) do %>
                 <%= link_to 'Awarded', new_restaurant_meal_award_path(@meal.restaurant, @meal), :data => {:confirm => 'You already awarded this item... Would you want to change your review?'} %>
-                               <!-- # data: { confirm: 'You have already given your award in this category to this ....... Are you sure you want to change your vote?' } -->
+                 <!-- # data: { confirm: 'You have already given your award in this category to this ....... Are you sure you want to change your vote?' } -->
                   <%= image_tag "vote.png", class: "card-meal-vote-img"%>
                 <p style="text-align: center;"><%= @meal.awards.count %> upvotes</p>
                 <% end %>
@@ -54,22 +54,122 @@
             <!-- checks if the user has already given award in this category and if the current meal has an award from the current_user-->
             <!-- the user has given award in the category but none one of the meal awards of this meal have been given by the user; the user has selceted another meal in this category, so can vote for this one, redirect to new award but give him a pop up notice about the fact that he is changing the award in the given already category -->
               <div class="card-meal-vote-button">
-                <%= link_to 'Upvote', new_restaurant_meal_award_path(@meal.restaurant, @meal), :data => {:confirm => 'Are you sure, you already awarded a meal in this category?'} %>
-                  <%= image_tag "vote.png", class: "card-meal-vote-img"%>
+                <%#= link_to 'Upvote', new_restaurant_meal_award_path(@meal.restaurant, @meal), :data => {:confirm => 'Are you sure? You have already given an award to a meal in this category. So, by doing this you will be replacing your #1'} %>
+                  <%= image_tag "vote.png", class: "card-meal-vote-img", data: { target: "#replaceAwardModal", toggle: "modal"} %>
                   <p style="text-align: center;"><%= @meal.awards.count %> upvotes</p>
               </div>
             <% end %>
             <!-- if the user has NOT yet given award in this category(same as the buttons above, just no pop-up that warns about the category being awarded by the user) or the user is not yet signed in -->
           <% else %>
             <div class="card-meal-vote-button">
-              <%= link_to new_restaurant_meal_award_path(@meal.restaurant, @meal) do %>
-                <%= image_tag "vote.png", class: "card-meal-vote-img"%>
+              <%#= link_to new_restaurant_meal_award_path(@meal.restaurant, @meal) do %>
+                <%= image_tag "vote.png", class: "card-meal-vote-img", data: { target: "#firstAwardModal", toggle: "modal"} %>
                 <p style="text-align: center;"><%= @meal.awards.count %> upvotes</p>
-              <% end %>
+              <%# end %>
             </div>
           <% end %>
         </div>
       </div>
     </div>
   <% end %>
+</div>
+
+<!-- Modals -->
+<!-- replaceAwardModal -->
+<div class="modal fade" id="replaceAwardModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">You are voting for a meal!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="choose-details">
+          <h3><i class="fas fa-exclamation-triangle"></i> Are you sure? You have already given an award to a meal in this category.</h3>
+          <h3>So, by doing this you will be replacing your #1 <i class="fas fa-exclamation-triangle"></i></h3>
+          <div class="row-award">
+            <h1>You only have one vote for each category, choose wisely!</h1>
+          </div>
+          <h2>You are about to vote for
+            <%= @meal.name %>
+            at <%= @meal.restaurant.name %>
+            as the best <%= @meal.category.name %>
+          </h2>
+          <%= simple_form_for [@meal,@award] do |f| %>
+            <%= f.input :review, :label => "Give a review (optional)", as: :text, class: "review" %>
+            <%= f.submit "Confirm!", class: "btn btn-info" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">I changed my mind</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- firstAwardModal -->
+<div class="modal fade" id="firstAwardModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">You are voting for a meal!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="choose-details">
+          <div class="row-award">
+            <h1>You only have one vote for each category, choose wisely!</h1>
+          </div>
+          <h2>You are about to vote for
+            <%= @meal.name %>
+            at <%= @meal.restaurant.name %>
+            as the best <%= @meal.category.name %>
+          </h2>
+          <%= simple_form_for [@meal,@award] do |f| %>
+            <%= f.input :review, :label => "Give a review (optional)", as: :text, class: "review" %>
+            <%= f.submit "Confirm!", class: "btn btn-info", data: { target: "#createAwardModal", toggle: "modal"} %>
+          <% end %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">I changed my mind</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- createAwardModal -->
+<div class="modal fade" id="createAwardModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">You have confirmed your #1 meal!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row-award-congrats">
+            <h1>Congratulations, now you have your best <%= "#{@meal.category.name}" %></h1>
+            <%= image_tag "fireworks.png", class: "fireworks-img" %>
+            <div class="button">
+              <%= link_to "Vote for another category", new_award_path, class: "main-button-congrats" %>
+            </div>
+            <div class="button-home">
+              <%= link_to "No, thank you", category_meals_path(@meal.category), class: "link" %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">I changed my mind</button>
+      </div>
+    </div>
+  </div>
 </div>
