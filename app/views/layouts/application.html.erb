@@ -12,9 +12,18 @@
     <%= stylesheet_pack_tag 'application', media: 'all' %>
   </head>
   <body>
+    <% if current_page?(controller: 'pages', action: 'home') == false %>
+    <%= render 'shared/navbar' %>
+    <% end %>
     <%= render 'shared/flashes' %>
-    <%= yield %>
-    <%= render 'shared/footer' %>
+    <div id="page-container">
+      <div id="page-content">
+        <%= yield %>
+      </div>
+      <div id="page-footer">
+        <%= render 'shared/footer' %>
+      </div>
+    </div>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
