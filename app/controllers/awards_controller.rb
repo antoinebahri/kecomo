@@ -17,12 +17,21 @@ class AwardsController < ApplicationController
   end
 
   def create
+    # Now need to clear all awards of the user in the current category before save of new award in that same category
+    @meal = Meal.find(params[:meal_id])
+    current_user_awards = current_user.awards
+    awards_from_category_to_release = current_user_awards.find_all { |award| award.meal.category == @meal.category }
+    # Award.destroy(awards_from_category_to_releasemap.map(&:id))
+    award_indexes_to_destroy = awards_from_category_to_release.map(&:id)
+    # raise
+    award_indexes_to_destroy.each do |index|
+      Award.where(id: index).destroy_all
+    end
     @award = Award.new(set_award_params)
     @meal = Meal.find(params[:meal_id])
-    # @category = @meal.category
     @award.user = current_user
     @award.meal = @meal
-    # @award.category = @category
+    # raise
     @award.save
     # redirect_to somwhere
   end

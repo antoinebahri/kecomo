@@ -20,8 +20,11 @@ class MealsController < ApplicationController
           flattened_array = all_results_array.flatten
           sorted_array = flattened_array.sort_by {|meal| meal.awards.count }
           @meals = sorted_array.reverse!
+          sorted_array = flattened_array.sort_by {|meal| meal.awards.count}
+          @meals = sorted_array.reverse!.uniq
         end
       end
+      # raise
     elsif params[:category_id].present?
       @meals = Meal.all.where(category_id: params[:category_id])
       @sorted_meals = @meals.sort_by do |meal|
@@ -39,6 +42,14 @@ class MealsController < ApplicationController
     else
       @meals = Meal.all
     end
+    # raise
+    @current_user_awarded_categories = []
+    @current_user_awards = current_user.awards
+    @current_user_awards.each do |award|
+      @current_user_awarded_categories << award.meal.category
+    end
+    @current_user_awarded_categories = @current_user_awarded_categories.sort
+    # raise
   end
 
   def show
