@@ -46,7 +46,7 @@
                 <%= link_to 'Awarded', new_restaurant_meal_award_path(meal.restaurant, meal), :data => {:confirm => 'You already awarded this item... Would you want to change your review?'} %>
                                <!-- # data: { confirm: 'You have already given your award in this category to this ....... Are you sure you want to change your vote?' } -->
                   <%= image_tag "vote.png", class: "card-meal-vote-img"%>
-                <p style="text-align: center;"><%= meal.awards.count %> upvotes</p>
+                <p style="text-align: center;"><%= @meal.awards.count %> votes</p>
                 <% end %>
               </div>
             <% else %>
@@ -55,7 +55,7 @@
               <div class="card-meal-vote-button">
                 <%= link_to 'Upvote', new_restaurant_meal_award_path(meal.restaurant, meal), :data => {:confirm => 'Are you sure, you already awarded a meal in this category?'} %>
                   <%= image_tag "vote.png", class: "card-meal-vote-img"%>
-                  <p style="text-align: center;"><%= meal.awards.count %> upvotes</p>
+                  <p style="text-align: center;"><%= @meal.awards.count %> votes</p>
               </div>
             <% end %>
             <!-- if the user has NOT yet given award in this category(same as the buttons above, just no pop-up that warns about the category being awarded by the user) or the user is not yet signed in -->
@@ -63,7 +63,8 @@
             <div class="card-meal-vote-button">
               <%= link_to new_restaurant_meal_award_path(meal.restaurant, meal) do %>
                 <%= image_tag "vote.png", class: "card-meal-vote-img"%>
-                <p style="text-align: center;"><%= meal.awards.count %> upvotes</p>
+
+                <p style="text-align: center;"><%= @meal.awards.count %> votes</p>
               <% end %>
             </div>
           <% end %>
