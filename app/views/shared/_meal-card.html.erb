@@ -1,70 +1,69 @@
 <div class="container">
-  <% counter = 0 %>
-  <% @meals.each do |meal| %>
-    <% @meal = meal %>
+  <% @meals.each_with_index do |meal, index| %>
     <br>
     <div class="row">
       <div class="card-meal">
-        <% counter = counter + 1 %>
-        <% if counter == 1 %>
+        <% case index %>
+        <% when 0 %>
           <div class="card-meal-rank-1">
-        <% elsif counter == 2 %>
+        <% when 1 %>
           <div class="card-meal-rank-2">
-        <% elsif counter == 3 %>
+        <% when 2 %>
           <div class="card-meal-rank-3">
         <% else %>
           <div class="card-meal-rank">
         <% end %>
-          <%= counter %>st
-          </div>
+      <%= index + 1 %>
+      </div>
         <!-- meal cloudinary image -->
         <img src="https://www.tasteofhome.com/wp-content/uploads/2017/10/exps28800_UG143377D12_18_1b_RMS-696x696.jpg">
         <div class="card-meal-infos">
             <!-- meal.name -->
-          <h2><%= link_to @meal.name, category_meal_path(@meal.category_id, @meal.id) %></h2>
+          <h2><%= link_to meal.name, category_meal_path(meal.category_id, meal.id) %></h2>
           <!-- meal.award.review -->
-          <p style="font-style: italic;"><%= @meal.description %></p>
+          <p style="font-style: italic;"><%= meal.description %></p>
           <div class="card-meal-button-wrapper">
             <div class="card-meal-restaurant-button" style="margin-right: 5px;">
               <!-- meal.restaurant -->
-              <p><%= link_to @meal.restaurant.name, restaurant_path(@meal.restaurant_id) %></p>
+              <p><%= link_to meal.restaurant.name, restaurant_path(meal.restaurant_id) %></p>
             </div>
             <div class="card-meal-category-button">
               <!-- meal.category -->
-              <p>#<%= link_to @meal.category.name, category_meals_path(@meal.category_id) %></p>
+              <p>#<%= link_to meal.category.name, category_meals_path(meal.category_id) %></p>
             </div>
           </div>
         </div>
+
           <!-- Need to implement two differently styled buttons here -->
         <div class="card-meal-voting">
           <!-- checks if the user has already given award in this category -->
-          <% if user_signed_in? && @current_user_awarded_categories.include?(@meal.category) %>
+          <% if user_signed_in? && @current_user_awarded_categories.include?(meal.category) %>
           <!-- checks if the current user has any awards for the given meal -->
-            <% if @current_user_awards.find_all{|award| award.meal == @meal}.any?%>
+            <% if @current_user_awards.find_all { |award| award.meal == meal }.any?%>
             <!-- the user has given award in the category and one of the awards of this given meal belongs to the user, so the user has already awarded this meal, maybe a little info window/pop up to tell him about the obvious, Need to change the "upvote" to a different icon -->
               <div class="card-meal-vote-button">
-                <%= link_to new_restaurant_meal_award_path(@meal.restaurant, @meal) do %>
-                <%= link_to 'Awarded', new_restaurant_meal_award_path(@meal.restaurant, @meal), :data => {:confirm => 'You already awarded this item... Would you want to change your review?'} %>
+                <%= link_to new_restaurant_meal_award_path(meal.restaurant, meal) do %>
+                <%= link_to 'Awarded', new_restaurant_meal_award_path(meal.restaurant, meal), :data => {:confirm => 'You already awarded this item... Would you want to change your review?'} %>
                                <!-- # data: { confirm: 'You have already given your award in this category to this ....... Are you sure you want to change your vote?' } -->
                   <%= image_tag "vote.png", class: "card-meal-vote-img"%>
-                <p style="text-align: center;"><%= @meal.awards.count %> upvotes</p>
+                <p style="text-align: center;"><%= meal.awards.count %> upvotes</p>
                 <% end %>
               </div>
             <% else %>
             <!-- checks if the user has already given award in this category and if the current meal has an award from the current_user-->
             <!-- the user has given award in the category but none one of the meal awards of this meal have been given by the user; the user has selceted another meal in this category, so can vote for this one, redirect to new award but give him a pop up notice about the fact that he is changing the award in the given already category -->
               <div class="card-meal-vote-button">
-                <%= link_to 'Upvote', new_restaurant_meal_award_path(@meal.restaurant, @meal), :data => {:confirm => 'Are you sure, you already awarded a meal in this category?'} %>
+                <%= link_to 'Upvote', new_restaurant_meal_award_path(meal.restaurant, meal), :data => {:confirm => 'Are you sure, you already awarded a meal in this category?'} %>
                   <%= image_tag "vote.png", class: "card-meal-vote-img"%>
-                  <p style="text-align: center;"><%= @meal.awards.count %> upvotes</p>
+                  <p style="text-align: center;"><%= meal.awards.count %> upvotes</p>
               </div>
             <% end %>
             <!-- if the user has NOT yet given award in this category(same as the buttons above, just no pop-up that warns about the category being awarded by the user) or the user is not yet signed in -->
           <% else %>
             <div class="card-meal-vote-button">
-              <%= link_to new_restaurant_meal_award_path(@meal.restaurant, @meal) do %>
+              <%= link_to new_restaurant_meal_award_path(meal.restaurant, meal) do %>
                 <%= image_tag "vote.png", class: "card-meal-vote-img"%>
-                <p style="text-align: center;"><%= @meal.awards.count %> upvotes</p>
+                <p style="text-align: center;"><%= meal.awards.count %> upvotes</p>
               <% end %>
             </div>
           <% end %>
