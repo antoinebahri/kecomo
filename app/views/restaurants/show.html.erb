@@ -5,7 +5,7 @@
     <p> Sorry we don't have any picture of the place yet :(</p>
   </div>
   <% else %>
-  <div class="restaurant-page-hero" style="linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), background-image: url(<%= cl_image_path @restaurant.picture %>)">
+  <div class="restaurant-page-hero" style="linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), background-image: url(<%= image_path @restaurant.picture %>)">
   </div>
 <% end %>
 <div class="container">
@@ -22,14 +22,13 @@
       </div>
   </div>
     <div class="restaurant-page-map">
-      <i class="far fa-map fa-2x"></i>
-        <p style="text-align: center;">Get there</p>
-      </div>
-</div>
+      <%= link_to "", restaurant_map_path(params[:id]), class: "far fa-map fa-2x" %>
+      <p style="text-align: center;">Get there!</p>
+    </div>
+  </div>
 
-
-<div class="restaurant-page-meals">
-<p>The best voted meals in this restaurant</p>
-</div>
+  <div class="restaurant-page-meals">
+    <p>The best voted meals in this restaurant</p>
+  </div>
   <%= render 'shared/meal-card' %>
 </div>

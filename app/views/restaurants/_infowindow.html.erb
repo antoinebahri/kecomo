@@ -1,6 +1,6 @@
 <!-- <#% if index?(action_name) %> -->
 
-<% @meals.each do |meal| %>
+<% restaurant.meals.each do |meal| %>
 <p style="font-weight: bolder;"><%= meal.name %></p>
 <p><%= meal.restaurant.name %>, <%= meal.restaurant.city %></p>
 <p>€<%= meal.awards.count %> awards</p>

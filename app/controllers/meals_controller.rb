@@ -18,6 +18,8 @@ class MealsController < ApplicationController
             all_results_array << meal
           end
           flattened_array = all_results_array.flatten
+          sorted_array = flattened_array.sort_by {|meal| meal.awards.count }
+          @meals = sorted_array.reverse!
           sorted_array = flattened_array.sort_by {|meal| meal.awards.count}
           @meals = sorted_array.reverse!.uniq
         end
@@ -25,6 +27,13 @@ class MealsController < ApplicationController
       # raise
     elsif params[:category_id].present?
       @meals = Meal.all.where(category_id: params[:category_id])
+      @sorted_meals = @meals.sort_by do |meal|
+        meal.awards.count
+      end
+      @sorted_meals.first(10)
+      @meals = @sorted_meals.reverse
+    elsif params[:restaurant_id].present?
+      @meals = Meal.all.where(restaurant_id: params[:restaurant_id])
       @sorted_meals = @meals.sort_by do |meal|
         meal.awards.count
       end
@@ -47,35 +56,6 @@ class MealsController < ApplicationController
     @category = Category.find(params[:category_id])
     @meal = Meal.find(params[:id])
     @full_score = @meal.awards
-
-    @markers =
-      [{
-        lat: @meal.restaurant.latitude,
-        lng: @meal.restaurant.longitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { restaurant: @meal.restaurant })
-      }]
-  end
-
-  def map
-    if params[:id].present?
-    @category = Category.find(params[:category_id]).first(10)
-    @meal = Meal.find(params[:id])
-    @markers =
-      [{
-        lat: @meal.restaurant.latitude,
-        lng: @meal.restaurant.longitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { restaurant: @meal.restaurant })
-      }]
-    else
-    @meals = Meal.all.where(category_id: params[:category_id])
-    @markers = @meals.map do |meal|
-      {
-        lat: meal.restaurant.latitude,
-        lng: meal.restaurant.longitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { restaurant: meal.restaurant })
-      }
-    end
-    end
   end
 
   def new
@@ -83,6 +63,19 @@ class MealsController < ApplicationController
       @meal = Meal.new
     else
       redirect_to new_user_session_path, notice: 'You need to be logged in to add a new meal.'
+    end
+  end
+
+  def map
+    if params[:category_id].present?
+      @meals = Meal.all.where(category_id: params[:category_id])
+      @markers = @meals.map do |meal|
+        {
+          lat: meal.restaurant.latitude,
+          lng: meal.restaurant.longitude,
+          infoWindow: render_to_string(partial: "infowindow", locals: { restaurant: meal.restaurant })
+        }
+      end
     end
   end
 
