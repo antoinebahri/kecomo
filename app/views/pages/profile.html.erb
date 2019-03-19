@@ -1,4 +1,10 @@
-<h1>These are my awards:</h1>
+<%= render 'shared/navbar' %>
+<h3>My awards:</h3>
+<div class="profile-info">
+  <div class="avatar-profile"></div>
+  <div class="user-name"></div>
+  <div class="profile-gear"></div>
+</div>
 <% @awards.each do |award| %>
   <ul>
     <li>
