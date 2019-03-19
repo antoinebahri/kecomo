@@ -1,0 +1,51 @@
+<%= render "shared/navbar" %>
+
+<div class="container">
+  <div class="wrapper-new">
+    <div class="form-new">
+
+      <% if @meal.id.nil? %>
+
+        <div class="choose-details-blank">
+
+          <h1>Vote for a new meal</h1>
+
+          <%= simple_form_for (@meal) do |f| %>
+
+              <%= f.association :category, :label => "What do you want to vote for:" %>
+
+              <%= f.association :restaurant, :label => "In which restaurant is that meal you want to vote for?" %>
+
+              <%= f.input :name, :label => "What’s the name of that meal in the menu?" %>
+
+
+              <div class="button-award">
+                  <%= f.submit "Confirm", class: "main-button" %>
+              <br>
+              </div>
+          <% end %>
+        </div>
+
+      <% else %>
+
+        <div class="choose-details">
+          <div class="row-award">
+          <h1>You only have one vote for each category, choose wisely!</h2>
+            </div>
+            <h2>You are about to vote for <%= @meal.name %> at <%= @meal.restaurant.name %> as the best <%= @meal.category.name %> </h2>
+
+          <%= simple_form_for [@meal,@award] do |f| %>
+
+                <%= f.input :review, :label => "Give a review (optional)", as: :text, class: "review" %>
+
+                <div class="button-award">
+                    <%= f.submit "Confirm", class: "main-button" %>
+                <br>
+                </div>
+          <% end %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
