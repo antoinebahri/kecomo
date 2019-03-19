@@ -35,7 +35,7 @@ class CategoriesController < ApplicationController
         }
       end
     elsif params[:searchquery].present?
-      search_for_stuff
+      @meals = SearchMeals.new(params).by_text
       @restaurants = []
       @meals.each do |meal|
         @restaurants << Restaurant.find(meal.restaurant_id)
@@ -60,27 +60,5 @@ class CategoriesController < ApplicationController
 
   def cat_params
     params.require(:category).permit(:name)
-  end
-
-  def search_for_stuff
-    @results = PgSearch.multisearch(params[:searchquery])
-    unless @results.nil?
-      all_results_array = []
-      @results.each do |result|
-        if result.searchable_type == "Restaurant"
-          resto = result.searchable
-          all_results_array << resto.meals
-        elsif result.searchable_type == "Category"
-          catego = result.searchable
-          all_results_array << catego.meals
-        elsif result.searchable_type == "Meal"
-          meal = result.searchable
-          all_results_array << meal
-        end
-        flattened_array = all_results_array.flatten
-        sorted_array = flattened_array.sort_by {|meal| meal.awards.count }
-        @meals = sorted_array.reverse!
-      end
-    end
   end
 end

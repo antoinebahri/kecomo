@@ -2,57 +2,20 @@ class MealsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
+    query_meals = SearchMeals.new(params)
     if params[:searchquery].present?
-      @results = PgSearch.multisearch(params[:searchquery])
-      unless @results.nil?
-        all_results_array = []
-        @results.each do |result|
-          if result.searchable_type == "Restaurant"
-            resto = result.searchable
-            all_results_array << resto.meals
-          elsif result.searchable_type == "Category"
-            catego = result.searchable
-            all_results_array << catego.meals
-          elsif result.searchable_type == "Meal"
-            meal = result.searchable
-            all_results_array << meal
-          end
-          flattened_array = all_results_array.flatten
-          # sorted_array = flattened_array.sort_by { |meal| meal.awards.count }
-          # @meals = sorted_array.reverse!
-          sorted_array = flattened_array.sort_by { |meal| meal.awards.count }
-          @meals = sorted_array.reverse!.uniq
-        end
-      end
-      # raise
+      @meals = query_meals.by_text
       # here we are displaying the meals of a particluar CATEGORY
     elsif params[:category_id].present?
-      @meals = Meal.all.where(category_id: params[:category_id])
-      @sorted_meals = @meals.sort_by do |meal|
-        meal.awards.count
-      end
-      @sorted_meals.first(10)
-      @meals = @sorted_meals.reverse
+      @meals = query_meals.by_category
       # here we are displaying the meals of a particluar RESTAURANT
     elsif params[:restaurant_id].present?
-      @meals = Meal.all.where(restaurant_id: params[:restaurant_id])
-      @sorted_meals = @meals.sort_by { |meal| meal.awards.count }
-      @sorted_meals.first(10)
-      @meals = @sorted_meals.reverse
+      @mneals = query_meals.by_restaurant
     else
       @meals = Meal.all
     end
-    # raise
-    if user_signed_in? && current_user.awards.nil? == false
-      # all the awarded categories of the current_user if signed_in
-      @current_user_awarded_categories = []
-      @current_user_awards = current_user.awards
-      @current_user_awards.each do |award|
-        @current_user_awarded_categories << award.meal.category
-      end
-    @current_user_awarded_categories = @current_user_awarded_categories.sort
-    end
-    # raise
+    @current_user_awards = current_user.try(:awards)
+    @current_user_awarded_categories = current_user.try(:awarded_categories)
   end
 
   def show
