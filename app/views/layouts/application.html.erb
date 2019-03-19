@@ -12,9 +12,8 @@
     <%= stylesheet_pack_tag 'application', media: 'all' %>
   </head>
   <body>
-    <% if current_page?(controller: 'pages', action: 'home') == false %>
-    <%= render 'shared/navbar' %>
-    <% end %>
+    <%= render 'shared/navbar' unless current_page?(controller: 'pages', action: 'home')  %>
+
     <%= render 'shared/flashes' %>
     <div id="page-container">
       <div id="page-content">
