@@ -5,6 +5,7 @@ class SearchMeals
 
   def by_text
     results = PgSearch.multisearch(@params[:searchquery])
+    meals = [];
     unless results.nil?
       all_results_array = []
       results.each do |result|

@@ -14,12 +14,8 @@ class MealsController < ApplicationController
     else
       @meals = Meal.all
     end
-
-    if user_signed_in? && !current_user.awards.nil?
-      # all the awarded categories of the current_user if signed_in
-      @current_user_awarded_categories = UserAwards.fetch(current_user)
-    end
-    # raise
+    @current_user_awards = current_user.try(:awards)
+    @current_user_awarded_categories = current_user.try(:awarded_categories)
   end
 
   def show

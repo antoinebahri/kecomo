@@ -12,13 +12,11 @@
     <%= stylesheet_pack_tag 'application', media: 'all' %>
   </head>
   <body>
-    <%= render 'shared/navbar' unless current_page?(controller: 'pages', action: 'home')  %>
+    <%= render 'shared/navbar' unless devise_controller? ||  current_page?(controller: 'pages', action: 'home')  %>
 
     <%= render 'shared/flashes' %>
     <div id="page-container">
-      <div id="page-content">
         <%= yield %>
-      </div>
       <div id="page-footer">
         <%= render 'shared/footer' %>
       </div>
