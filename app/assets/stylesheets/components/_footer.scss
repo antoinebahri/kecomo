@@ -10,6 +10,17 @@
   margin-top: 20px;
 }
 
+.footer-copyright a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer-copyright a:hover {
+  text-decoration: none;
+  color: white;
+  opacity: 0.8;
+}
+
 .footer-links {
   display: flex;
   align-items: center;

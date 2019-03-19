@@ -37,8 +37,9 @@ class AwardsController < ApplicationController
   end
 
   def destroy
-    @award = Award.find(params[:award_id])
+    @award = Award.find(params[:id])
     @award.destroy
+    redirect_to profile_path
   end
 
   private

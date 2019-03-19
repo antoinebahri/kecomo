@@ -24,11 +24,12 @@ class MealsController < ApplicationController
       end
       # raise
     elsif params[:category_id].present?
-      @meals = Meal.all.where(category_id: params[:category_id]).first(10)
-      @meals.sort_by! do |meal|
+      @meals = Meal.all.where(category_id: params[:category_id])
+      @sorted_meals = @meals.sort_by do |meal|
         meal.awards.count
       end
-      @meals = @meals.reverse
+      @sorted_meals.first(10)
+      @meals = @sorted_meals.reverse
     else
       @meals = Meal.all
     end
@@ -46,6 +47,35 @@ class MealsController < ApplicationController
     @category = Category.find(params[:category_id])
     @meal = Meal.find(params[:id])
     @full_score = @meal.awards
+
+    @markers =
+      [{
+        lat: @meal.restaurant.latitude,
+        lng: @meal.restaurant.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { restaurant: @meal.restaurant })
+      }]
+  end
+
+  def map
+    if params[:id].present?
+    @category = Category.find(params[:category_id]).first(10)
+    @meal = Meal.find(params[:id])
+    @markers =
+      [{
+        lat: @meal.restaurant.latitude,
+        lng: @meal.restaurant.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { restaurant: @meal.restaurant })
+      }]
+    else
+    @meals = Meal.all.where(category_id: params[:category_id])
+    @markers = @meals.map do |meal|
+      {
+        lat: meal.restaurant.latitude,
+        lng: meal.restaurant.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { restaurant: meal.restaurant })
+      }
+    end
+    end
   end
 
   def new

@@ -1,6 +1,14 @@
-<h1>Awards#create</h1>
-<p>Find me in app/views/awards/create.html.erb</p>
+<%= render "shared/navbar" %>
 
-<h1>You have awarded this thing:</h1>
-
-<%= link_to 'Home', root_path %>
+<div class="container">
+  <div class="row-award-congrats">
+    <h1>Congratulations, now you have your best <%= "#{@meal.category.name}" %></h1>
+      <%= image_tag "fireworks.png", class: "fireworks-img" %>
+      <div class="button">
+         <%= link_to "Vote for another category", new_award_path, class: "main-button-congrats" %>
+      </div>
+      <div class="button-home">
+        <%= link_to "No, thank you", category_meals_path(@meal.category), class: "link" %>
+      </div>
+  </div>
+</div>

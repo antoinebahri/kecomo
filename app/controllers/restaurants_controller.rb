@@ -1,13 +1,50 @@
 class RestaurantsController < ApplicationController
   def index
-    @restaurants = Restaurant.all
+    @meals = Meal.all
+    @restaurants = Restaurant.where.not(latitude: nil, longitude: nil)
+
+    @markers = @restaurants.map do |restaurant|
+      {
+        lat: restaurant.latitude,
+        lng: restaurant.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { restaurant: restaurant })
+      }
+    end
   end
 
   def show
-    @restaurant = Restaurant.find(params[:id])
+    @restaurants = Restaurant.where.not(latitude: nil, longitude: nil)
+    @restaurant = @restaurants.find(params[:id])
     @meals = @restaurant.meals
-    @meals.sort_by {|meal| meal.awards.count}
-    # raise
+    @meals.sort_by { |meal| meal.awards.count }
+
+    @markers =
+      [{
+        lat: @restaurant.latitude,
+        lng: @restaurant.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { restaurant: @restaurant })
+      }]
+  end
+
+  def map
+    if params[:restaurant_id].present?
+    @restaurant = @restaurants.find(params[:id])
+    @markers =
+      [{
+        lat: @restaurant.latitude,
+        lng: @restaurant.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { restaurant: @restaurant })
+      }]
+    else
+    @restaurants = Restaurant.where.not(latitude: nil, longitude: nil)
+    @markers = @restaurants.map do |restaurant|
+      {
+        lat: restaurant.latitude,
+        lng: restaurant.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { restaurant: restaurant })
+      }
+    end
+    end
   end
 
   def new
