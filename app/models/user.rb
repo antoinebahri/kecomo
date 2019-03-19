@@ -4,4 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :awards
+
+  def awarded_categories
+    awards.map do |award|
+      award.meal.category
+    end
+  end
 end

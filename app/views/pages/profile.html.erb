@@ -1,14 +1,5 @@
 <%= render 'shared/navbar' %>
-<div class="profile-info">
-  <div class="avatar-profile"></div>
-  <div class="user-name-profile">
-    <p><%= current_user.email %></p>
-  </div>
-  <%= link_to edit_user_registration_path(current_user), class: "profile-gear" do %>
-    <i class="fas fa-cog"></i>
-  <% end %>
-</div>
-<h3>My awards:</h3>
+<h1>These are my awards:</h1>
 <% @awards.each do |award| %>
   <div class="meal-page-reviews">
     <img src="https://www.tasteofhome.com/wp-content/uploads/2017/10/exps28800_UG143377D12_18_1b_RMS-696x696.jpg" class="card-meal-vote-img-profile">
