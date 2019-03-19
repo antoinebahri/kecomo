@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get '/profile', to: 'pages#profile', as: 'profile'
 
-  resources :awards, except: [:show, :edit, :patch]
+  resources :awards, except: [:show]
 
   resources :categories, only: [:show] do
     collection do
