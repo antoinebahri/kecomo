@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   resources :restaurants do
     resources :meals do
-      resources :awards, only: [:new, :create]
+      resources :awards, only: [:new, :create, :edit, :patch]
     end
   end
 end

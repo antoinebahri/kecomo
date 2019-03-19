@@ -37,12 +37,25 @@
         </div>
       </div>
       <div class="card-meal-voting">
-        <div class="card-meal-vote-button">
-          <%= link_to new_restaurant_meal_award_path(meal.restaurant, meal) do %>
-            <%= image_tag "vote.png", class: "card-meal-vote-img"%>
-          <% end %>
-          <p style="text-align: center;"><%= meal.awards.count %> upvotes</p>
-        </div>
+        <!-- Need to implement two differently styled buttons here -->
+        <!-- if the user has already given award in this category -->
+        <% if @current_user_awarded_categories.include?(meal.category) %>
+          <div class="card-meal-vote-button">
+            <%= link_to new_restaurant_meal_award_path(meal.restaurant, meal) do
+                           # data: { confirm: 'You have already given your award in this category to this ....... Are you sure you want to change your vote?' } %>
+              <%= image_tag "vote.png", class: "card-meal-vote-img"%>
+            <% end %>
+            <p style="text-align: center;"><%= meal.awards.count %> upvotes</p>
+          </div>
+          <!-- if the user has NOT yet given award in this category -->
+        <% else %>
+          <div class="card-meal-vote-button">
+            <%= link_to new_restaurant_meal_award_path(meal.restaurant, meal) do %>
+              <%= image_tag "vote.png", class: "card-meal-vote-img"%>
+            <% end %>
+            <p style="text-align: center;"><%= meal.awards.count %> upvotes</p>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
