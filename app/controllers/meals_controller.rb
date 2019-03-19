@@ -18,7 +18,7 @@ class MealsController < ApplicationController
             all_results_array << meal
           end
           flattened_array = all_results_array.flatten
-          sorted_array = flattened_array.sort_by {|meal| meal.awards.count}
+          sorted_array = flattened_array.sort_by {|meal| meal.awards.count }
           @meals = sorted_array.reverse!
         end
       end
@@ -38,13 +38,6 @@ class MealsController < ApplicationController
     @category = Category.find(params[:category_id])
     @meal = Meal.find(params[:id])
     @full_score = @meal.awards
-
-    @markers =
-      [{
-        lat: @meal.restaurant.latitude,
-        lng: @meal.restaurant.longitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { restaurant: @meal.restaurant })
-      }]
   end
 
   def map

@@ -17,6 +17,10 @@
   </div>
 
   <div class="filter-bar-map">
+    <% if params[:category_id].present? %>
     <%= link_to "", category_map_path(params[:category_id]), class: "far fa-map fa-2x" %>
+    <% elsif params[:searchquery].present? %>
+    <%= link_to "", category_map_path((@meals.first).category_id), class: "far fa-map fa-2x" %>
+    <% end %>
   </div>
 </div>
