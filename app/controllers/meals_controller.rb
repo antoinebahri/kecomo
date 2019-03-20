@@ -49,26 +49,34 @@ class MealsController < ApplicationController
   end
 
   def create
-    unless meal_params[:restaurant_id].nil?
-      @meal = Meal.new(name: meal_params[:name])
-      @category = Category.find(meal_params[:category_id])
-      @restaurant = Restaurant.find(meal_params[:restaurant_id])
-      @meal.restaurant = @restaurant
-      @meal.category = @category
-      if @meal.save
-        redirect_to restaurant_meal_path(@meal.restaurant, @meal)
-      else
-        render :new
-      end
+    @meal = Meal.new(meal_params)
+    if @meal.save
+      redirect_to new_meal_award_path(@meal)
     else
-      @meal = Meal.new(meal_params)
-      if @meal.save
-        redirect_to restaurant_meal_path(@meal.restaurant, @meal)
-      else
-        render :new
-      end
+    raise
+      render 'meals#new'
     end
   end
+
+  #   unless meal_params[:restaurant_id].nil? || meal_params[:category_id].nil?
+  #     @meal = Meal.new(name: meal_params[:name])
+  #     @category = Category.find(meal_params[:category_id])
+  #     @restaurant = Restaurant.find(meal_params[:restaurant_id])
+  #     @meal.restaurant = @restaurant
+  #     @meal.category = @category
+  #     if @meal.save
+  #       redirect_to restaurant_meal_path(@meal.restaurant, @meal)
+  #     else
+  #       render :new
+  #     end
+  #   else
+  #     @meal = Meal.new(meal_params)
+  #     if @meal.save
+  #       redirect_to restaurant_meal_path(@meal.restaurant, @meal)
+  #     else
+  #       render :new
+  #     end
+  #   end
 
   def edit
     if user_signed_in?

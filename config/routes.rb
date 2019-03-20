@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   end
 
   get '/meals', to: 'meals#index', as: 'all_meals'
-  resources :meals, only: [:index, :create] do
+  resources :meals, only: [:index, :new, :create] do
     resources :awards, only: [:new,:create]
   end
 
