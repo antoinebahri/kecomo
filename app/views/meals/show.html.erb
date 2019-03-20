@@ -8,7 +8,7 @@
     <div>
       <h2><%= @meal.name %></h2>
       <div class="meal-page-tags">
-        <%= link_to @meal.restaurant.name, restaurant_meals_path(@meal.restaurant.id), class: "page-meal-restaurant-tag" %>
+        <%= link_to @meal.restaurant.name, restaurant_path(@meal.restaurant.id), class: "page-meal-restaurant-tag" %>
         <%= link_to @meal.category.name, category_meals_path(@meal.category.id, @meal.id), class: "page-meal-category-tag" %>
       </div>
     </div>
