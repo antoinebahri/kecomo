@@ -7,8 +7,7 @@
     padding-right: 5px;
     z-index: 2;
     position: relative;
-    top: 5px;
-    right: 5px;
+    top: 20px;
     text-transform: uppercase;
     font-weight: bolder;
     letter-spacing: 1px;
@@ -25,4 +24,35 @@
     opacity: 1;
     color: white;
     border-bottom: 3px solid white;
+  }
+
+.navbar-wagon {
+    .tabs-underlined {
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    justify-content: flex-end;
+    padding-top: 15px;
+    padding-right: 5px;
+    z-index: 2;
+    position: relative;
+    right: -20px;
+    top: 0px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    letter-spacing: 1px;
+  }
+
+  .tabs-underlined .tab-underlined {
+    padding: 8px 15px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .tab-underlined:hover {
+    opacity: 1;
+    color: white;
+    border-bottom: 3px solid white;
+  }
   }

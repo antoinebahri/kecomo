@@ -77,13 +77,6 @@
   text-align: center;
 }
 
-label {
-  font-size: 13px;
-  font-weight: bold;
-  margin-top: 20px;
-  color: white;
-}
-
 .button-award {
   text-align: center;
 }
@@ -116,6 +109,13 @@ label {
     background-image: none;
     border-color: #6b006b;
   }
+
+  label {
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: white;
+  }
 }
 
 #replaceAwardModal {
@@ -145,5 +145,12 @@ label {
     background-color: #6b006b;
     background-image: none;
     border-color: #6b006b;
+  }
+
+  label {
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: white;
   }
 }
