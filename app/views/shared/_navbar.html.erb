@@ -1,8 +1,6 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-   <a href="javascript:history.back()" class="navbar-wagon-brand">
-    <i class="fas fa-angle-left"></i>
-  </a>
+    <%= link_to "", "javascript: if (document.referrer == '#{request.original_url}'){history.go(-2);} else {history.go(-1);}", class: "fas fa-angle-left"%>
 
 <% if user_signed_in? %>
   <!-- Right Navigation -->
