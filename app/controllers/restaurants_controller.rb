@@ -4,13 +4,12 @@ class RestaurantsController < ApplicationController
   def index
     @meals = Meal.all
     @restaurants = Restaurant.all
+
   end
 
   def show
-    @restaurants = Restaurant.all
-    @restaurant = @restaurants.find(params[:id])
-    @meals = @restaurant.meals
-    @meals = @meals.sort_by { |meal| meal.awards.count }
+    @restaurant = Restaurant.find(params[:id])
+    @meals = @restaurant.meals.sort_by { |meal| meal.awards.count }
     if user_signed_in? && current_user.awards.nil? == false
       # all the awarded categories of the current_user if signed_in
       @current_user_awarded_categories = []
@@ -20,6 +19,7 @@ class RestaurantsController < ApplicationController
       end
     @current_user_awarded_categories = @current_user_awarded_categories.sort
     end
+    @award = Award.new
   end
 
   def map
