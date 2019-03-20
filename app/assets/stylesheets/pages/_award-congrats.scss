@@ -36,9 +36,21 @@
   font-weight: bolder;
   padding: 8px 25px;
   border-radius: 4px;
-  background: #FFB228;
+  background: #440063;
   font-weight: bolder;
-  margin-left: 100px;
+  margin-left: 6px;
+}
+
+.button a {
+  text-decoration: none;
+  color: white;
+  opacity: 0.8;
+}
+
+.button a:hover {
+  text-decoration: none;
+  color: white;
+  opacity: 1;
 }
 
 .button-home {

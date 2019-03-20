@@ -12,11 +12,48 @@
           <%= f.input :review, :label => "Give a review (optional)", as: :text, class: "review" %>
 
           <div class="button-award">
-            <%= f.submit "Confirm", class: "main-button" %>
+            <%= f.submit "Confirm", class: "main-button", data: { target: "#firstAwardModal", toggle: "modal"} %>
             <br>
           </div>
         <% end %>
       </div>
     </div>
   </div>
+</div>
+
+<!-- firstAwardModal -->
+<div class="modal fade" id="firstAwardModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Let's vote!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="choose-details">
+          <div class="row-award">
+            <h1>You only have one vote for each category, so choose wisely!</h1>
+          </div>
+          <div class="row-vote">
+            <h2>You are about to vote for</h2>
+              <h3><%= @meal.name %></h3>
+              <h2>at</h2> <h3><%= @meal.restaurant.name %></h3>
+              <h2>as the best</h2> <h3><%= @meal.category.name %></h3>
+              <h2>in</h2> <h3><%= @meal.restaurant.city %></h3>
+            </h2>
+          </div>
+          <div class="user-thing">
+            <%# @meal = meal %>
+            <%= simple_form_for [@meal,@award] do |f| %>
+            <%= f.input :review, :label => "- Tell us how much you like it! (optional)", as: :text, class: "review" %>
+          </div>
+            <%= f.submit "Confirm", class: "btn btn-info" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </div>

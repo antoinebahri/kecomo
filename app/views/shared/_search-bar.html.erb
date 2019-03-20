@@ -1,8 +1,8 @@
 <div action="" id="search-bar" class="form-inline">
   <%= form_tag all_meals_url, method: :get do %>
     <%= text_field_tag :searchquery, params[:searchquery], size: 25, placeholder: "Try 'burger' or 'bacoa'", class: "form-control", id: 'searchbar' %>
-  <button type="submit" name="commit" value="search" class="btn btn-info btn-fill">GO!</button>
   <% end %>
+  <button type="submit" name="commit" value="search" class="btn btn-info btn-fill">GO!</button>
 </div>
 <!-- the autocomplete suggestions results dropdown -->
 <div id="autocomplete_results">

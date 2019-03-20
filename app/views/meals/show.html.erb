@@ -15,9 +15,9 @@
     <!-- meal.award.review -->
     <div class="card-meal-voting">
       <div class="card-meal-vote-button">
-        <%= link_to new_restaurant_meal_award_path(@meal.restaurant, @meal) do %>
-        <%= image_tag "vote.png", class: "card-meal-vote-img"%>
-        <% end %>
+        <%#= link_to new_restaurant_meal_award_path(@meal.restaurant, @meal) do %>
+        <%= image_tag "vote.png", class: "card-meal-vote-img", data: { target: "#firstAwardModal", toggle: "modal"} %>
+        <%# end %>
         <p style="text-align: center;"><%= @meal.awards.count %> votes</p>
       </div>
     </div>
@@ -42,3 +42,75 @@
   <% end %>
 </div>
 
+<!-- Modals -->
+<!-- replaceAwardModal -->
+<div class="modal fade" id="replaceAwardModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Let's vote!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="choose-details">
+          <h4><i class="fas fa-exclamation-triangle"></i> You have already voted for a meal in this category</h4>
+          <div class="row-award">
+            <h1>You only have one vote for each category, choose wisely!</h1>
+          </div>
+          <div class="row-vote">
+            <h2>You are about to vote for</h2>
+              <h3><%= @meal.name %></h3>
+              <h2>at</h2> <h3><%= @meal.restaurant.name %></h3>
+              <h2>as the best</h2> <h3><%= @meal.category.name %></h3>
+              <h2>in</h2> <h3><%= @meal.restaurant.city %></h3>
+            </h2>
+          </div>
+          <%# @meal = meal %>
+          <%# @award = Award.new %>
+          <%= simple_form_for [@meal,@award] do |f| %>
+            <%= f.input :review, :label => "- Tell us how much you like it! (optional)", as: :text, class: "review" %>
+            <%= f.submit "Confirm", class: "btn btn-info" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- firstAwardModal -->
+<div class="modal fade" id="firstAwardModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Let's vote!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="choose-details">
+          <div class="row-award">
+            <h1>You only have one vote for each category, so choose wisely!</h1>
+          </div>
+          <div class="row-vote">
+            <h2>You are about to vote for</h2>
+              <h3><%= @meal.name %></h3>
+              <h2>at</h2> <h3><%= @meal.restaurant.name %></h3>
+              <h2>as the best</h2> <h3><%= @meal.category.name %></h3>
+              <h2>in</h2> <h3><%= @meal.restaurant.city %></h3>
+            </h2>
+          </div>
+          <div class="user-thing">
+            <%# @meal = meal %>
+            <%= simple_form_for [@meal,@award] do |f| %>
+            <%= f.input :review, :label => "- Tell us how much you like it! (optional)", as: :text, class: "review" %>
+          </div>
+            <%= f.submit "Confirm", class: "btn btn-info" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
