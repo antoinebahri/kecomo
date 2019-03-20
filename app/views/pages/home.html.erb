@@ -9,7 +9,8 @@
       <img class="avatar-large dropdown-toggle" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" data-toggle="dropdown" id="navbar-wagon-menu" />
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li><%= link_to "Profile", profile_path(current_user) %></li>
-        <li><%= link_to "Pick your best!", new_award_path %></li>
+        <li><%= link_to "Add a new meal", new_meal_path %></li>
+        <li><%= link_to "Give your awards!", new_award_path %></li>
         <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
       </ul>
     </div>
@@ -20,7 +21,9 @@
 <!--
       <li><%#= link_to "Register and pick your best!", new_user_registration_path, class: "tab-underlined" %></li> -->
 
-      <li><%= link_to "Log in", new_user_session_path, class: "tab-underlined" %></li>
+        <div class="navbar-wagon-right-offline">
+          <p><%= link_to "Log in", new_user_session_path %></p>
+        </div>
       </ul>
 
     <% end %>

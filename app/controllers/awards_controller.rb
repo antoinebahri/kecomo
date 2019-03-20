@@ -27,10 +27,10 @@ class AwardsController < ApplicationController
       Award.where(id: index).destroy_all
     end
     @award = Award.new(set_award_params)
-    @meal = Meal.find(params[:meal_id])
     @award.user = current_user
     @award.meal = @meal
     @award.save
+    redirect_to category_meal_path(@meal.category, @meal)
   end
 
   def destroy

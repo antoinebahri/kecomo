@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="wrapper-new">
+    <div class="form-new">
+      <div class="choose-details-blank">
+        <h1>Cannot find your personal favourites? Add the meal to our menu:</h1>
+
+        <%= simple_form_for (@meal) do |f| %>
+
+          <%= f.association :restaurant, :label => "In which restaurant is that meal you want to vote for?" %>
+
+          <%= f.association :category, :label => "What do you want to vote for:" %>
+
+          <%= f.input :name, :label => "What’s the name of that meal in the menu?" %>
+
+          <%= f.input :description, :label => "Little meal description" %>
+
+          <%= f.input :picture, :label => "Upload a pic of your awarded meal" %>
+
+          <div class="button-award">
+              <%= f.submit "Confirm", class: "main-button" %>
+            <br>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
