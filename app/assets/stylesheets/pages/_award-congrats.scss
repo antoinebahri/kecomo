@@ -1,7 +1,7 @@
 .row-award-congrats {
   font-family: Montserrat;
   width: 345px;
-  height: 550px;
+  height: 600px;
   text-align: center;
   background: #32DBC6;
   margin-top: 35px;
@@ -28,7 +28,7 @@
 }
 
 .button {
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .main-button-congrats {
@@ -36,9 +36,21 @@
   font-weight: bolder;
   padding: 8px 25px;
   border-radius: 4px;
-  background: #FFB228;
+  background: #440063;
   font-weight: bolder;
-  margin-left: 100px;
+  margin-left: 6px;
+}
+
+.button a {
+  text-decoration: none;
+  color: white;
+  opacity: 0.8;
+}
+
+.button a:hover {
+  text-decoration: none;
+  color: white;
+  opacity: 1;
 }
 
 .button-home {
