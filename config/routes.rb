@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get '/profile', to: 'pages#profile', as: 'profile'
 
-  resources :awards, except: [:show, :edit, :patch]
+  resources :awards, except: [:show]
 
   resources :categories, only: [:show] do
     collection do
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   end
 
   get '/meals', to: 'meals#index', as: 'all_meals'
-  resources :meals, only: [:index] do
+  resources :meals, only: [:index, :create] do
     resources :awards, only: [:new,:create]
   end
 

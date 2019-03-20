@@ -1,15 +1,24 @@
 <h1>These are my awards:</h1>
 <% @awards.each do |award| %>
-  <ul>
-    <li>
-      <%= award.meal.category.name %>
-      <br>
-      <%= award.meal.name%>
-      <%= award.review %>
-      <%= link_to 'Delete',
-             award_path(award),
-                         method: :delete,
-                         data: { confirm: 'Are you sure?' } %>
-    </li>
-  </ul>
+  <div class="meal-page-reviews">
+    <img src="https://www.tasteofhome.com/wp-content/uploads/2017/10/exps28800_UG143377D12_18_1b_RMS-696x696.jpg" class="card-meal-vote-img-profile">
+    <div class="meal-page-reviews-content-profile">
+      <p><%= award.meal.name%> in the category of <%= award.meal.category.name%></p>
+      <p>@ <%=award.meal.restaurant.name %></p>
+      <h6 style="font-style: italic;">"<%= award.review.first(80) %>..."</h6>
+      <div class="meal-page-reviews-date">
+        <p><%= award.created_at %></p>
+      </div>
+      <%  if user_signed_in? && award.user_id == current_user.id %>
+      <div class="meal-page-reviews-actions">
+        <%= link_to edit_award_path(award) , class: "award-edit-icon" do %>
+          <i class="fas fa-pencil-alt"></i>
+        <% end %>
+        <%= link_to awards_path(award), data: {:confirm => 'Are you sure?'}, :method => :delete ,class: "award-delete-icon" do %>
+          <i class="far fa-trash-alt"></i>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+  </div>
 <% end %>

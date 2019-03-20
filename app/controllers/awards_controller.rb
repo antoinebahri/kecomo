@@ -23,7 +23,6 @@ class AwardsController < ApplicationController
     awards_from_category_to_release = current_user_awards.find_all { |award| award.meal.category == @meal.category }
     # Award.destroy(awards_from_category_to_releasemap.map(&:id))
     award_indexes_to_destroy = awards_from_category_to_release.map(&:id)
-    # raise
     award_indexes_to_destroy.each do |index|
       Award.where(id: index).destroy_all
     end
@@ -36,8 +35,7 @@ class AwardsController < ApplicationController
   end
 
   def destroy
-    @award = Award.find(params[:id])
-    @award.destroy
+    award.destroy
     redirect_to profile_path
   end
 

@@ -12,9 +12,15 @@
     <%= stylesheet_pack_tag 'application', media: 'all' %>
   </head>
   <body>
+    <%= render 'shared/navbar' unless devise_controller? ||  current_page?(controller: 'pages', action: 'home')  %>
+
     <%= render 'shared/flashes' %>
-    <%= yield %>
-    <%= render 'shared/footer' %>
+    <div id="page-container">
+        <%= yield %>
+      <div id="page-footer">
+        <%= render 'shared/footer' %>
+      </div>
+    </div>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
