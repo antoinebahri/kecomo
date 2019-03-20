@@ -6,14 +6,17 @@
         <% case index %>
         <% when 0 %>
           <div class="card-meal-rank-1">
+            <%= index + 1 %>st
         <% when 1 %>
           <div class="card-meal-rank-2">
+            <%= index + 1 %>nd
         <% when 2 %>
           <div class="card-meal-rank-3">
+            <%= index + 1 %>rd
         <% else %>
           <div class="card-meal-rank">
+            <%= index + 1 %>th
         <% end %>
-      <%= index + 1 %>
       </div>
         <!-- meal cloudinary image -->
         <img src="https://www.tasteofhome.com/wp-content/uploads/2017/10/exps28800_UG143377D12_18_1b_RMS-696x696.jpg">
