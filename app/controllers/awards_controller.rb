@@ -31,6 +31,7 @@ class AwardsController < ApplicationController
     @award.meal = @meal
     @award.save
     redirect_to category_meal_path(@meal.category, @meal)
+
   end
 
   def destroy

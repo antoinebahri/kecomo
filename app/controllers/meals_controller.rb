@@ -2,6 +2,7 @@ class MealsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
+    @award = Award.new
     query_meals = SearchMeals.new(params)
     if params[:searchquery].present?
       @meals = query_meals.by_text
