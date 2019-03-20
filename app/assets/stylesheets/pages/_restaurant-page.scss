@@ -47,7 +47,6 @@
   }
 }
 
-
 .restaurant-page-map {
   padding: 10px;
   display: flex;
@@ -72,6 +71,12 @@
     text-decoration: none;
     opacity: 0.8;
   }
+  .far {
+    opacity: 0.9;
+  }
+  .far:hover {
+    opacity: 1;
+  }
 }
 
 .restaurant-page-meals {
@@ -82,6 +87,6 @@
     margin-top: 15px;
     text-align: center;
     font-weight: bold;
-    color: grey;
+    color: gray;
   }
 }
