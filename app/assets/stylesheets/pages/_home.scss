@@ -47,15 +47,16 @@ h3 {
 .rectangle h2 {
   position: absolute;
   z-index: 2;
-  bottom: 150px;
+  bottom: 130px;
   right: 5px;
-  text-align: center;
+  text-align: left;
+  padding-left: 20px;
 }
 
 .banner .rectangle #search-bar {
   position: absolute;
-  bottom: 75px;
-  right: 25px;
+  bottom: 55px;
+  padding-left: 20px;
 }
 
 .rectangle .avatar-large {
