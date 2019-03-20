@@ -2,27 +2,26 @@
 
   <div class="filter-bar-tags">
 
-    <div class="filter-bar-tags-cities">
-      <div class="result">
-        <i class="fas fa-map-pin"></i>
-        Barcelona
-      </div>
+    <div class="filter-bar-tags-meals">
+         <%= form_tag all_meals_path, method: :get do %>
+      <%= text_field_tag :searchquery, params[:searchquery], placeholder: "Barcelona", class: "form-control", id: 'searchbar' %>
+      <% end %>
     </div>
 
-    <div class="filter-bar-tags-cities">
+    <div class="filter-bar-tags-meals">
       <%= form_tag all_meals_path, method: :get do %>
-      <%= text_field_tag :searchquery, params[:searchquery], placeholder: "Search Category", class: "form-control", id: 'searchbar' %>
+      <%= text_field_tag :searchquery, params[:searchquery], placeholder: "Search category", class: "form-control", id: 'searchbar' %>
      <% end %>
     </div>
   </div>
 
   <div class="filter-bar-map">
     <% if params[:category_id].present? %>
-      <%= link_to "", category_map_path(params[:category_id]), class: "far fa-map fa-2x" %>
+      <%= link_to "", category_map_path(params[:category_id]), class: "far fa-map fa" %>
     <% elsif params[:id].present? %>
-      <%= link_to "", restaurant_map_path(params[:id]), class: "far fa-map fa-2x" %>
+      <%= link_to "", restaurant_map_path(params[:id]), class: "far fa-map fa" %>
     <% elsif params[:searchquery].present? %>
-      <%= link_to "", map_categories_path(params.permit!), class: "far fa-map fa-2x" %>
+      <%= link_to "", map_categories_path(params.permit!), class: "far fa-map fa" %>
     <% end %>
   </div>
 </div>

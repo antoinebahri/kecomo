@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #E7E7E2;
+  background: rgb(236,238,239);
 }
 
 .filter-bar a {
@@ -25,24 +25,10 @@
 }
 
 .filter-bar-tags-cities {
-  border: 2px solid black;
-  border-radius: 10px;
-  margin-left: 20px;
-  font-size: 12px;
-  font-style: Montserrat;
-  align-items: center;
-  padding: 4px 4px;
-  background: white;
-
-  .result {
+    input {
+    margin-left: 5px;
     background-color: white;
-    padding: 4px;
-    border-radius: 4px;
-  }
-  input {
-    background-color: white;
-    padding: 4px;
-    border-radius: 4px;
+    font-size: 12px;
     &:focus {
       background-color: white;
       padding: 4px;
@@ -51,6 +37,23 @@
     }
   }
 }
+
+.filter-bar-tags-meals {
+
+  input {
+    margin-left: 5px;
+    background-color: white;
+    font-size: 12px;
+    width: 125px;
+    &:focus {
+      background-color: white;
+      padding: 4px;
+      border-radius: 4px;
+      border: none !important;
+    }
+  }
+}
+
 
 
 .filter-bar-tags-category{
@@ -63,6 +66,10 @@
   display: flex;
   margin-right: 20px;
   align-items: center;
+  .far {
+    color: grey;
+    opacity: 0.6;
+  }
 }
 
 .filter-bar-tags-cities .form-control {
@@ -71,6 +78,7 @@
   font-size: 12px;
   font-style: Montserrat;
 }
+
 
 // .filter-bar > .filter-bar-tags {
 //   display:flex;
