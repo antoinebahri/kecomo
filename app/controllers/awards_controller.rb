@@ -31,6 +31,7 @@ class AwardsController < ApplicationController
     @award.user = current_user
     @award.meal = @meal
     @award.save
+    # redirect_to root_path
   end
 
   def destroy

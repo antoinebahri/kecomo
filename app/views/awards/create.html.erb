@@ -1,12 +1,14 @@
 <div class="container">
   <div class="row-award-congrats">
-    <h1>Congratulations, now you have your best <%= "#{@meal.category.name}" %></h1>
+    <h1>Congratulations!</h1>
+    <h1>You have voted for your best <%= "#{@meal.category.name}" %></h1>
       <%= image_tag "fireworks.png", class: "fireworks-img" %>
+      <!--
       <div class="button">
-         <%= link_to "Vote for another category", new_award_path, class: "main-button-congrats" %>
+         <%#= link_to "Vote for another category", new_award_path, class: "main-button-congrats" %>
       </div>
       <div class="button-home">
-        <%= link_to "No, thank you", category_meals_path(@meal.category), class: "link" %>
-      </div>
+        <%#= link_to "No, thank you", category_meals_path(@meal.category), class: "link" %>
+      </div> -->
   </div>
 </div>
