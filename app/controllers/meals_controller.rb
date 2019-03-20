@@ -51,7 +51,7 @@ class MealsController < ApplicationController
   def create
     @meal = Meal.new(meal_params)
     if @meal.save
-      redirect_to new_meal_award_path(@meal)
+      redirect_to restaurant_meal_path(@meal.restaurant, @meal)
     else
     raise
       render 'meals#new'
