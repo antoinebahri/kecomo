@@ -54,8 +54,6 @@
   }
 }
 
-
-
 .filter-bar-tags-category{
   border: 2px solid black;
   border-radius: 10px;
@@ -66,9 +64,10 @@
   display: flex;
   margin-right: 20px;
   align-items: center;
+  font-size: 22px;
   .far {
-    color: grey;
-    opacity: 0.6;
+    color: gray;
+    opacity: 0.8;
   }
 }
 
