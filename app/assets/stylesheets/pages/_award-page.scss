@@ -16,16 +16,51 @@
     margin-top: 25px;
 }
 
+.choose-details h4 {
+  color: white;
+  background-color: #440063;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  font-size: 11px;
+  width: 325px;
+  height: auto;
+  text-align: center;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  font-weight: bold;
+}
 
 .row-award {
   font-family: Montserrat;
-  width: 345px;
-  height: 75px;
+  width: 325px;
+  height: 65px;
   text-align: center;
   background: #32DBC6;
-  margin-top: 35px;
+  margin-top: 5px;
   border-radius: 10px;
-  margin-bottom: 35px;
+  margin-bottom: 5px;
+}
+
+.row-vote {
+  font-family: Montserrat;
+  text-align: center;
+  margin-top: 15px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.row-vote h3 {
+  color: white;
+  margin: 0px;
+  font-size: 19px;
+}
+
+.row-vote h2 {
+  margin: 0px;
+  color: white;
+  font-weight: lighter;
 }
 
 .row-award h1 {
@@ -38,26 +73,77 @@
 }
 
 .choose-details h2 {
-  margin: 0px 0px 0px 0px;
-  margin-top: 30px;
-  padding-bottom: 15px;
-  font-size: 22px;
+  font-size: 18px;
   text-align: center;
 }
 
 label {
-  font-size: 14px;
-  font-weight: bolder;
-  margin-top: 25px;
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: white;
 }
 
 .button-award {
   text-align: center;
 }
 
-.fireworks-img {
-  width: 300px;
-  height: 300px;
-  margin-left: 20px;
+#firstAwardModal {
+.btn-info {
+    color: white;
+    background-color: #440063;
+    border-color: #440063;
+  }
 
+  .btn-info:hover {
+    color: white;
+    background-color: #6b006b;
+    border-color: #6b006b;
+  }
+
+  .btn-info:focus, .btn-info.focus {
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+  }
+
+  .btn-info.disabled, .btn-info:disabled {
+    background-color: #440063;
+    border-color: #440063;
+  }
+
+  .btn-info:active, .btn-info.active,
+  .show > .btn-info.dropdown-toggle {
+    background-color: #6b006b;
+    background-image: none;
+    border-color: #6b006b;
+  }
+}
+
+#replaceAwardModal {
+.btn-info {
+    color: white;
+    background-color: #440063;
+    border-color: #440063;
+  }
+
+  .btn-info:hover {
+    color: white;
+    background-color: #6b006b;
+    border-color: #6b006b;
+  }
+
+  .btn-info:focus, .btn-info.focus {
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+  }
+
+  .btn-info.disabled, .btn-info:disabled {
+    background-color: #440063;
+    border-color: #440063;
+  }
+
+  .btn-info:active, .btn-info.active,
+  .show > .btn-info.dropdown-toggle {
+    background-color: #6b006b;
+    background-image: none;
+    border-color: #6b006b;
+  }
 }

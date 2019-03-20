@@ -31,9 +31,8 @@ class AwardsController < ApplicationController
     @meal = Meal.find(params[:meal_id])
     @award.user = current_user
     @award.meal = @meal
-    # raise
     @award.save
-    # redirect_to somwhere
+    # redirect_to root_path
   end
 
   def destroy
