@@ -28,7 +28,7 @@
           <div class="card-meal-button-wrapper">
             <div class="card-meal-restaurant-button" style="margin-right: 5px;">
               <!-- meal.restaurant -->
-              <p><%= link_to meal.restaurant.name, restaurant_path(meal.restaurant_id) %></p>
+              <p><%= link_to meal.restaurant.name, restaurant_path(meal.restaurant) %></p>
             </div>
             <div class="card-meal-category-button">
               <!-- meal.category -->
@@ -97,6 +97,8 @@
                   <h2>in</h2> <h3><%= meal.restaurant.city %></h3>
                 </h2>
               </div>
+              <%# @meal = meal %>
+              <%# @award = Award.new %>
               <%= simple_form_for [meal,@award] do |f| %>
                 <%= f.input :review, :label => "- Tell us how much you like it! (optional)", as: :text, class: "review" %>
                 <%= f.submit "Confirm", class: "btn btn-info" %>
@@ -106,7 +108,6 @@
         </div>
       </div>
     </div>
-
     <!-- firstAwardModal -->
     <div class="modal fade" id="firstAwardModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
@@ -131,6 +132,7 @@
                 </h2>
               </div>
               <div class="user-thing">
+                <%# @meal = meal %>
                 <%= simple_form_for [meal,@award] do |f| %>
                 <%= f.input :review, :label => "- Tell us how much you like it! (optional)", as: :text, class: "review" %>
               </div>
