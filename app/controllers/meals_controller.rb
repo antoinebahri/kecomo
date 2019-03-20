@@ -10,7 +10,7 @@ class MealsController < ApplicationController
       @meals = query_meals.by_category
       # here we are displaying the meals of a particluar RESTAURANT
     elsif params[:restaurant_id].present?
-      @mneals = query_meals.by_restaurant
+      @meals = query_meals.by_restaurant
     else
       @meals = Meal.all
     end
