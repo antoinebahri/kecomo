@@ -51,16 +51,20 @@
     color: inherit;
   }
   p {
-    margin-bottom: 0;
-    margin-right: 15px;
+    margin-bottom: 0px;
+    margin-right: 5px;
     color: white;
-    border: 1px solid white;
     padding: 4px 15px;
-    border-radius: 10px;
-    opacity: 0.7;
+    opacity: 1;
     transition: opacity 0.3s ease;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bolder;
     :hover {
       opacity: 1;
+      color: white;
+      text-decoration: none;
     }
   }
 }
