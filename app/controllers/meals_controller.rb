@@ -20,6 +20,7 @@ class MealsController < ApplicationController
   end
 
   def show
+    @award = Award.new
     unless params[:category_id].nil?
       @category = Category.find(params[:category_id])
     end
