@@ -42,8 +42,7 @@
             <% if @current_user_awards.find_all { |award| award.meal == meal }.any?%>
             <!-- the user has given award in the category and one of the awards of this given meal belongs to the user, so the user has already awarded this meal, maybe a little info window/pop up to tell him about the obvious, Need to change the "upvote" to a different icon -->
               <div class="card-meal-vote-button">
-                <%= link_to new_restaurant_meal_award_path(meal.restaurant, meal) do %>
-                <%= link_to 'Awarded', new_restaurant_meal_award_path(meal.restaurant, meal), :data => {:confirm => 'You already awarded this item... Would you want to change your review?'} %>
+                <%= link_to new_restaurant_meal_award_path(meal.restaurant, meal), :data => {:confirm => 'You already awarded this item... Would you want to change your review?'} do %>
                                <!-- # data: { confirm: 'You have already given your award in this category to this ....... Are you sure you want to change your vote?' } -->
                   <%= image_tag "vote.png", class: "card-meal-vote-img"%>
                 <p style="text-align: center;"><%= meal.awards.count %> votes</p>
