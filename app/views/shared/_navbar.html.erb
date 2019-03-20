@@ -1,29 +1,28 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-   <a href="javascript:history.back()" class="navbar-wagon-brand">
+  <a href="javascript:history.back()" class="navbar-wagon-brand">
     <i class="fas fa-angle-left"></i>
   </a>
-
-<% if user_signed_in? %>
+  <% if user_signed_in? %>
   <!-- Right Navigation -->
-  <div class="navbar-wagon-right">
-    <p><%= link_to "Vote for a meal", new_award_path %></p>
-    <!-- Profile picture with dropdown list -->
-    <div class="navbar-wagon-item">
-      <div class="dropdown">
-        <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><%= link_to "Home", root_path, class: "dropdown-item" %></li>
-          <li><%= link_to "Profile", profile_path(current_user), class: "dropdown-item" %></li>
-          <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
-        </ul>
+    <div class="navbar-wagon-right">
+
+      <!-- Profile picture with dropdown list -->
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li><span><%= link_to "Home", root_path, class: "dropdown-item" %></span></li>
+            <li><span><%= link_to "Profile", profile_path(current_user), class: "dropdown-item" %></span></li>
+            <li><span><%= link_to "Can't find your best? Add a meal to our menu!", new_meal_path, class: "dropdown-item"  %></span></li>
+            <li><span><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %></span></li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-<% else %>
-<div class="list-inline tabs-underlined">
-    <p><%= link_to "Log in", new_user_session_path, class: "tab-underlined" %></p>
-</div>
-
-<% end %>
+  <% else %>
+    <div class="list-inline tabs-underlined">
+      <p><%= link_to "Log in", new_user_session_path, class: "tab-underlined" %></p>
+    </div>
+  <% end %>
 </div>
