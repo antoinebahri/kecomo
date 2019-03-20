@@ -1,58 +1,60 @@
 
 <div class="container">
-   <div class="profile-user">
-    <h2>  <%= @user.first_name %> <%= @user.last_name %> </h2>
-   </div>
-  <div class="profile-header">
+ <div class="profile-user">
+   <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+  <h2>  <%= @user.email %> </h2>
+</div>
+<div class="profile-header">
   <h1>My awards:</h1>
-  </div>
-  <div class="container">
-    <% @awards.each_with_index do |award, index| %>
-    <br>
-    <div class="row">
-      <div class="card-meal">
-        <% case index %>
-        <% when 0 %>
-        <div class="card-meal-rank-1">
-          <% when 1 %>
-          <div class="card-meal-rank-2">
-            <% when 2 %>
-            <div class="card-meal-rank-3">
-              <% else %>
-              <div class="card-meal-rank">
-                <% end %>
-                <%= index + 1 %>
-              </div>
-              <!-- meal cloudinary image -->
-              <img src="https://www.tasteofhome.com/wp-content/uploads/2017/10/exps28800_UG143377D12_18_1b_RMS-696x696.jpg">
-              <div class="card-meal-infos" id="profile-card-meal">
-                <!-- meal.name -->
-                <h2><%= link_to award.meal.name, category_meal_path(award.meal.category_id, award.meal.id) %></h2>
-                <!-- meal.award.review -->
-                <p style="font-style: italic;"><%= award.meal.description %></p>
-                <div class="card-meal-button-wrapper">
-                  <div class="card-meal-restaurant-button" style="margin-right: 5px;">
-                    <!-- meal.restaurant -->
-                    <p><%= link_to award.meal.restaurant.name, restaurant_path(award.meal.restaurant_id) %></p>
-                  </div>
-                  <div class="card-meal-category-button">
-                    <!-- meal.category -->
-                    <p>#<%= link_to award.meal.category.name, category_meals_path(award.meal.category_id) %></p>
-                  </div>
+</div>
+<div class="container">
+  <% @awards.each_with_index do |award, index| %>
+  <br>
+  <div class="row">
+    <div class="card-meal">
+      <% case index %>
+      <% when 0 %>
+      <div class="card-meal-rank-1">
+        <% when 1 %>
+        <div class="card-meal-rank-2">
+          <% when 2 %>
+          <div class="card-meal-rank-3">
+            <% else %>
+            <div class="card-meal-rank">
+              <% end %>
+              <%= index + 1 %>
+            </div>
+            <!-- meal cloudinary image -->
+            <img src="https://www.tasteofhome.com/wp-content/uploads/2017/10/exps28800_UG143377D12_18_1b_RMS-696x696.jpg">
+            <div class="card-meal-infos" id="profile-card-meal">
+              <!-- meal.name -->
+              <h2><%= link_to award.meal.name, category_meal_path(award.meal.category_id, award.meal.id) %></h2>
+              <!-- meal.award.review -->
+              <p style="font-style: italic;"><%= award.meal.description %></p>
+              <div class="card-meal-button-wrapper">
+                <div class="card-meal-restaurant-button" style="margin-right: 5px;">
+                  <!-- meal.restaurant -->
+                  <p><%= link_to award.meal.restaurant.name, restaurant_path(award.meal.restaurant_id) %></p>
+                </div>
+                <div class="card-meal-category-button">
+                  <!-- meal.category -->
+                  <p>#<%= link_to award.meal.category.name, category_meals_path(award.meal.category_id) %></p>
                 </div>
               </div>
-              <div class="profile-change-delete">
-              <%  if user_signed_in? && award.user_id == current_user.id %>
-                <a href="#" id="color-edit-change">Change<i class="fas fa-pencil-alt" id="color-edit-change"></i></a>
-                <a href="#" id="color-edit-delete">Delete <i class="far fa-trash-alt" id="color-edit-delete"></i></a>
-              </div>
-              <% end %>
             </div>
-
+            <div class="profile-change-delete">
+              <%  if user_signed_in? && award.user_id == current_user.id %>
+              <a href="#" id="color-edit-change">Change<i class="fas fa-pencil-alt" id="color-edit-change"></i></a>
+              <a href="#" id="color-edit-delete">Delete <i class="far fa-trash-alt" id="color-edit-delete"></i></a>
+            </div>
+            <% end %>
           </div>
         </div>
-        <% end %>
-      </div>
+
+      <% end %>
     </div>
+    </div>
+
+  </div>
 
 

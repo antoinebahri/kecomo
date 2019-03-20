@@ -1,21 +1,33 @@
 #color-edit-change {
   color: rgba(119, 209, 97, 0.87);
-
 }
 
 #color-edit-delete {
   color: rgba(252, 8, 8, 0.87);
-
 }
 
-.profile-change-delete {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 15px;
-
+.profile-user {
+  height: 175px;
+  border-bottom-style: solid;
+  text-align: center;
 }
+
+.profile-user h2 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  font-size: 18px;
+  color: #000000;
+}
+
+.profile-user img {
+  width: 75px;
+  height: 75px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
 .profile-header h1 {
   font-family: Montserrat;
   font-style: normal;
@@ -26,9 +38,10 @@
   color: #000000;
 }
 
-
-.profile-user {
-  height: 200px;
-  border-bottom-style: solid;
-
+.profile-change-delete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
 }
