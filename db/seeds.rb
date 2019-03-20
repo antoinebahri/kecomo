@@ -84,6 +84,7 @@ puts "-----------------------------------"
 puts "Destroying all meal categories.."
 Category.destroy_all
 meal_categories = ["Dessert", "Cookie", "Cupcake", "Salad", "French Fries", "Burger", "Brownie", "Muffin", "Croissant", "Ice Cream", "Cinnamon Roll", "Bread", "Pie", "Cake", "Coffee", "Tea", "Pasta", "Chicken", "Sandwich", "Curry", "Wok", "Egg", "Hot Dog", "Tapas", "Cocktail", "Sushi", "Taco", "Noodles", "Meat", "Donut", "Pizza"]
+meal_categories.sort
 puts "Creating meal categories..."
 c = 0
 meal_categories.each do |category|
