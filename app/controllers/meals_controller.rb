@@ -19,7 +19,9 @@ class MealsController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:category_id])
+    unless params[:category_id].nil?
+      @category = Category.find(params[:category_id])
+    end
     @meal = Meal.find(params[:id])
     @full_score = @meal.awards
   end
@@ -46,11 +48,24 @@ class MealsController < ApplicationController
   end
 
   def create
-    @meal = Meal.new(meal_params)
-    if @meal.save
-      redirect_to meal_path(@meal)
+    unless meal_params[:restaurant_id].nil?
+      @meal = Meal.new(name: meal_params[:name])
+      @category = Category.find(meal_params[:category_id])
+      @restaurant = Restaurant.find(meal_params[:restaurant_id])
+      @meal.restaurant = @restaurant
+      @meal.category = @category
+      if @meal.save
+        redirect_to restaurant_meal_path(@meal.restaurant, @meal)
+      else
+        render :new
+      end
     else
-      render :new
+      @meal = Meal.new(meal_params)
+      if @meal.save
+        redirect_to restaurant_meal_path(@meal.restaurant, @meal)
+      else
+        render :new
+      end
     end
   end
 
@@ -84,6 +99,6 @@ class MealsController < ApplicationController
   private
 
   def meal_params
-    params.require(:meal).permit(:name, :description, :picture)
+    params.require(:meal).permit(:name, :description, :picture, :category_id, :restaurant_id)
   end
 end

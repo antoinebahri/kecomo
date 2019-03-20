@@ -1,6 +1,8 @@
 <div class="container">
-  <%= image_tag @meal.picture, class: "meal-page-img" %>
-  <!-- meal cloudinary image -->
+  <% unless @meal.picture.nil? %>
+    <%= image_tag @meal.picture, class: "meal-page-img" %>
+    <!-- meal cloudinary image -->
+  <% end %>
   <div class="meal-page-info">
     <!-- meal.name -->
     <div>
