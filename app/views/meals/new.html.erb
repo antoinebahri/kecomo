@@ -5,14 +5,13 @@
         <h1>Cannot find the meal you want to vote for? Create it!</h1>
 
         <%= simple_form_for (@meal) do |f| %>
-
-          <%= f.association :restaurant, :label => "In which restaurant is that meal you want to vote for?" %>
+          <div class="first-question">
+            <%= f.association :restaurant, :label => "In which restaurant is that meal you want to vote for?" %>
+          </div>
 
           <%= f.association :category, :label => "What do you want to vote for:" %>
 
           <%= f.input :name, :label => "What’s the name of that meal in the menu?" %>
-
-          <%= f.input :description, :label => "Little meal description" %>
 
           <%= f.input :picture, :label => "Upload a pic of your awarded meal" %>
 
