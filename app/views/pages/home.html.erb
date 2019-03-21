@@ -6,54 +6,28 @@
     <% if user_signed_in? %>
 
     <div class="dropdown">
-      <img class="avatar-large dropdown-toggle" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" data-toggle="dropdown" id="navbar-wagon-menu" />
+      <% if current_user.picture == nil %>
+        <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar-large dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+      <% else %>
+        <%= image_tag current_user.picture, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", data: { toggle: "dropdown" } %>
+      <% end %>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li><%= link_to "Profile", profile_path(current_user),  class: "dropdown-item"  %></li>
-        <li><%= link_to "Don't see your meal", new_meal_path, class: "dropdown-item"  %></li>
+        <li><%= link_to "Don't see your meal?", new_meal_path, class: "dropdown-item"  %></li>
         <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item"  %></li>
       </ul>
     </div>
 
     <% else %>
-
       <ul class="list-inline tabs-underlined">
-<!--
-      <li><%#= link_to "Register and pick your best!", new_user_registration_path, class: "tab-underlined" %></li> -->
-
-          <p><%= link_to "Log in", new_user_session_path, class: "tab-underlined" %></p>
-
+        <p><%= link_to "Log in", new_user_session_path, class: "tab-underlined" %></p>
       </ul>
-
     <% end %>
 
     <h2>Looking for the best voted food on the menu?</h2>
     <%= render 'shared/search-bar' %>
   </div>
 </div>
-
-<!--
-<h3>Discover your new favourite</h3>
-<div class="container">
-  <div class="card-grid">
-    <div class="cards">
-      <div class="row">
-        <%# @random_categories.each do |category| %>
-          <div class="col-xs-4"
-            <div class="card">
-              <div class="card-img">
-                <%#= link_to (image_tag (category.icon)), category_meals_path(category.id) %>
-              </div>
-              <div class="card-txt">
-                <h5><strong><%#= category.name %></strong></h5>
-              </div>
-            </div>
-          </div>
-        <#% end %>
-      </div>
-    </div>
-  </div>
-</div>
- -->
 
 <div class="container">
 <h3 style="text-align: center; font-size: 18px;">Discover the best food in town</h3>
