@@ -2,10 +2,15 @@
 
   <div class="filter-bar-tags">
 
-    <div class="filter-bar-tags-meals">
-         <%= form_tag all_meals_path, method: :get do %>
-      <%= text_field_tag :searchquery, params[:searchquery], placeholder: "Barcelona", class: "form-control", id: 'searchbar' %>
-      <% end %>
+  <!--   <div class="filter-bar-tags-meals">
+         <%#= form_tag all_meals_path, method: :get do %>
+      <%#= text_field_tag :searchquery, params[:searchquery], placeholder: "Barcelona", class: "form-control", id: 'searchbar' %>
+      <#% end %>
+    </div> -->
+    <div>
+      <div class="fake-form">
+       <i class="fas fa-map-pin" style="font-size: 10px; color: grey;" ></i> Barcelona
+      </div>
     </div>
 
     <div class="filter-bar-tags-meals">
