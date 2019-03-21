@@ -50,6 +50,10 @@
   padding: 10px;
 }
 
+.card-meal-photo-info {
+  display:flex;
+}
+
 .card-meal-voting {
   padding: 10px;
   display: flex;
@@ -64,8 +68,8 @@
 
 .card-meal-rank {
   position: absolute;
-  left: -6px;
-  top: -6px;
+  left: -8px;
+  top: -16px;
   color: white;
   padding: 8px 8px;
   border-radius: 6px;
@@ -81,8 +85,8 @@
 
 .card-meal-rank-1 {
   position: absolute;
-  left: -6px;
-  top: -6px;
+  left: -8px;
+  top: -16px;
   color: white;
   padding: 8px 8px;
   border-radius: 6px;
@@ -98,8 +102,8 @@
 
 .card-meal-rank-2 {
   position: absolute;
-  left: -6px;
-  top: -6px;
+  left: -8px;
+  top: -16px;
   color: white;
   padding: 8px 8px;
   border-radius: 6px;
@@ -115,8 +119,8 @@
 
 .card-meal-rank-3 {
   position: absolute;
-  left: -6px;
-  top: -6px;
+  left: -8px;
+  top: -16px;
   color: white;
   padding: 8px 8px;
   border-radius: 6px;

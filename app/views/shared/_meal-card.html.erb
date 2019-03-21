@@ -19,6 +19,7 @@
         <% end %>
       </div>
         <!-- meal cloudinary image -->
+        <div class="card-meal-photo-info">
         <img src="https://www.tasteofhome.com/wp-content/uploads/2017/10/exps28800_UG143377D12_18_1b_RMS-696x696.jpg">
         <div class="card-meal-infos">
             <!-- meal.name -->
@@ -36,6 +37,7 @@
             </div>
           </div>
         </div>
+      </div>
 
           <!-- Need to implement two differently styled buttons here -->
         <div class="card-meal-voting">
@@ -57,7 +59,7 @@
               <div class="card-meal-vote-button">
                 <%#= link_to 'Upvote', new_restaurant_meal_award_path(@meal.restaurant, @meal), :data => {:confirm => 'Are you sure? You have already given an award to a meal in this category. So, by doing this you will be replacing your #1'} %>
                   <%= image_tag "vote.png", class: "card-meal-vote-img", data: { target: "#replaceAwardModal", toggle: "modal"} %>
-                  <p style="text-align: center;"><%= meal.awards.count %> votes</p>
+                  <p style="text-align: center; "><%= meal.awards.count %> votes</p>
               </div>
             <% end %>
             <!-- if the user has NOT yet given award in this category(same as the buttons above, just no pop-up that warns about the category being awarded by the user) or the user is not yet signed in -->
