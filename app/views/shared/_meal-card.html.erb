@@ -21,13 +21,9 @@
         <!-- meal cloudinary image -->
         <div class="card-meal-photo-info">
 
-  <% if meal.picture.blank? && !meal.awards.first.try(:photo) %>
+  <% if meal.picture.blank? %>
     <%= link_to category_meal_path(meal.category_id, meal.id) do %>
       <%= image_tag "default-restaurant.png", class: "card-meal-no-image"%>
-    <% end %>
-  <% elsif meal.awards.first.try(:photo) %>
-    <%= link_to category_meal_path(meal.category_id, meal.id) do %>
-      <%= cl_image_tag meal.awards.first.photo %>
     <% end %>
   <% else %>
    <%= link_to category_meal_path(meal.category_id, meal.id) do %>
