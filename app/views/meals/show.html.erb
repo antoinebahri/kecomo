@@ -1,10 +1,10 @@
 <div class="container">
-  <% if @meal.picture == nil && @meal.awards.first.photo == nil %>
+  <% if @meal.picture == nil || @meal.picture == "" && @meal.awards.first.photo == nil %>
   <div class="restaurant-page-no-hero">
     <%= image_tag "default-restaurant.png", class: "restaurant-page-no-image" %>
     <p> Sorry we don't have pictures of the meal yet :(</p>
   </div>
-  <% elsif @meal.picture == nil %>
+  <% elsif @meal.picture == nil || @meal.picture == "" %>
     <!-- meal cloudinary image -->
     <%= cl_image_tag @meal.awards.first.photo, class: "meal-page-img" %>
   <% else %>
@@ -60,7 +60,7 @@
       <p><%= award.user.first_name%> <%= award.user.last_name%></p>
       <h6 style="font-style: italic;">"<%= award.review.first(80) %>..."</h6>
       <div class="meal-page-reviews-date">
-        <p><%= award.created_at %></p>
+        <p><%= award.created_at.strftime("%d-%m-%Y") %></p>
       </div>
       <%  if user_signed_in? && award.user_id == current_user.id %>
       <% end %>
