@@ -56,8 +56,7 @@ class MealsController < ApplicationController
     if @meal.save
       redirect_to restaurant_meal_path(@meal.restaurant, @meal)
     else
-    raise
-      render 'meals#new'
+      render :new
     end
   end
 
