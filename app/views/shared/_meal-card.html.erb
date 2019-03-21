@@ -20,7 +20,15 @@
       </div>
         <!-- meal cloudinary image -->
         <div class="card-meal-photo-info">
-        <img src="https://www.tasteofhome.com/wp-content/uploads/2017/10/exps28800_UG143377D12_18_1b_RMS-696x696.jpg">
+            <% if meal.picture == nil %>
+            <%= link_to category_meal_path(meal.category_id, meal.id) do %>
+    <%= image_tag "default-restaurant.png", class: "card-meal-no-image"%>
+    <% end %>
+  <% else %>
+   <%= link_to category_meal_path(meal.category_id, meal.id) do %>
+   <%= image_tag meal.picture %>
+    <% end %>
+  <% end %>
         <div class="card-meal-infos">
             <!-- meal.name -->
           <h2><%= link_to meal.name, category_meal_path(meal.category_id, meal.id) %></h2>
