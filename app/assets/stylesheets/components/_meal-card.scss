@@ -138,8 +138,8 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 60px;
-  width: 60px;
+  height: 70px;
+  width: 70px;
   padding: 2px;
   border-radius: 3px;
   // box-shadow: 0px 0px 15px 0px rgba(8,203,187,1);
@@ -147,7 +147,7 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   background: white;
   p {
-    font-size: 0.6em !important;
+    font-size: 0.7em !important;
     margin: 0 !important;
     font-weight: bolder;
   }
