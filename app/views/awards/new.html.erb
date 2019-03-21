@@ -8,7 +8,8 @@
         <h2>You are about to vote for <%= @meal.name %> at <%= @meal.restaurant.name %> as the best <%= @meal.category.name %> </h2>
 
         <%= simple_form_for [@meal,@award] do |f| %>
-
+          <%= f.input :photo, :label => "- Upload a photo (optional)" %>
+          <%= f.input :photo_cache, as: :hidden %>
           <%= f.input :review, :label => "Give a review (optional)", as: :text, class: "review" %>
 
           <div class="button-award">
@@ -47,9 +48,11 @@
           <div class="user-thing">
             <%# @meal = meal %>
             <%= simple_form_for [@meal,@award] do |f| %>
+            <%= f.input :photo, :label => "- Upload a photo (optional)" %>
+                  <%= f.input :photo_cache, as: :hidden %>
             <%= f.input :review, :label => "- Tell us how much you like it! (optional)", as: :text, class: "review" %>
-          </div>
             <%= f.submit "Confirm", class: "btn btn-info" %>
+          </div>
           <% end %>
         </div>
       </div>

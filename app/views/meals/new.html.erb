@@ -9,11 +9,9 @@
             <%= f.association :restaurant, :label => "In which restaurant is that meal you want to vote for?" %>
           </div>
 
-          <%= f.association :category, :label => "What do you want to vote for:" %>
+          <%= f.association :category, :label => "What category?" %>
 
-          <%= f.input :name, :label => "What’s the name of that meal in the menu?" %>
-
-          <%= f.input :picture, :label => "Upload a pic of your awarded meal" %>
+          <%= f.input :name, :label => "What's the name of that meal in the menu? (Please be specific!)" %>
 
           <div class="button-award-create-page">
               <%= f.submit "Confirm", class: "main-button" %>

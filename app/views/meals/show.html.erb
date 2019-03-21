@@ -1,12 +1,14 @@
 <div class="container">
-  <% if @meal.picture == nil || @meal.picture == "" %>
+  <% if @meal.picture == nil || @meal.picture == "" && @meal.awards.first.photo == nil %>
   <div class="restaurant-page-no-hero">
     <%= image_tag "default-restaurant.png", class: "restaurant-page-no-image" %>
     <p> Sorry we don't have pictures of the meal yet :(</p>
   </div>
+  <% elsif @meal.picture == nil || @meal.picture == "" %>
+    <!-- meal cloudinary image -->
+    <%= cl_image_tag @meal.awards.first.photo, class: "meal-page-img" %>
   <% else %>
     <%= image_tag @meal.picture, class: "meal-page-img" %>
-    <!-- meal cloudinary image -->
   <% end %>
   <div class="meal-page-info">
     <!-- meal.name -->
@@ -108,7 +110,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Let's vote!</h5>
+        <h5 class="modal-title" id="exampleModalLabel"><strong>Best <%= @meal.category.name %> in <%= @meal.restaurant.city %></strong></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -127,11 +129,15 @@
               <h2>in</h2> <h3><%= @meal.restaurant.city %></h3>
             </h2>
           </div>
-          <%# @meal = meal %>
-          <%# @award = Award.new %>
-          <%= simple_form_for [@meal,@award] do |f| %>
-            <%= f.input :review, :label => "- Tell us how much you like it! (optional)", as: :text, class: "review" %>
-            <%= f.submit "Confirm", class: "btn btn-info" %>
+          <div class="user-thing">
+            <%# @meal = meal %>
+            <%# @award = Award.new %>
+            <%= simple_form_for [@meal,@award] do |f| %>
+              <%= f.input :photo, :label => "- Upload a photo (optional)" %>
+              <%= f.input :photo_cache, as: :hidden %>
+              <%= f.input :review, :label => "- Tell us how much you like it! (optional)", as: :text, class: "review" %>
+              <%= f.submit "Confirm", class: "btn btn-info" %>
+          </div>
           <% end %>
         </div>
       </div>
@@ -143,7 +149,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Let's vote!</h5>
+        <h5 class="modal-title" id="exampleModalLabel"><strong>Best <%= @meal.category.name %> in <%= @meal.restaurant.city %></strong></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -164,9 +170,11 @@
           <div class="user-thing">
             <%# @meal = meal %>
             <%= simple_form_for [@meal,@award] do |f| %>
-            <%= f.input :review, :label => "- Tell us how much you like it! (optional)", as: :text, class: "review" %>
+              <%= f.input :photo, :label => "- Upload a photo (optional)" %>
+              <%= f.input :photo_cache, as: :hidden %>
+              <%= f.input :review, :label => "- Tell us how much you like it! (optional)", as: :text, class: "review" %>
+              <%= f.submit "Confirm", class: "btn btn-info" %>
           </div>
-            <%= f.submit "Confirm", class: "btn btn-info" %>
           <% end %>
         </div>
       </div>
