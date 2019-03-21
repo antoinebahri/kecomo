@@ -11,16 +11,16 @@ require 'faker'
 require 'open-uri'
 require "httparty"
 
-puts "-----------------------------------"
-puts "Destroying all users"
-User.destroy_all
-puts "creating team-member users in format: d.penev@lewagon.com, pass: 123123"
-User.create(email: "a.bahri@lewagon.com", password: "123123", first_name: "Antoine", last_name: "Bahri", picture: "antoine-avatar.jpg")
-User.create(email: "f.ordeig@lewagon.com", password: "123123", first_name: "Francesc", last_name: "Ordeig", picture: "francesc-avatar.jpg")
-User.create(email: "ngilmichel@lewagon.com", password: "123123", first_name: "Nicolas", last_name: "Michel", picture: "nicolas-avatar.jpg")
-User.create(email: "d.penev@lewagon.com", password: "123123", first_name: "Doncho", last_name: "Penev", picture: "doncho-avatar.jpg")
-puts "Team users created"
-puts "-----------------------------------"
+# puts "-----------------------------------"
+# puts "Destroying all users"
+# User.destroy_all
+# puts "creating team-member users in format: d.penev@lewagon.com, pass: 123123"
+# User.create(email: "a.bahri@lewagon.com", password: "123123", first_name: "Antoine", last_name: "Bahri", picture: "antoine-avatar.jpg")
+# User.create(email: "f.ordeig@lewagon.com", password: "123123", first_name: "Francesc", last_name: "Ordeig", picture: "francesc-avatar.jpg")
+# User.create(email: "ngilmichel@lewagon.com", password: "123123", first_name: "Nicolas", last_name: "Michel", picture: "nicolas-avatar.jpg")
+# User.create(email: "d.penev@lewagon.com", password: "123123", first_name: "Doncho", last_name: "Penev", picture: "doncho-avatar.jpg")
+# puts "Team users created"
+# puts "-----------------------------------"
 # puts "-----------------------------------"
 # puts "creating 30 faker profiles"
 # 30.times do
@@ -233,308 +233,308 @@ puts "creating 95 real meals..."
 meal1 = Meal.new(name: "Pizza Stracciatella")
 meal1.restaurant = Restaurant.find(1)
 meal1.category = Category.find_by(name: "Pizza")
-meal1.picture = "stracciatella-parking-pizza.jpg"
+meal1.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal1.save!
 
 meal2 = Meal.new(name: "Pizza Sobrasada")
 meal2.restaurant = Restaurant.find(1)
 meal2.category = Category.find_by(name: "Pizza")
-meal2.picture = "sobrasada-parking-pizza.jpg"
+meal2.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal2.save!
 
 meal7 = Meal.new(name: "Pizza Rimini")
 meal7.restaurant = Restaurant.find(1)
 meal7.category = Category.find_by(name: "Pizza")
-meal7.picture = "pizza-rimini-pizza-circus.jpg"
+meal7.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal7.save!
 
 meal8 = Meal.new(name: "Pizza Octaviana")
 meal8.restaurant = Restaurant.find(1)
 meal8.category = Category.find_by(name: "Pizza")
-meal8.picture = "pizza-octaviana-pizza-circus.jpg"
+meal8.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal8.save!
 
 meal9 = Meal.new(name: "Pizza Calabrese")
 meal9.restaurant = Restaurant.find(1)
 meal9.category = Category.find_by(name: "Pizza")
-meal9.picture = "pizza-calabrese-pizza-circus.jpg"
+meal9.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal9.save!
 
 meal10 = Meal.new(name: "Pizza Garmona")
 meal10.restaurant = Restaurant.find(1)
 meal10.category = Category.find_by(name: "Pizza")
-meal10.picture = "garmona-parking-pizza.jpg"
+meal10.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal10.save!
 
 meal11 = Meal.new(name: "Pizza Especial")
 meal11.restaurant = Restaurant.find(1)
 meal11.category = Category.find_by(name: "Pizza")
-meal11.picture = "especial-parking-pizza.jpg"
+meal11.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal11.save!
 
 meal12 = Meal.new(name: "Pizza Senna")
 meal12.restaurant = Restaurant.find(1)
 meal12.category = Category.find_by(name: "Pizza")
-meal12.picture = "senna-parking-pizza.jpg"
+meal12.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal12.save!
 
 meal13 = Meal.new(name: "Pizza Nona")
 meal13.restaurant = Restaurant.find(1)
 meal13.category = Category.find_by(name: "Pizza")
-meal13.picture = "nona-can-pizza-prat.jpeg"
+meal13.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal13.save!
 
 meal14 = Meal.new(name: "Pizza Canta")
 meal14.restaurant = Restaurant.find(1)
 meal14.category = Category.find_by(name: "Pizza")
-meal14.picture = "canta-can-pizza-prat.jpeg"
+meal14.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal14.save!
 
 meal15 = Meal.new(name: "Pizza Edensa")
 meal15.restaurant = Restaurant.find(1)
 meal15.category = Category.find_by(name: "Pizza")
-meal15.picture = "edensa-can-pizza-prat.jpg"
+meal15.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal15.save!
 
 meal16 = Meal.new(name: "Pizza Valencia")
 meal16.restaurant = Restaurant.find(2)
 meal16.category = Category.find_by(name: "Pizza")
-meal16.picture = "pizza-2.jpg"
+meal16.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal16.save!
 
 meal17 = Meal.new(name: "Pizza Bretana")
 meal17.restaurant = Restaurant.find(2)
 meal17.category = Category.find_by(name: "Pizza")
-meal17.picture = "pizza-3.jpeg"
+meal17.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal17.save!
 
 meal18 = Meal.new(name: "Pizza Brava")
 meal18.restaurant = Restaurant.find(2)
 meal18.category = Category.find_by(name: "Pizza")
-meal18.picture = "pizza-4.jpg"
+meal18.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal18.save!
 
 meal19 = Meal.new(name: "Pizza Celebra")
 meal19.restaurant = Restaurant.find(2)
 meal19.category = Category.find_by(name: "Pizza")
-meal19.picture = "pizza-5.jpg"
+meal19.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal19.save!
 
 meal20 = Meal.new(name: "Pizza Rugani")
 meal20.restaurant = Restaurant.find(2)
 meal20.category = Category.find_by(name: "Pizza")
-meal20.picture = "pizza-6.jpg"
+meal20.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal20.save!
 
 meal21 = Meal.new(name: "Pizza Lombarda")
 meal21.restaurant = Restaurant.find(2)
 meal21.category = Category.find_by(name: "Pizza")
-meal21.picture = "pizza-7.jpeg"
+meal21.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal21.save!
 
 meal22 = Meal.new(name: "Pizza Brescia")
 meal22.restaurant = Restaurant.find(2)
 meal22.category = Category.find_by(name: "Pizza")
-meal22.picture = "pizza-8.jpg"
+meal22.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal22.save!
 
 meal23 = Meal.new(name: "Pizza Gastronomica")
 meal23.restaurant = Restaurant.find(2)
 meal23.category = Category.find_by(name: "Pizza")
-meal23.picture = "pizza-9.jpg"
+meal23.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal23.save!
 
 meal24 = Meal.new(name: "Pizza Classica")
 meal24.restaurant = Restaurant.find(3)
 meal24.category = Category.find_by(name: "Pizza")
-meal24.picture = "pizza-11.jpg"
+meal24.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal24.save!
 
 meal25 = Meal.new(name: "Pizza Prono")
 meal25.restaurant = Restaurant.find(3)
 meal25.category = Category.find_by(name: "Pizza")
-meal25.picture = "pizza-12.jpg"
+meal25.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal25.save!
 
 meal26 = Meal.new(name: "Pizza Pannata")
 meal26.restaurant = Restaurant.find(2)
 meal26.category = Category.find_by(name: "Pizza")
-meal26.picture = "pizza-10.jpg"
+meal26.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal26.save!
 
 meal27 = Meal.new(name: "Pizza Adele")
 meal27.restaurant = Restaurant.find(2)
 meal27.category = Category.find_by(name: "Pizza")
-meal27.picture = "pizza-1.jpg"
+meal27.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal27.save!
 
 meal28 = Meal.new(name: "Pizza Selena")
 meal28.restaurant = Restaurant.find(3)
 meal28.category = Category.find_by(name: "Pizza")
-meal28.picture = "pizza-13.jpg"
+meal28.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal28.save!
 
 meal29 = Meal.new(name: "Pizza Maria")
 meal29.restaurant = Restaurant.find(3)
 meal29.category = Category.find_by(name: "Pizza")
-meal29.picture = "pizza-14.jpg"
+meal29.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal29.save!
 
 meal30 = Meal.new(name: "Pizza Valeria")
 meal30.restaurant = Restaurant.find(3)
 meal30.category = Category.find_by(name: "Pizza")
-meal30.picture = "pizza-15.jpg"
+meal30.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal30.save!
 
 meal31 = Meal.new(name: "Pizza Nerola")
 meal31.restaurant = Restaurant.find(3)
 meal31.category = Category.find_by(name: "Pizza")
-meal31.picture = "pizza-16.jpg"
+meal31.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal31.save!
 
 meal32 = Meal.new(name: "Pizza Monza")
 meal32.restaurant = Restaurant.find(3)
 meal32.category = Category.find_by(name: "Pizza")
-meal32.picture = "pizza-41.jpg"
+meal32.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal32.save!
 
 meal33 = Meal.new(name: "Pizza Ademola")
 meal33.restaurant = Restaurant.find(3)
 meal33.category = Category.find_by(name: "Pizza")
-meal33.picture = "pizza-18.jpg"
+meal33.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal33.save!
 
 meal34 = Meal.new(name: "Pizza Helena")
 meal34.restaurant = Restaurant.find(3)
 meal34.category = Category.find_by(name: "Pizza")
-meal34.picture = "pizza-19.jpg"
+meal34.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal34.save!
 
 meal35 = Meal.new(name: "Pizza Palio")
 meal35.restaurant = Restaurant.find(3)
 meal35.category = Category.find_by(name: "Pizza")
-meal35.picture = "pizza-20.jpg"
+meal35.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal35.save!
 
 meal36 = Meal.new(name: "Pizza Quatro")
 meal36.restaurant = Restaurant.find(3)
 meal36.category = Category.find_by(name: "Pizza")
-meal36.picture = "pizza-21.jpg"
+meal36.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal36.save!
 
 meal37 = Meal.new(name: "Pizza Linea")
 meal37.restaurant = Restaurant.find(4)
 meal37.category = Category.find_by(name: "Pizza")
-meal37.picture = "pizza-22.jpg"
+meal37.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal37.save!
 
 meal38 = Meal.new(name: "Pizza Adina")
 meal38.restaurant = Restaurant.find(4)
 meal38.category = Category.find_by(name: "Pizza")
-meal38.picture = "pizza-23.jpeg"
+meal38.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal38.save!
 
 meal39 = Meal.new(name: "Pizza Bonnita")
 meal39.restaurant = Restaurant.find(4)
 meal39.category = Category.find_by(name: "Pizza")
-meal39.picture = "pizza-24.jpg"
+meal39.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal39.save!
 
 meal40 = Meal.new(name: "Pizza Carlotta")
 meal40.restaurant = Restaurant.find(4)
 meal40.category = Category.find_by(name: "Pizza")
-meal40.picture = "pizza-25.jpg"
+meal40.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal40.save!
 
 meal41 = Meal.new(name: "Pizza Gracia")
 meal41.restaurant = Restaurant.find(4)
 meal41.category = Category.find_by(name: "Pizza")
-meal41.picture = "pizza-26.png"
+meal41.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal41.save!
 
 meal42 = Meal.new(name: "Pizza Xample")
 meal42.restaurant = Restaurant.find(4)
 meal42.category = Category.find_by(name: "Pizza")
-meal42.picture = "pizza-27.jpg"
+meal42.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal42.save!
 
 meal43 = Meal.new(name: "Pizza Catala")
 meal43.restaurant = Restaurant.find(4)
 meal43.category = Category.find_by(name: "Pizza")
-meal43.picture = "pizza-28.jpg"
+meal43.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal43.save!
 
 meal44 = Meal.new(name: "Pizza Nuestra")
 meal44.restaurant = Restaurant.find(4)
 meal44.category = Category.find_by(name: "Pizza")
-meal44.picture = "pizza-29.jpg"
+meal44.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal44.save!
 
 
 meal45 = Meal.new(name: "Pizza Trada")
 meal45.restaurant = Restaurant.find(4)
 meal45.category = Category.find_by(name: "Pizza")
-meal45.picture = "pizza-30.png"
+meal45.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal45.save!
 
 meal46 = Meal.new(name: "Pizza Natural")
 meal46.restaurant = Restaurant.find(5)
 meal46.category = Category.find_by(name: "Pizza")
-meal46.picture = "pizza-31.jpeg"
+meal46.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal46.save!
 
 meal47 = Meal.new(name: "Pizza Catto")
 meal47.restaurant = Restaurant.find(5)
 meal47.category = Category.find_by(name: "Pizza")
-meal47.picture = "pizza-32.jpg"
+meal47.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal47.save!
 
 meal48 = Meal.new(name: "Pizza Verta")
 meal48.restaurant = Restaurant.find(5)
 meal48.category = Category.find_by(name: "Pizza")
-meal48.picture = "pizza-33.jpg"
+meal48.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal48.save!
 
 meal49 = Meal.new(name: "Pizza Leandra")
 meal49.restaurant = Restaurant.find(5)
 meal49.category = Category.find_by(name: "Pizza")
-meal49.picture = "pizza-34.jpg"
+meal49.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal49.save!
 
 meal50 = Meal.new(name: "Pizza Beccio")
 meal50.restaurant = Restaurant.find(5)
 meal50.category = Category.find_by(name: "Pizza")
-meal50.picture = "pizza-35.jpg"
+meal50.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal50.save!
 
 meal51 = Meal.new(name: "Pizza Carmella")
 meal51.restaurant = Restaurant.find(5)
 meal51.category = Category.find_by(name: "Pizza")
-meal51.picture = "pizza-36.jpg"
+meal51.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal51.save!
 
 meal52 = Meal.new(name: "Pizza Campa")
 meal52.restaurant = Restaurant.find(5)
 meal52.category = Category.find_by(name: "Pizza")
-meal52.picture = "pizza-37.jpg"
+meal52.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal52.save!
 
 meal53 = Meal.new(name: "Pizza Sestra")
 meal53.restaurant = Restaurant.find(5)
 meal53.category = Category.find_by(name: "Pizza")
-meal53.picture = "pizza-38.jpg"
+meal53.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal53.save!
 
 meal54 = Meal.new(name: "Pizza Manuela")
 meal54.restaurant = Restaurant.find(5)
 meal54.category = Category.find_by(name: "Pizza")
-meal54.picture = "pizza-39.jpg"
+meal54.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal54.save!
 
 meal55 = Meal.new(name: "Pizza Arretta")
 meal55.restaurant = Restaurant.find(5)
 meal55.category = Category.find_by(name: "Pizza")
-meal55.picture = "pizza-40.jpg"
+meal55.picture = "https://lh3.googleusercontent.com/-aity5C64lH4/VqnJ3V7cn2I/AAAAAAAFQzI/IogzMqjzilA/s800-Ic42/cheese-crust-pizza-13.jpg"
 meal55.save!
 
 meal56 = Meal.new(name: "Brava Burger")
