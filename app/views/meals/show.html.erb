@@ -1,5 +1,5 @@
 <div class="container">
-  <% if @meal.picture == nil || @meal.picture == "" && @meal.awards.first.photo == nil %>
+  <% if (@meal.picture == nil || @meal.picture == "") && @meal.awards.first.photo == nil %>
   <div class="restaurant-page-no-hero">
     <%= image_tag "default-restaurant.png", class: "restaurant-page-no-image" %>
     <p> Sorry we don't have pictures of the meal yet :(</p>
