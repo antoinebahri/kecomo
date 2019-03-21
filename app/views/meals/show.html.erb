@@ -52,7 +52,13 @@
   </div>
   <% @full_score.reverse.each do |award| %>
   <div class="meal-page-reviews">
-    <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
+    <% if award.user.picture == nil %>
+    <img src='https://kitt.lewagon.com/placeholder/users/ssaunier' class="avatar-large"/>
+    <% else %>
+    <%= image_tag award.user.picture, class:"avatar-large" %>
+    <% end %>
+    <!-- <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
+     -->
     <div class="meal-page-reviews-content">
       <p><%= award.user.first_name%> <%= award.user.last_name%></p>
       <h6 style="font-style: italic;">"<%= award.review.first(80) %>..."</h6>
