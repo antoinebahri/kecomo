@@ -1,5 +1,7 @@
+
+<div class="container">
 <div class="signin-form-wrapper">
-  <h2>Log in</h2>
+  <h2>Login to Kecomo</h2>
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-inputs">
       <%= f.input :email,
@@ -13,9 +15,10 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Log in" %>
+      <%= f.button :submit, "Log in", class: "log-in" %>
     </div>
   <% end %>
 </div>
 
 <%= render "devise/shared/links" %>
+</div>
