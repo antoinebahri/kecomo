@@ -44,17 +44,36 @@
             </div>
             <div class="profile-change-delete">
               <%  if user_signed_in? && award.user_id == current_user.id %>
-              <a href="#" id="color-edit-change">Change<i class="fas fa-pencil-alt" id="color-edit-change"></i></a>
-              <a href="#" id="color-edit-delete">Delete <i class="far fa-trash-alt" id="color-edit-delete"></i></a>
-            </div>
+                <%= link_to edit_award_path(award), class: "color-edit-change",:id=> "color-edit-delete", data: { confirm: 'Found a new MORE WORTHY dish to award? ;)'} do %>
+                  <i class="fas fa-pencil-alt" id="color-edit-change"></i>
+                <% end %>
+                <%= link_to award_path(award), class: "color-edit-delete",:id=> "color-edit-delete", method: :delete,
+                         data: { confirm: 'Found a new MORE WORTHY dish to award? ;)'} do %>
+                  <i class="far fa-trash-alt" id="color-edit-delete"></i>
+                <% end %>
+              </div>
             <% end %>
           </div>
         </div>
-
       <% end %>
+      <div class="row">
+        <% @free_categories.each do |category| %>
+          <div class="card-meal">
+            <img src="https://www.tasteofhome.com/wp-content/uploads/2017/10/exps28800_UG143377D12_18_1b_RMS-696x696.jpg">
+            <div class="award-first-part">
+              <h2>The award in the category </h2>
+              <h5><%= category.name %></h5>
+            </div>
+            <div class="award-second-part">
+              <div class="card-meal-vote-button card-meal-vote-button-new">
+                <%= link_to "goes to... ", category_meals_path(category) %></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
-    </div>
-
   </div>
+</div>
 
 

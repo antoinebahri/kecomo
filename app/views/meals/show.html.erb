@@ -32,10 +32,6 @@
         <p><%= award.created_at %></p>
       </div>
       <%  if user_signed_in? && award.user_id == current_user.id %>
-      <div class="meal-page-reviews-actions">
-        <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
-        <a href="#">Delete <i class="far fa-trash-alt"></i></a>
-      </div>
       <% end %>
     </div>
   </div>

@@ -10,6 +10,7 @@ class RestaurantsController < ApplicationController
   def show
     @restaurant = Restaurant.find(params[:id])
     @meals = @restaurant.meals.sort_by { |meal| meal.awards.count }
+    @meals.reverse
     if user_signed_in? && current_user.awards.nil? == false
       # all the awarded categories of the current_user if signed_in
       @current_user_awarded_categories = []
