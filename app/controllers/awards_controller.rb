@@ -43,7 +43,6 @@ class AwardsController < ApplicationController
   private
 
   def set_award_params
-    params.require(:award).permit(:review)
+    params.require(:award).permit(:review, :photo)
   end
-
 end

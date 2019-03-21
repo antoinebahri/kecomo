@@ -21,15 +21,20 @@
         <!-- meal cloudinary image -->
         <div class="card-meal-photo-info">
 
-            <% if meal.picture == nil %>
+            <% if meal.picture == nil && meal.awards.first.photo == nil %>
             <%= link_to category_meal_path(meal.category_id, meal.id) do %>
     <%= image_tag "default-restaurant.png", class: "card-meal-no-image"%>
+    <% end %>
+    <% elsif meal.picture == nil %>
+    <%= link_to category_meal_path(meal.category_id, meal.id) do %>
+      <%= cl_image_tag meal.awards.first.photo %>
     <% end %>
   <% else %>
    <%= link_to category_meal_path(meal.category_id, meal.id) do %>
    <%= image_tag meal.picture %>
     <% end %>
   <% end %>
+
         <div class="card-meal-infos">
             <!-- meal.name -->
           <h2><%= link_to meal.name, category_meal_path(meal.category_id, meal.id) %></h2>
@@ -133,11 +138,15 @@
                   <h2>in</h2> <h3><%= meal.restaurant.city %></h3>
                 </h2>
               </div>
-              <%# @meal = meal %>
-              <%# @award = Award.new %>
-              <%= simple_form_for [meal,@award] do |f| %>
-                <%= f.input :review, :label => "- Tell us how much you like it! (optional)", as: :text, class: "review" %>
-                <%= f.submit "Confirm", class: "btn btn-info" %>
+              <div class="user-thing">
+                <%# @meal = meal %>
+                <%# @award = Award.new %>
+                <%= simple_form_for [meal,@award] do |f| %>
+                  <%= f.input :photo, :label => "- Upload a photo (optional)" %>
+                  <%= f.input :photo_cache, as: :hidden %>
+                  <%= f.input :review, :label => "- Tell us how much you like it! (optional)", as: :text, class: "review" %>
+                  <%= f.submit "Confirm", class: "btn btn-info" %>
+              </div>
               <% end %>
             </div>
           </div>
@@ -170,9 +179,11 @@
               <div class="user-thing">
                 <%# @meal = meal %>
                 <%= simple_form_for [meal,@award] do |f| %>
+                <%= f.input :photo, :label => "- Upload a photo (optional)" %>
+                <%= f.input :photo_cache, as: :hidden %>
                 <%= f.input :review, :label => "- Tell us how much you like it! (optional)", as: :text, class: "review" %>
-              </div>
                 <%= f.submit "Confirm", class: "btn btn-info" %>
+              </div>
               <% end %>
             </div>
           </div>
