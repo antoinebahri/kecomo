@@ -21,10 +21,11 @@
     <%= render 'shared/flashes' %>
     <div id="page-container">
         <%= yield %>
-      <div id="page-footer">
+
+    </div>
+    <div id="page-footer">
         <%= render 'shared/footer' %>
       </div>
-    </div>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>

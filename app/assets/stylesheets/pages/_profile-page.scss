@@ -44,6 +44,7 @@
   align-items: center;
   justify-content: space-between;
   font-size: 15px;
+  margin-left: 60px;
 }
 
 .award-first-part {
@@ -53,4 +54,20 @@
 .card-meal-category-button-new {
   // padding: 10px !important;
   align-items: center;
+}
+
+.profile-header-2 {
+  margin-top: 20px;
+  border-top-style: solid;
+}
+
+.profile-header-2 h1 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  font-size: 18px;
+  padding-top: 10px;
+
+  color: #000000;
 }
