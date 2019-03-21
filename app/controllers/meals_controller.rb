@@ -26,6 +26,8 @@ class MealsController < ApplicationController
     end
     @meal = Meal.find(params[:id])
     @full_score = @meal.awards
+    @current_user_awards = current_user.try(:awards)
+    @current_user_awarded_categories = current_user.try(:awarded_categories)
   end
 
   def new
