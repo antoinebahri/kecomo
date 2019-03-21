@@ -251,13 +251,13 @@ meal7.save!
 meal8 = Meal.new(name: "Pizza Octaviana")
 meal8.restaurant = Restaurant.find(1)
 meal8.category = Category.find_by(name: "Pizza")
-meal8.picture = "pizza-octaviana-pizza-circus.jpeg"
+meal8.picture = "pizza-octaviana-pizza-circus.jpg"
 meal8.save!
 
 meal9 = Meal.new(name: "Pizza Calabrese")
 meal9.restaurant = Restaurant.find(1)
 meal9.category = Category.find_by(name: "Pizza")
-meal9.picture = "pizza-calabrese-pizza-circus.jpeg"
+meal9.picture = "pizza-calabrese-pizza-circus.jpg"
 meal9.save!
 
 meal10 = Meal.new(name: "Pizza Garmona")
@@ -281,13 +281,13 @@ meal12.save!
 meal13 = Meal.new(name: "Pizza Nona")
 meal13.restaurant = Restaurant.find(1)
 meal13.category = Category.find_by(name: "Pizza")
-meal13.picture = "nona-can-pizza-prat.jpg"
+meal13.picture = "nona-can-pizza-prat.jpeg"
 meal13.save!
 
 meal14 = Meal.new(name: "Pizza Canta")
 meal14.restaurant = Restaurant.find(1)
 meal14.category = Category.find_by(name: "Pizza")
-meal14.picture = "canta-can-pizza-prat.jpg"
+meal14.picture = "canta-can-pizza-prat.jpeg"
 meal14.save!
 
 meal15 = Meal.new(name: "Pizza Edensa")
