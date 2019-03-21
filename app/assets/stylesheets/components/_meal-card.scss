@@ -12,10 +12,18 @@
   padding-bottom: 20px;
 }
 
+.card-meal-no-image {
+  height: 100px;
+  width: 100px;
+  padding: 15px;
+}
+
 .card-meal img {
-  height: 100%;
+  height: 100px;
   width: 100px;
   object-fit: cover;
+  object-position: center;
+
 }
 
 .card-meal h2 {
@@ -50,6 +58,10 @@
   padding: 10px;
 }
 
+.card-meal-photo-info {
+  display:flex;
+}
+
 .card-meal-voting {
   padding: 10px;
   display: flex;
@@ -64,8 +76,8 @@
 
 .card-meal-rank {
   position: absolute;
-  left: -6px;
-  top: -6px;
+  left: -8px;
+  top: -16px;
   color: white;
   padding: 8px 8px;
   border-radius: 6px;
@@ -81,8 +93,8 @@
 
 .card-meal-rank-1 {
   position: absolute;
-  left: -6px;
-  top: -6px;
+  left: -8px;
+  top: -16px;
   color: white;
   padding: 8px 8px;
   border-radius: 6px;
@@ -98,8 +110,8 @@
 
 .card-meal-rank-2 {
   position: absolute;
-  left: -6px;
-  top: -6px;
+  left: -8px;
+  top: -16px;
   color: white;
   padding: 8px 8px;
   border-radius: 6px;
@@ -115,8 +127,8 @@
 
 .card-meal-rank-3 {
   position: absolute;
-  left: -6px;
-  top: -6px;
+  left: -8px;
+  top: -16px;
   color: white;
   padding: 8px 8px;
   border-radius: 6px;
@@ -134,8 +146,8 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 60px;
-  width: 60px;
+  height: 70px;
+  width: 70px;
   padding: 2px;
   border-radius: 3px;
   // box-shadow: 0px 0px 15px 0px rgba(8,203,187,1);
@@ -143,7 +155,7 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   background: white;
   p {
-    font-size: 0.6em !important;
+    font-size: 0.7em !important;
     margin: 0 !important;
     font-weight: bolder;
   }

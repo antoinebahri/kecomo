@@ -1,5 +1,10 @@
 <div class="container">
-  <% unless @meal.picture.nil? %>
+  <% if @meal.picture == nil %>
+  <div class="restaurant-page-no-hero">
+    <%= image_tag "default-restaurant.png", class: "restaurant-page-no-image" %>
+    <p> Sorry we don't have pictures of the meal yet :(</p>
+  </div>
+  <% else %>
     <%= image_tag @meal.picture, class: "meal-page-img" %>
     <!-- meal cloudinary image -->
   <% end %>

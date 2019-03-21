@@ -132,3 +132,34 @@
 .meal-page-reviews .meal-page-reviews-actions a:hover {
   color: #555555;
 }
+
+
+// MEALS - EDIT PAGE SCSS STARTS BELOW
+
+
+.choose-details-blank-create-form h1 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  font-size: 20px;
+  text-align: center;
+  color: black;
+  padding-top: 20px;
+  border-bottom-style: solid;
+  border-bottom-color: black;
+  padding-bottom: 20px;
+}
+
+.button-award-create-page {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+  text-align: center;
+  font-style: bolder;
+}
+
+.first-question {
+  margin-top: 20px;
+}

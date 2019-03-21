@@ -2,7 +2,7 @@
   <% if @restaurant.picture == nil %>
   <div class="restaurant-page-no-hero">
     <%= image_tag "default-restaurant.png", class: "restaurant-page-no-image" %>
-    <p> Sorry we don't have any picture of the place yet :(</p>
+    <p> Sorry we don't have pictures of the place yet :(</p>
   </div>
   <% else %>
   <div class="restaurant-page-hero" style="linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), background-image: url(<%= image_path @restaurant.picture %>)">
@@ -32,6 +32,6 @@
   </div>
   <%= render 'shared/meal-card' %>
   <div class="header-link-form">
-    <h3> <%= link_to "Don't see your meal?", new_award_path %> </h3>
+    <h3> <%= link_to "Don't see your meal?", new_meal_path %> </h3>
   </div>
 </div>
