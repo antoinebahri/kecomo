@@ -155,7 +155,7 @@ resto_la_central = Restaurant.create!(
   longitude: 2.174943,
   latitude: 41.386691,
 )
-resto_la_central.picture = "la-central.jpeg"
+resto_la_central.picture = "la_central.jpg"
 resto_la_central.save!
 
 resto_la_caleta = Restaurant.create!(
@@ -395,7 +395,7 @@ meal31.save!
 meal32 = Meal.new(name: "Pizza Monza")
 meal32.restaurant = Restaurant.find(3)
 meal32.category = Category.find_by(name: "Pizza")
-meal32.picture = "pizza-17.jpg"
+meal32.picture = "pizza-41.jpg"
 meal32.save!
 
 meal33 = Meal.new(name: "Pizza Ademola")
