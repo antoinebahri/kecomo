@@ -1,10 +1,10 @@
 <div class="container">
-  <% if (@meal.picture == nil || @meal.picture == "") && @meal.awards.first.photo == nil %>
+  <% if @meal.picture.blank? && !@meal.awards.first.try(:photo) %>
   <div class="restaurant-page-no-hero">
     <%= image_tag "default-restaurant.png", class: "restaurant-page-no-image" %>
     <p> Sorry we don't have pictures of the meal yet :(</p>
   </div>
-  <% elsif @meal.picture == nil || @meal.picture == "" %>
+  <% elsif @meal.awards.first.try(:photo) %>
     <!-- meal cloudinary image -->
     <%= cl_image_tag @meal.awards.first.photo, class: "meal-page-img" %>
   <% else %>

@@ -21,18 +21,18 @@
         <!-- meal cloudinary image -->
         <div class="card-meal-photo-info">
 
-            <% if (meal.picture == nil || meal.picture == "") && meal.awards.first.photo == nil %>
-            <%= link_to category_meal_path(meal.category_id, meal.id) do %>
-    <%= image_tag "default-restaurant.png", class: "card-meal-no-image"%>
+  <% if meal.picture.blank? && !meal.awards.first.try(:photo) %>
+    <%= link_to category_meal_path(meal.category_id, meal.id) do %>
+      <%= image_tag "default-restaurant.png", class: "card-meal-no-image"%>
     <% end %>
-    <% elsif meal.picture == nil || meal.picture == "" %>
+  <% elsif meal.awards.first.try(:photo) %>
     <%= link_to category_meal_path(meal.category_id, meal.id) do %>
       <%= cl_image_tag meal.awards.first.photo %>
     <% end %>
   <% else %>
    <%= link_to category_meal_path(meal.category_id, meal.id) do %>
-   <%= image_tag meal.picture %>
-    <% end %>
+    <%= image_tag meal.picture %>
+  <% end %>
   <% end %>
 
         <div class="card-meal-infos">
