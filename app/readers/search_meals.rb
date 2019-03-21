@@ -34,13 +34,13 @@ class SearchMeals
     sorted_meals = meals.sort_by do |meal|
       meal.awards.count
     end
-    sorted_meals.reverse
+    sorted_meals.reverse!
   end
 
   def by_restaurant
     meals = Meal.all.where(restaurant_id: @params[:restaurant_id])
     sorted_meals = meals.sort_by { |meal| meal.awards.count }
     sorted_meals.first(10)
-    sorted_meals.reverse
+    sorted_meals.reverse!
   end
 end
