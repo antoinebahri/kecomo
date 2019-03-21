@@ -245,7 +245,7 @@ meal2.save!
 meal7 = Meal.new(name: "Pizza Rimini")
 meal7.restaurant = Restaurant.find(1)
 meal7.category = Category.find_by(name: "Pizza")
-meal7.picture = "pizza-rimini-pizza-circus.jpeg"
+meal7.picture = "pizza-rimini-pizza-circus.jpg"
 meal7.save!
 
 meal8 = Meal.new(name: "Pizza Octaviana")
