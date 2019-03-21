@@ -58,7 +58,7 @@
       <p><%= award.user.first_name%> <%= award.user.last_name%></p>
       <h6 style="font-style: italic;">"<%= award.review.first(80) %>..."</h6>
       <div class="meal-page-reviews-date">
-        <p><%= award.created_at %></p>
+        <p><%= award.created_at.strftime("%d-%m-%Y") %></p>
       </div>
       <%  if user_signed_in? && award.user_id == current_user.id %>
       <% end %>
