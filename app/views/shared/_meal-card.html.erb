@@ -20,6 +20,7 @@
       </div>
         <!-- meal cloudinary image -->
         <div class="card-meal-photo-info">
+
             <% if meal.picture == nil %>
             <%= link_to category_meal_path(meal.category_id, meal.id) do %>
     <%= image_tag "default-restaurant.png", class: "card-meal-no-image"%>
