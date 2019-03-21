@@ -15,10 +15,10 @@ puts "-----------------------------------"
 puts "Destroying all users"
 User.destroy_all
 puts "creating team-member users in format: d.penev@lewagon.com, pass: 123123"
-User.create(email: "a.bahri@lewagon.com", password: "123123", first_name: "Antoine", last_name: "Bahri")
-User.create(email: "f.ordeig@lewagon.com", password: "123123", first_name: "Francesc", last_name: "Ordeig")
-User.create(email: "ngilmichel@lewagon.com", password: "123123", first_name: "Nico", last_name: "Michel")
-User.create(email: "d.penev@lewagon.com", password: "123123", first_name: "Doncho", last_name: "Penev")
+User.create(email: "a.bahri@lewagon.com", password: "123123", first_name: "Antoine", last_name: "Bahri", picture: "antoine-avatar.jpg")
+User.create(email: "f.ordeig@lewagon.com", password: "123123", first_name: "Francesc", last_name: "Ordeig", picture: "francesc-avatar.jpg")
+User.create(email: "ngilmichel@lewagon.com", password: "123123", first_name: "Nicolas", last_name: "Michel", picture: "nicolas-avatar.jpg")
+User.create(email: "d.penev@lewagon.com", password: "123123", first_name: "Doncho", last_name: "Penev", picture: "doncho-avatar.jpg")
 puts "Team users created"
 puts "-----------------------------------"
 # puts "-----------------------------------"
