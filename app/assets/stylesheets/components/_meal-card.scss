@@ -12,10 +12,18 @@
   padding-bottom: 20px;
 }
 
+.card-meal-no-image {
+  height: 100px;
+  width: 100px;
+  padding: 15px;
+}
+
 .card-meal img {
-  height: 100%;
+  height: 100px;
   width: 100px;
   object-fit: cover;
+  object-position: center;
+
 }
 
 .card-meal h2 {
