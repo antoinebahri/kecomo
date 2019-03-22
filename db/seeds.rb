@@ -260,6 +260,10 @@ meal9.category = Category.find_by(name: "Pizza")
 meal9.picture = "pizza-calabrese-pizza-circus.jpeg"
 meal9.save!
 
+
+
+Meal.all.each {|meal| begin; helper.image_path(meal.picture);rescue; meal.awards.destroy_all && meal.destroy; end}Meal.all.each {|meal| begin; helper.image_path(meal.picture);rescue; meal.awards.destroy_all && meal.destroy; end}
+
 meal10 = Meal.new(name: "Pizza Garmona")
 meal10.restaurant = Restaurant.find(1)
 meal10.category = Category.find_by(name: "Pizza")
@@ -1033,3 +1037,10 @@ puts "-----------------------------------"
 #   Award.create(review: 'Boo Yah', meal_id: meal_index_array[1], category_id: cat_index_array[0], user_id: user_index_array[1]);
 #   Award.create(review: 'Bullshit', meal_id: meal_index_array[2], category_id: cat_index_array[0], user_id: user_index_array[2]);
 # puts 'Done'
+Meal.all.each do |meal|
+  begin
+   helper.image_path(meal.picture)
+ rescue
+   meal.awards.destroy_all && meal.destroy
+  end
+end
