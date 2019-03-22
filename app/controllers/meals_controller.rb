@@ -17,6 +17,7 @@ class MealsController < ApplicationController
     end
     @current_user_awards = current_user.try(:awards)
     @current_user_awarded_categories = current_user.try(:awarded_categories)
+
   end
 
   def show
