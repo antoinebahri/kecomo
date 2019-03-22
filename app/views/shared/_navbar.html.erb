@@ -3,6 +3,9 @@
   <a href="javascript:history.back()" class="navbar-wagon-brand">
     <i class="fas fa-angle-left"></i>
   </a>
+  <div class="nav-left-icons">
+    <%= link_to "", root_path, class: "fas fa-home size" %>
+  </div>
   <% if user_signed_in? %>
   <!-- Right Navigation -->
     <div class="navbar-wagon-right">
