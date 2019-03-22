@@ -29,14 +29,15 @@ h3 {
 
 .triangle-top-left {
   border-right: 300px solid transparent;
-  border-top: 445px solid #00ccbc;
-  border-left: 0px solid #00ccbc;
+  border-top: 445px solid #13af9b;
+  border-left: 0px solid #13af9b;
   border-bottom: 0px solid transparent;
   position: absolute;
  }
 
 .rectangle .kecomo-logo img {
-  height: 40px;
+  height: 60px;
+  width: auto;
   position: absolute;
   color: white;
   z-index: 2;
@@ -53,7 +54,7 @@ h3 {
   padding-left: 20px;
 }
 
-.banner .rectangle #search-bar {
+#search-bar {
   position: absolute;
   bottom: 55px;
   padding-left: 20px;
@@ -61,8 +62,12 @@ h3 {
 
 .rectangle .avatar-large {
   position: absolute;
-  top: 10px;
-  right: 15px;
+  top: 15px;
+  right: 20px;
+}
+
+.banner .rectangle .new-search #search-bar .form {
+  display: flex !important;
 }
 
 .navbar-wagon-right-offline {
