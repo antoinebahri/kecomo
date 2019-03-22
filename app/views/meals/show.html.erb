@@ -1,3 +1,6 @@
+<% content_for :meta_title, "#{@meal.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @meal.description %>
+<% content_for :meta_image, image_tag(@meal.picture) %>
 <div class="container">
   <% if @meal.picture.blank? %>
   <div class="restaurant-page-no-hero">
