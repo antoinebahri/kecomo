@@ -1,4 +1,4 @@
 meta_product_name: "kecomo"
 meta_title: "kecomo - Find the best voted meals on the menu"
 meta_description: "kecomo is the first user generated ranking for the best dishes in town. We help foodies find the best taco, the best avocado toast or the best burger based on the votes of other foodies."
-meta_image: "kecomo-logo.png" # should exist in `app/assets/images/`
+meta_image: "kecomo-cover.png" # should exist in `app/assets/images/`
