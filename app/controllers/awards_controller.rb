@@ -30,7 +30,7 @@ class AwardsController < ApplicationController
     @award.user = current_user
     @award.meal = @meal
     @award.save
-    #redirect_to category_meal_path(@meal.category, @meal)
+    redirect_to category_meal_path(@meal.category, @meal), notice: "Well done! You voted for #{@meal.name} as the best #{@meal.category.name} in town."
   end
 
   def destroy
