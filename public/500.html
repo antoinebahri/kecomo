@@ -4,63 +4,63 @@
   <title>We're sorry, but something went wrong (500)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+  @import url("https://fonts.googleapis.com/css?family=Roboto");
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+* {
+  box-sizing: border-box;
+}
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+body {
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(35deg, #a1eeeb 30%, #4331ec 85%);
+  background: linear-gradient(35deg, #f8d60f 20%, #fc5c5c 85%);
+  background: linear-gradient(65deg, #fbdc14 20%, #04c4d4 20%, #04c4d4 65%, #fc5c5c 65%, #fc5c5c 85%);
+}
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+canvas {
+  height: 30vh;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+}
 
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+canvas {
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.content {
+  align-items: center;
+  color: #fafafa;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  justify-content: center;
+  z-index: 2;
+}
+
+.content h1 {
+  font-size: 4rem;
+  text-shadow: 10px 10px 5px rgba(0,0,0,0.5);
+}
+
+@media (min-width: 768px) {
+  .content h1 {
+    font-size: 5rem;
   }
+}
   </style>
 </head>
 
-<body class="rails-default-error-page">
+<body>
   <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <div>
+  <canvas>  </canvas>
+    <div class=content>
       <h1>We're sorry, but something went wrong.</h1>
-    </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
 </body>
 </html>
