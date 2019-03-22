@@ -1,14 +1,1 @@
-<!-- <#% if index?(action_name) %> -->
 
-<% restaurant.meals.each do |meal| %>
-<p style="font-weight: bolder;"><%= meal.name %></p>
-<p><%= meal.restaurant.name %>, <%= meal.restaurant.city %></p>
-<p>€<%= meal.awards.count %> awards</p>
-<% end %>
-
-<!--
-<#% else %>
-<p style="font-weight: bolder;"><%#= @flat.title %></p>
-<p><%#= @flat.address %>, <%#= @flat.city %></p>
-<p>€<%#= @flat.price_night %> per night</p>
-<#% end %> -->

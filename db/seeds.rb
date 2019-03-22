@@ -15,10 +15,10 @@ puts "-----------------------------------"
 puts "Destroying all users"
 User.destroy_all
 puts "creating team-member users in format: d.penev@lewagon.com, pass: 123123"
-User.create(email: "a.bahri@lewagon.com", password: "123123", first_name: "Antoine", last_name: "Bahri", picture: "antoine-avatar.jpg")
-User.create(email: "f.ordeig@lewagon.com", password: "123123", first_name: "Francesc", last_name: "Ordeig", picture: "francesc-avatar.jpg")
-User.create(email: "ngilmichel@lewagon.com", password: "123123", first_name: "Nicolas", last_name: "Michel", picture: "nicolas-avatar.jpg")
-User.create(email: "d.penev@lewagon.com", password: "123123", first_name: "Doncho", last_name: "Penev", picture: "doncho-avatar.jpg")
+User.create(email: "a.bahri@lewagon.com", password: "123123", first_name: "Antoine", last_name: "Bahri")
+User.create(email: "f.ordeig@lewagon.com", password: "123123", first_name: "Francesc", last_name: "Ordeig")
+User.create(email: "ngilmichel@lewagon.com", password: "123123", first_name: "Nico", last_name: "Michel")
+User.create(email: "d.penev@lewagon.com", password: "123123", first_name: "Doncho", last_name: "Penev")
 puts "Team users created"
 puts "-----------------------------------"
 # puts "-----------------------------------"
@@ -155,7 +155,7 @@ resto_la_central = Restaurant.create!(
   longitude: 2.174943,
   latitude: 41.386691,
 )
-resto_la_central.picture = "la_central.jpg"
+resto_la_central.picture = "la-central.jpeg"
 resto_la_central.save!
 
 resto_la_caleta = Restaurant.create!(
@@ -259,6 +259,10 @@ meal9.restaurant = Restaurant.find(1)
 meal9.category = Category.find_by(name: "Pizza")
 meal9.picture = "pizza-calabrese-pizza-circus.jpeg"
 meal9.save!
+
+
+
+Meal.all.each {|meal| begin; helper.image_path(meal.picture);rescue; meal.awards.destroy_all && meal.destroy; end}Meal.all.each {|meal| begin; helper.image_path(meal.picture);rescue; meal.awards.destroy_all && meal.destroy; end}
 
 meal10 = Meal.new(name: "Pizza Garmona")
 meal10.restaurant = Restaurant.find(1)
@@ -395,7 +399,7 @@ meal31.save!
 meal32 = Meal.new(name: "Pizza Monza")
 meal32.restaurant = Restaurant.find(3)
 meal32.category = Category.find_by(name: "Pizza")
-meal32.picture = "pizza-41.jpg"
+meal32.picture = "pizza-17.jpg"
 meal32.save!
 
 meal33 = Meal.new(name: "Pizza Ademola")
@@ -1033,3 +1037,10 @@ puts "-----------------------------------"
 #   Award.create(review: 'Boo Yah', meal_id: meal_index_array[1], category_id: cat_index_array[0], user_id: user_index_array[1]);
 #   Award.create(review: 'Bullshit', meal_id: meal_index_array[2], category_id: cat_index_array[0], user_id: user_index_array[2]);
 # puts 'Done'
+Meal.all.each do |meal|
+  begin
+   helper.image_path(meal.picture)
+ rescue
+   meal.awards.destroy_all && meal.destroy
+  end
+end
