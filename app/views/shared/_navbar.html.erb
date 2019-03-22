@@ -6,11 +6,11 @@
   <div class="nav-left-icons">
     <%= link_to "", root_path, class: "fas fa-home size" %>
   </div>
+
   <% if user_signed_in? %>
   <!-- Right Navigation -->
     <div class="navbar-wagon-right">
       <p><%= link_to "Don't see your meal?", new_meal_path %></p>
-
 
       <!-- Profile picture with dropdown list -->
       <div class="navbar-wagon-item">
@@ -29,6 +29,7 @@
     </div>
   <% else %>
     <div class="list-inline tabs-underlined">
+      <p><%= link_to "Don't see your meal?", new_meal_path, class: "tab-underlined" %></p>
       <p><%= link_to "Log in", new_user_session_path, class: "tab-underlined" %></p>
     </div>
   <% end %>
