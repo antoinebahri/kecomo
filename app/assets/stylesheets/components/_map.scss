@@ -5,9 +5,14 @@
 .mapboxgl-popup-content {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+  border: 2px solid #FB3569;
 }
 
-#map {
+.mapboxgl-popup-content p {
+  margin: 0px;
+}
+
+/* #map {
   position: relative;
 }
 
@@ -30,4 +35,4 @@
   text-decoration: none;
   color: white;
   opacity: 0.8;
-}
+} */
