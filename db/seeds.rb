@@ -260,9 +260,13 @@ meal9.category = Category.find_by(name: "Pizza")
 meal9.picture = "pizza-calabrese-pizza-circus.jpeg"
 meal9.save!
 
-
-
-Meal.all.each {|meal| begin; helper.image_path(meal.picture);rescue; meal.awards.destroy_all && meal.destroy; end}Meal.all.each {|meal| begin; helper.image_path(meal.picture);rescue; meal.awards.destroy_all && meal.destroy; end}
+Meal.all.each do |meal|
+  begin
+    helper.image_path(meal.picture)
+  rescue
+    meal.awards.destroy_all && meal.destroy
+  end
+end
 
 meal10 = Meal.new(name: "Pizza Garmona")
 meal10.restaurant = Restaurant.find(1)
