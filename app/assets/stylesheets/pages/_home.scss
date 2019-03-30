@@ -44,21 +44,44 @@ h3 {
 #13af9b
 #FB3569 */
 
-.banner-content {
-  width: 700px;
-  height: auto;
-  position: absolute;
-  bottom: 45px;
-  right: 100px;
+@media only screen and (min-width: 845px) {
+  .banner-content {
+    width: 700px;
+    height: auto;
+    position: absolute;
+    bottom: 45px;
+    right: 100px;
+    display: center;
+  }
+
+  .banner-content h2 {
+    font-size: 50px;
+    text-align: left;
+  }
+
+  #search-bar {
+    margin-top: 30px;
+  }
 }
 
-.banner-content h2 {
-  font-size: 50px;
-  text-align: left;
-}
+@media only screen and (max-width: 844px) {
+  .banner-content {
+    width: 80%;
+    height: auto;
+    margin-left: 30px;
+    margin-right: 30px;
+    position: absolute;
+    bottom: 135px;
+  }
 
-#search-bar {
-  margin-top: 30px;
+  .banner-content h2 {
+    font-size: 38px;
+    text-align: left;
+  }
+
+  #search-bar {
+    margin-top: 30px;
+  }
 }
 
 .banner .banner-content .new-search #search-bar .form {
