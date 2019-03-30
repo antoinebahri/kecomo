@@ -44,35 +44,21 @@ h3 {
 #13af9b
 #FB3569 */
 
-.banner-content .kecomo-logo img {
-  height: 60px;
-  width: auto;
+.banner-content {
+  width: 700px;
+  height: auto;
   position: absolute;
-  color: white;
-  z-index: 2;
-  top: 10px;
-  left: 20px;
+  bottom: 45px;
+  right: 100px;
 }
 
 .banner-content h2 {
-  position: absolute;
-  z-index: 2;
-  bottom: 130px;
-  right: 5px;
+  font-size: 50px;
   text-align: left;
-  padding-left: 20px;
 }
 
 #search-bar {
-  position: absolute;
-  bottom: 55px;
-  padding-left: 20px;
-}
-
-.banner-content .avatar-large {
-  position: absolute;
-  top: 15px;
-  right: 20px;
+  margin-top: 30px;
 }
 
 .banner .banner-content .new-search #search-bar .form {
