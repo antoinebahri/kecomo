@@ -17,7 +17,7 @@ User.destroy_all
 puts "creating team-member users in format: d.penev@lewagon.com, pass: 123123"
 User.create(email: "a.bahri@lewagon.com", password: "123123", first_name: "Antoine", last_name: "Bahri")
 User.create(email: "f.ordeig@lewagon.com", password: "123123", first_name: "Francesc", last_name: "Ordeig")
-User.create(email: "ngilmichel@lewagon.com", password: "123123", first_name: "Nico", last_name: "Michel")
+User.create(email: "ngilmichel@lewagon.com", password: "123123", first_name: "Nico", last_name: "Gil Michel")
 User.create(email: "d.penev@lewagon.com", password: "123123", first_name: "Doncho", last_name: "Penev")
 puts "Team users created"
 puts "-----------------------------------"
