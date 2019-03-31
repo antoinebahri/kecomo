@@ -1,4 +1,4 @@
-<div class="navbar-wagon-transparent sticky">
+<div class="navbar-wagon-transparent">
   <!-- Logo -->
   <%= link_to image_tag("kecomo-logo.png"), root_path, class: "kecomo-logo" %>
 
@@ -16,7 +16,7 @@
           <% end %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li><%= link_to "Profile", profile_path(current_user), class: "dropdown-item" %></li>
-            <li><%= link_to "Don't see your meal?", new_meal_path %></li>
+            <li><%= link_to "Don't see your meal?", new_meal_path, class: "dropdown-item" %></li>
             <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
           </ul>
         </div>

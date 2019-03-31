@@ -33,11 +33,22 @@ h2 {
   color: #440063;
 }
 
-h3 {
-  font-size: 20px;
-  font-weight: bolder;
-  color: #440063;
-  margin: 20px 20px 10px 20px;
+@media only screen and (min-width: 845px) {
+  h3 {
+    font-size: 25px;
+    font-weight: bolder;
+    color: #440063;
+    margin: 20px 20px 10px 20px;
+  }
+}
+
+@media only screen and (max-width: 844px) {
+  h3 {
+    font-size: 20px;
+    font-weight: bolder;
+    color: #440063;
+    margin: 20px 20px 10px 20px;
+  }
 }
 
 /*
@@ -87,6 +98,9 @@ h3 {
 .banner .banner-content .new-search #search-bar .form {
   display: flex !important;
 }
+
+
+/////
 
 .navbar-wagon-right-offline {
     display: flex;
