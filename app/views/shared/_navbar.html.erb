@@ -1,10 +1,8 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-  <a href="javascript:history.back()" class="navbar-wagon-brand">
-    <i class="fas fa-angle-left"></i>
-  </a>
   <div class="nav-left-icons">
-    <%= link_to "", root_path, class: "fas fa-home size" %>
+    <%= link_to "", "javascript:history.back()", class: "fas fa-angle-left" %>
+    <%= link_to "", root_path, class: "fas fa-home" %>
   </div>
 
   <% if user_signed_in? %>

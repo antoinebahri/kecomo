@@ -10,8 +10,20 @@
   background-color: #fa3869;
 }
 
-.nav-left-icons .fas {
-  font-size: 20px;
+.nav-left-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.nav-left-icons .fa-angle-left {
+  font-size: 30px;
+  color: white;
+}
+
+.nav-left-icons .fa-home {
+  font-size: 23px;
+  margin-left: 45px;
   color: white;
 }
 
@@ -40,18 +52,6 @@
   height: 60px;
   width: auto;
   color: white;
-}
-
-/* Logo */
-.navbar-wagon-brand .fas {
-  color: white;
-  font-size: 30px;
-}
-
-.navbar-wagon-brand:hover {
-  text-decoration: none;
-  color: white;
-  opacity: 0.8;
 }
 
 /* User Avatar */
