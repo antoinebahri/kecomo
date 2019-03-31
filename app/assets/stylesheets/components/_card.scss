@@ -1,6 +1,6 @@
 @media only screen and (max-width: 539px) {
   .card {
-    width: 125px;
+    width: auto;
     height: 100px;
     margin-left: auto;
     margin-right: auto;
@@ -30,7 +30,7 @@
   margin-right: auto;
   left: 0;
   right: 0;
-  bottom: 3px;
+  bottom: -2px;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -65,17 +65,17 @@
   }
 
   .card .card-txt h5 {
-  font-size: 14px;
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  bottom: -4px;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #440063;
+    font-size: 14px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #440063;
   }
 }
 

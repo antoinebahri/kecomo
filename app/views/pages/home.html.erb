@@ -11,7 +11,7 @@
   <div class="container-categories">
     <div class="row">
       <% @categories.each do |category| %>
-        <div class="col-xs-4 col-md-3">
+        <div class="col-4 col-md-3">
           <div class="card">
             <div class="card-img">
               <%= link_to (image_tag (category.icon)), category_meals_path(category.id) %>
