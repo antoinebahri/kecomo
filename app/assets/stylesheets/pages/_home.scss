@@ -1,4 +1,11 @@
 // Specific CSS for your home-page
+
+/*
+// BANNER IMAGE COLORS
+LIGHT BLUE: #13AF9B
+PINK: #FB3569
+*/
+
 body {
   background-color: transparent;
 }
@@ -66,9 +73,6 @@ h2 {
   }
 }
 
-/*
-#13af9b
-#FB3569 */
 
 @media only screen and (min-width: 845px) {
   .banner-content {
@@ -80,7 +84,7 @@ h2 {
   }
 
   .banner-content h2 {
-    font-size: 50px;
+    font-size: 48px;
     text-align: left;
   }
 
@@ -114,9 +118,9 @@ h2 {
 /////
 
 .navbar-wagon-right-offline {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /* Dropdown menu */

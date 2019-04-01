@@ -1,15 +1,87 @@
-.card-meal {
-  height: 12vh;
-  width: 100vw;
-  background: transparent;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  border-bottom-style: solid;
-  border-bottom-color: gray;
-  border-width: 0.5px;
-  padding-bottom: 20px;
+@media only screen and (min-width: 540px) {
+  .card-meal {
+    height: 17vh;
+    width: 50vw;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-bottom-style: solid;
+    border-bottom-color: gray;
+    border-width: 0.5px;
+    padding-bottom: 20px;
+    margin-top: 10px;
+    margin-left: 15vw;
+  }
+
+  .card-meal img {
+    height: 17vh;
+    width: 17vw;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .card-meal h2 {
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+
+  .card-meal p {
+    font-size: 13px;
+    line-height: 1.4;
+    opacity: 0.8;
+    margin-bottom: 0;
+    margin-top: 0px;
+  }
+
+  .card-meal .card-meal-infos {
+    padding: 20px;
+  }
+}
+
+@media only screen and (max-width: 539px) {
+  .card-meal {
+    height: 12vh;
+    width: 100vw;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-bottom-style: solid;
+    border-bottom-color: gray;
+    border-width: 0.5px;
+    padding-bottom: 20px;
+  }
+
+  .card-meal img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .card-meal h2 {
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+
+  .card-meal p {
+    font-size: 10px;
+    line-height: 1.4;
+    opacity: 0.8;
+    margin-bottom: 0;
+    margin-top: 0px;
+  }
+
+  .card-meal .card-meal-infos {
+    padding: 10px;
+  }
 }
 
 .card-meal-no-image {
@@ -18,48 +90,17 @@
   padding: 15px;
 }
 
-.card-meal img {
-  height: 100px;
-  width: 100px;
-  object-fit: cover;
-  object-position: center;
-
-}
-
-.card-meal h2 {
-  color: black;
-  font-size: 15px;
-  font-weight: bold;
-  margin-bottom: 4px;
-}
-
-.card-meal p {
-  font-size: 10px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 0px;
-}
-
 .card-meal a {
   text-decoration: none;
   color: black;
 }
-/*
-.card-meal h2 a {
-  color: black;
-}
 
-.card-meal h2 p {
-  color: #FB3569;
-}
- */
-.card-meal .card-meal-infos {
-  padding: 10px;
+.card-meal p a:hover {
+  opacity: 1;
 }
 
 .card-meal-photo-info {
-  display:flex;
+  display: flex;
 }
 
 .card-meal-voting {
@@ -176,7 +217,6 @@
   font-weight: bold;
 }
 
-
 .card-meal-category-button {
   color: black;
   border: 1px solid black;
@@ -185,14 +225,6 @@
   transition: opacity 0.3s ease;
   text-align: center;
   font-weight: bold;
-}
-
-.card-meal-category-button a {
-  color: black;
-}
-
-.card-meal-category-button:hover {
-  opacity: 1;
 }
 
 .modal-dialog {

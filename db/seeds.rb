@@ -9,7 +9,7 @@
 require 'json'
 require 'faker'
 require 'open-uri'
-require "httparty"
+require 'httparty'
 
 puts "-----------------------------------"
 puts "Destroying all users"
@@ -30,10 +30,11 @@ puts "-----------------------------------"
 # puts "-----------------------------------"
 puts "-----------------------------------"
 puts "creating 400 real profiles"
+
 puts "Creating users..."
 400.times do
   url = 'https://randomuser.me/api/'
-  users_serialized = HTTParty.get(url).body
+  users_serialized = HTTParty.get(url, verify:true).body
   users_list = JSON.parse(users_serialized)
   user = User.create(
     first_name: users_list["results"][0]["name"]["first"].capitalize!,
@@ -45,7 +46,6 @@ puts "Creating users..."
 end
 puts "-----------------------------------"
 puts "400 other real profiles created"
-
 
 puts "-----------------------------------"
 puts "Destroying all restaurants..."
@@ -259,14 +259,6 @@ meal9.restaurant = Restaurant.find(1)
 meal9.category = Category.find_by(name: "Pizza")
 meal9.picture = "pizza-calabrese-pizza-circus.jpeg"
 meal9.save!
-
-Meal.all.each do |meal|
-  begin
-    helper.image_path(meal.picture)
-  rescue
-    meal.awards.destroy_all && meal.destroy
-  end
-end
 
 meal10 = Meal.new(name: "Pizza Garmona")
 meal10.restaurant = Restaurant.find(1)
@@ -1041,6 +1033,16 @@ puts "-----------------------------------"
 #   Award.create(review: 'Boo Yah', meal_id: meal_index_array[1], category_id: cat_index_array[0], user_id: user_index_array[1]);
 #   Award.create(review: 'Bullshit', meal_id: meal_index_array[2], category_id: cat_index_array[0], user_id: user_index_array[2]);
 # puts 'Done'
+
+# *************************************************
+
+puts "Remember INOU'S SCRIPT! Instructions in 'seeds.rb'"
+
+# INOU'S SCRIPT FOR PRODUCTION
+# ~ Will delete all meals causing trouble due to image-url when deploying on Heroku ~
+# Comment it for local development (as it will delete all meals).
+# Uncomment it for Heroku.
+=begin
 Meal.all.each do |meal|
   begin
    helper.image_path(meal.picture)
@@ -1048,3 +1050,4 @@ Meal.all.each do |meal|
    meal.awards.destroy_all && meal.destroy
   end
 end
+=end
