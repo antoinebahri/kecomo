@@ -1,6 +1,6 @@
 <div action="" id="search-bar" class="form-inline">
   <%= form_tag all_meals_url, style: "display: flex", method: :get do %>
-    <%= text_field_tag :searchquery, params[:searchquery], size: "25%", placeholder: "Try 'Pizza Market' or 'Pizza'", class: "form-control", id: 'searchbar' %>
+    <%= text_field_tag :searchquery, params[:searchquery], placeholder: "Try 'Pizza Market' or 'Pizza'", class: "form-control", id: 'searchbar' %>
     <button type="submit" name="commit" value="search" class="btn btn-info btn-fill">GO!</button>
   <% end %>
 </div>
