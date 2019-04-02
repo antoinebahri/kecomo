@@ -1,7 +1,7 @@
 <div class="container">
   <div class="profile-user">
     <% if current_user.picture == nil %>
-      <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar" id="navbar-wagon-menu" >
+      <%= image_tag "blank-avatar.jpg", class: "avatar" %>
     <% else %>
       <%= image_tag current_user.picture, class: "avatar", id: "navbar-wagon-menu" %>
     <% end %>

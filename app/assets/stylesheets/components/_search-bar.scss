@@ -1,4 +1,16 @@
 #search-bar {
+  @media only screen and (min-width: 845px) {
+    input {
+      width: 350px;
+    }
+  }
+
+  @media only screen and (max-width: 844px) {
+    input {
+      width: 250px;
+    }
+  }
+
   // Overriding bootstrap 'info' button
   .btn-info {
     color: white;

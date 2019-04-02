@@ -47,24 +47,24 @@
   <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
   <meta name="twitter:image:src" content="<%= meta_image %>">
 
-
 </head>
+
 <% if devise_controller? ||  current_page?(controller: 'pages', action: 'home') %>
-<body style="background-color: #fffde1">
-  <% else %>
+  <body style="background-color: #fffde1">
+  <%= render 'shared/navbar_transparent' %>
+<% else %>
   <body>
-    <% end %>
-    <%= render 'shared/navbar' unless devise_controller? ||  current_page?(controller: 'pages', action: 'home')  %>
+  <%= render 'shared/navbar' %>
+<% end %>
+<%= render 'shared/flashes' %>
+<div id="page-container">
+  <%= yield %>
+</div>
+<div id="page-footer">
+  <%= render 'shared/footer' %>
+</div>
+<%= javascript_include_tag 'application' %>
+<%= javascript_pack_tag 'application' %>
+</body>
 
-    <%= render 'shared/flashes' %>
-    <div id="page-container">
-      <%= yield %>
-
-    </div>
-    <div id="page-footer">
-      <%= render 'shared/footer' %>
-    </div>
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
-  </body>
-  </html>
+</html>

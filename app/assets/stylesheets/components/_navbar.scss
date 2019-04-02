@@ -1,19 +1,60 @@
 /* Main navbar */
-.navbar-wagon {
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: white;
+@media only screen and (max-width: 600px) {
+  .navbar-wagon {
   transition: all 0.3s ease;
   height: 70px;
   padding: 0px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #fa3869;
+  background-image: url("navbar-mobile.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  }
 }
 
-.nav-left-icons .fas {
-  font-size: 20px;
+@media only screen and (min-width: 600px) {
+  .navbar-wagon {
+    transition: all 0.3s ease;
+    height: 70px;
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url("navbar-desktop.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.nav-left-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.nav-left-icons .fa-angle-left {
+  font-size: 30px;
   color: white;
+}
+
+.nav-left-icons .fa-home {
+    font-size: 23px;
+    color: white;
+  }
+
+@media only screen and (max-width: 600px) {
+  .nav-left-icons .fa-home {
+    margin-left: 30px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .nav-left-icons .fa-home {
+    margin-left: 45px;
+  }
 }
 
 .nav-left-icons .fas:hover {
@@ -22,31 +63,35 @@
 }
 
 .navbar-wagon-transparent {
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: white;
+  background-color: transparent;
+  box-shadow: none;
   transition: all 0.3s ease;
   height: 70px;
   padding: 0px 30px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: transparent;
+  z-index: 2;
 }
 
-/* Logo */
-.navbar-wagon-brand .fas {
+.navbar-wagon-transparent .kecomo-logo img {
+  margin-top: 10px;
+  height: 60px;
+  width: auto;
   color: white;
-  font-size: 30px;
-}
-
-.navbar-wagon-brand:hover {
-  text-decoration: none;
-  color: white;
-  opacity: 0.8;
 }
 
 /* User Avatar */
 .navbar-wagon .avatar {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+
+.navbar-wagon-transparent .avatar {
   height: 35px;
   width: 35px;
   border-radius: 50%;
@@ -101,7 +146,6 @@
   }
 }
 
-
 /* Basic navbar item */
 .navbar-wagon-item {
   cursor: pointer;
@@ -147,4 +191,3 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
-

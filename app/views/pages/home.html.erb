@@ -1,48 +1,26 @@
 <div class="banner">
-  <div class="triangle-top-left"></div>
-    <div class="rectangle">
-    <%= link_to image_tag("kecomo-logo.png"), root_path, class: "kecomo-logo" %>
-
-    <% if user_signed_in? %>
-
-    <div class="dropdown">
-      <% if current_user.picture == nil %>
-        <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar-large dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
-      <% else %>
-        <%= image_tag current_user.picture, class: "avatar-large dropdown-toggle", id: "navbar-wagon-menu", data: { toggle: "dropdown" } %>
-      <% end %>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><%= link_to "Profile", profile_path(current_user),  class: "dropdown-item"  %></li>
-        <li><%= link_to "Don't see your meal?", new_meal_path, class: "dropdown-item"  %></li>
-        <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item"  %></li>
-      </ul>
-    </div>
-
-    <% else %>
-      <ul class="list-inline tabs-underlined">
-        <p><%= link_to "Log in", new_user_session_path, class: "tab-underlined" %></p>
-      </ul>
-    <% end %>
-
+  <div class="banner-content">
     <h2>Looking for the best voted food on the menu?</h2>
     <%= render 'shared/search-bar' %>
   </div>
 </div>
 
 <div class="container">
-<h3 style="text-align: center; font-size: 18px;">Discover the best food in town</h3>
-  <div class="row">
-    <% @categories.each do |category| %>
-      <div class="col-xs-4">
-        <div class="card">
-          <div class="card-img">
-            <%= link_to (image_tag (category.icon)), category_meals_path(category.id) %>
-          </div>
-          <div class="card-txt">
-            <h5><strong><%= category.name %></strong></h5>
+<h3>Discover the best food in town</h3>
+  <div class="container-categories">
+    <div class="row">
+      <% @categories.each do |category| %>
+        <div class="col-4 col-md-3">
+          <div class="card">
+            <div class="card-img">
+              <%= link_to (image_tag (category.icon)), category_meals_path(category.id) %>
+            </div>
+            <div class="card-txt">
+              <h5><strong><%= category.name %></strong></h5>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

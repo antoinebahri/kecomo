@@ -1,6 +1,5 @@
 <% content_for :meta_title, "#{@meal.name} is on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @meal.description %>
-<div class="container">
   <% if @meal.picture.blank? %>
   <div class="restaurant-page-no-hero">
     <%= image_tag "default-restaurant.png", class: "restaurant-page-no-image" %>
@@ -9,6 +8,7 @@
   <% else %>
     <%= image_tag @meal.picture, class: "meal-page-img" %>
   <% end %>
+<div class="container">
   <div class="meal-page-info">
     <!-- meal.name -->
     <div>
@@ -19,7 +19,7 @@
       </div>
     </div>
     <!-- meal.award.review -->
-    <div class="card-meal-voting">
+    <div class="card-meal-voting" id="meal-show-vote">
       <!-- checks if the user has already given award in this category -->
       <% if user_signed_in? && @current_user_awarded_categories.include?(@meal.category) %>
       <!-- checks if the current user has any awards for the given meal -->
@@ -55,14 +55,14 @@
   <% @full_score.reverse.each do |award| %>
   <div class="meal-page-reviews">
     <% if award.user.picture == nil %>
-    <img src='https://kitt.lewagon.com/placeholder/users/ssaunier' class="avatar-large"/>
+    <%= image_tag "blank-avatar.jpg", class: "avatar-large" %>
     <% else %>
-    <%= image_tag award.user.picture, class:"avatar-large" %>
+    <%= image_tag award.user.picture, class: "avatar-large" %>
     <% end %>
     <!-- <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
      -->
     <div class="meal-page-reviews-content">
-      <p><%= award.user.first_name%> <%= award.user.last_name%></p>
+      <p><%= award.user.first_name %> <%= award.user.last_name %></p>
       <h6>"<%= award.review.first(80) %>..."</h6>
       <div class="meal-page-reviews-date">
         <p><%= award.created_at.strftime("%d-%m-%Y") %></p>
@@ -89,11 +89,10 @@
             <div class="choose-details">
               <h4><i class="fas fa-exclamation-triangle"></i> Seems that you have already voted for this meal</h4>
               <div class="row-vote">
-                  <h3><%= @meal.name %></h3>
-                  <h2>from</h2> <h3><%= @meal.restaurant.name %></h3>
-                  <h2>is currently your best</h2> <h3><%= @meal.category.name %></h3>
-                  <h2>in</h2> <h3><%= @meal.restaurant.city %></h3>
-                </h2>
+                <h3><%= @meal.name %></h3>
+                <h2>from</h2> <h3><%= @meal.restaurant.name %></h3>
+                <h2>is currently your best</h2> <h3><%= @meal.category.name %></h3>
+                <h2>in</h2> <h3><%= @meal.restaurant.city %></h3>
               </div>
             </div>
           </div>

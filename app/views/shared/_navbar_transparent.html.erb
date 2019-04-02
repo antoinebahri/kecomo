@@ -1,14 +1,10 @@
-<div class="navbar-wagon">
+<div class="navbar-wagon-transparent">
   <!-- Logo -->
-  <div class="nav-left-icons">
-    <%= link_to "", "javascript:history.back()", class: "fas fa-angle-left" %>
-    <%= link_to "", root_path, class: "fas fa-home" %>
-  </div>
+  <%= link_to image_tag("kecomo-logo.png"), root_path, class: "kecomo-logo" %>
 
   <% if user_signed_in? %>
   <!-- Right Navigation -->
     <div class="navbar-wagon-right">
-      <p><%= link_to "Don't see your meal?", new_meal_path %></p>
 
       <!-- Profile picture with dropdown list -->
       <div class="navbar-wagon-item">
@@ -20,6 +16,7 @@
           <% end %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li><%= link_to "Profile", profile_path(current_user), class: "dropdown-item" %></li>
+            <li><%= link_to "Don't see your meal?", new_meal_path, class: "dropdown-item" %></li>
             <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
           </ul>
         </div>
@@ -27,7 +24,6 @@
     </div>
   <% else %>
     <div class="list-inline tabs-underlined">
-      <p><%= link_to "Don't see your meal?", new_meal_path, class: "tab-underlined" %></p>
       <p><%= link_to "Log in", new_user_session_path, class: "tab-underlined" %></p>
     </div>
   <% end %>

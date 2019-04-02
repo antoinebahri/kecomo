@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.5.3'
 
-gem "algoliasearch-rails"
+gem 'algoliasearch-rails'
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
@@ -14,7 +14,7 @@ gem 'rails', '5.2.2'
 gem 'redis'
 gem 'geocoder'
 
-gem "httparty"
+gem 'httparty'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
@@ -27,8 +27,6 @@ gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 
 gem 'rails_12factor', group: :production
-
-
 
 group :development do
   gem 'web-console', '>= 3.3.0'

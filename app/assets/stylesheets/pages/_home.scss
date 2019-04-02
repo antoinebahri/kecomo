@@ -1,10 +1,52 @@
 // Specific CSS for your home-page
+
+/*
+// BANNER IMAGE COLORS
+LIGHT BLUE: #13AF9B
+PINK: #FB3569
+*/
+
 body {
   background-color: transparent;
 }
 
-.banner {
-  position: relative;
+.container-categories {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+@media only screen and (min-width: 540px) {
+  .banner {
+    width: 100vw;
+    height: 70vh;
+    position: relative;
+  }
+}
+
+@media only screen and (max-width: 539px) {
+  .banner {
+    width: 100vw;
+    height: 50vh;
+    position: relative;
+  }
+}
+
+@media only screen and (min-width: 540px) {
+  .banner {
+    background-image: url("banner.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+@media only screen and (max-width: 539px) {
+  .banner {
+    background-image: url("banner-mobile.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 }
 
 h2 {
@@ -13,67 +55,72 @@ h2 {
   color: #440063;
 }
 
-h3 {
-  font-size: 20px;
-  font-weight: bolder;
-  color: #440063;
-  margin: 20px 20px 10px 20px;
+@media only screen and (min-width: 845px) {
+  h3 {
+    font-size: 25px;
+    font-weight: bolder;
+    color: #440063;
+    margin: 20px 20px 10px 20px;
+  }
 }
 
-.rectangle {
-  width: 100vw;
-  height: 55vh;
-  background: #FB3569;
-  margin-top: -16px;
+@media only screen and (max-width: 844px) {
+  h3 {
+    font-size: 18px;
+    font-weight: bolder;
+    color: #440063;
+    margin: 20px 20px 10px 20px;
+  }
 }
 
-.triangle-top-left {
-  border-right: 300px solid transparent;
-  border-top: 445px solid #13af9b;
-  border-left: 0px solid #13af9b;
-  border-bottom: 0px solid transparent;
-  position: absolute;
- }
 
-.rectangle .kecomo-logo img {
-  height: 60px;
-  width: auto;
-  position: absolute;
-  color: white;
-  z-index: 2;
-  top: 10px;
-  left: 20px;
+@media only screen and (min-width: 845px) {
+  .banner-content {
+    width: 700px;
+    height: auto;
+    position: absolute;
+    bottom: 45px;
+    right: 100px;
+  }
+
+  .banner-content h2 {
+    font-size: 48px;
+    text-align: left;
+  }
+
+  #search-bar {
+    margin-top: 30px;
+  }
 }
 
-.rectangle h2 {
-  position: absolute;
-  z-index: 2;
-  bottom: 130px;
-  right: 5px;
-  text-align: left;
-  padding-left: 20px;
+@media only screen and (max-width: 844px) {
+  .banner-content {
+    width: 85%;
+    height: auto;
+    position: absolute;
+    bottom: 50px;
+    left: 25px;
+  }
+
+  .banner-content h2 {
+    font-size: 38px;
+  }
+
+  #search-bar {
+    margin-top: 30px;
+  }
 }
 
-#search-bar {
-  position: absolute;
-  bottom: 55px;
-  padding-left: 20px;
-}
-
-.rectangle .avatar-large {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-}
-
-.banner .rectangle .new-search #search-bar .form {
+.banner .banner-content .new-search #search-bar .form {
   display: flex !important;
 }
 
+/////
+
 .navbar-wagon-right-offline {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /* Dropdown menu */
