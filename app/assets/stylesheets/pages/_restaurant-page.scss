@@ -54,11 +54,12 @@
   justify-content: space-around;
   flex-direction: column;
   border-style: solid;
-  height: 60px;
-  width: 60px;
+  height: 65px;
+  width: 65px;
   padding: 2px;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 50px;
   p {
     font-size: 0.6em !important;
     margin: 0 !important;
@@ -87,7 +88,8 @@
     margin-top: 15px;
     text-align: center;
     font-weight: bold;
-    color: gray;
+    color: #212529;
+    opacity: 0.9;
   }
 }
 

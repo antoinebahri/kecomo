@@ -1,6 +1,5 @@
 <% content_for :meta_title, "#{@meal.name} is on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @meal.description %>
-<div class="container">
   <% if @meal.picture.blank? %>
   <div class="restaurant-page-no-hero">
     <%= image_tag "default-restaurant.png", class: "restaurant-page-no-image" %>
@@ -9,6 +8,7 @@
   <% else %>
     <%= image_tag @meal.picture, class: "meal-page-img" %>
   <% end %>
+<div class="container">
   <div class="meal-page-info">
     <!-- meal.name -->
     <div>
@@ -19,7 +19,7 @@
       </div>
     </div>
     <!-- meal.award.review -->
-    <div class="card-meal-voting">
+    <div class="card-meal-voting" id="meal-show-vote">
       <!-- checks if the user has already given award in this category -->
       <% if user_signed_in? && @current_user_awarded_categories.include?(@meal.category) %>
       <!-- checks if the current user has any awards for the given meal -->

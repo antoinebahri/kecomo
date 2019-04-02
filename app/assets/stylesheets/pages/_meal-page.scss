@@ -3,10 +3,8 @@
   width: 100%;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   object-fit: cover;
-  border-radius: 5px;
   background-size: cover;
   background-position: center;
-  margin-top: 15px;
 }
 
 .meal-page-info {
@@ -78,6 +76,10 @@
   text-decoration: none;
 }
 
+#meal-show-vote {
+  padding-bottom: 60px;
+}
+
 .meal-page-reviews {
   display: flex;
   align-items: center;
@@ -133,10 +135,7 @@
   color: #555555;
 }
 
-
 // MEALS - EDIT PAGE SCSS STARTS BELOW
-
-
 .choose-details-blank-create-form h1 {
   font-family: Montserrat;
   font-style: normal;
