@@ -1,4 +1,134 @@
-@media only screen and (min-width: 540px) {
+@media only screen and (max-width: 600px) {
+  .card-meal {
+    height: 12vh;
+    width: 100vw;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-bottom-style: solid;
+    border-bottom-color: gray;
+    border-width: 0.5px;
+    padding-bottom: 20px;
+    margin-top: 4px;
+  }
+
+  .card-meal img {
+    height: 13vh;
+    width: 100px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .card-meal h2 {
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+
+  .card-meal p {
+    font-size: 10px;
+    line-height: 1.4;
+    opacity: 0.9;
+    margin-bottom: 0;
+    margin-top: 0px;
+  }
+
+  .card-meal .card-meal-infos {
+    padding: 10px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .card-meal {
+    height: 13vh;
+    width: 100vw;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-bottom-style: solid;
+    border-bottom-color: gray;
+    border-width: 0.5px;
+    padding-bottom: 20px;
+    margin-top: 10px;
+  }
+
+  .card-meal img {
+    height: 15vh;
+    width: 100px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .card-meal h2 {
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+
+  .card-meal p {
+    font-size: 10px;
+    line-height: 1.4;
+    opacity: 0.9;
+    margin-bottom: 0;
+    margin-top: 0px;
+  }
+
+  .card-meal .card-meal-infos {
+    padding: 10px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .card-meal {
+    height: 15vh;
+    width: 60vw;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-bottom-style: solid;
+    border-bottom-color: gray;
+    border-width: 0.5px;
+    padding-bottom: 20px;
+    margin-top: 10px;
+    margin-left: 10vw;
+  }
+
+  .card-meal img {
+    height: 17vh;
+    width: 15vw;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .card-meal h2 {
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+
+  .card-meal p {
+    font-size: 13px;
+    line-height: 1.4;
+    opacity: 0.9;
+    margin-bottom: 0;
+    margin-top: 0px;
+  }
+
+  .card-meal .card-meal-infos {
+    padding: 15px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
   .card-meal {
     height: 17vh;
     width: 50vw;
@@ -16,7 +146,7 @@
   }
 
   .card-meal img {
-    height: 17vh;
+    height: 19vh;
     width: 17vw;
     object-fit: cover;
     object-position: center;
@@ -32,7 +162,7 @@
   .card-meal p {
     font-size: 13px;
     line-height: 1.4;
-    opacity: 0.8;
+    opacity: 0.9;
     margin-bottom: 0;
     margin-top: 0px;
   }
@@ -42,10 +172,10 @@
   }
 }
 
-@media only screen and (max-width: 539px) {
+@media only screen and (min-width: 1200px) {
   .card-meal {
-    height: 12vh;
-    width: 100vw;
+    height: 17vh;
+    width: 50vw;
     background: transparent;
     display: flex;
     justify-content: space-between;
@@ -55,34 +185,38 @@
     border-bottom-color: gray;
     border-width: 0.5px;
     padding-bottom: 20px;
+    margin-top: 10px;
+    margin-left: 16vw;
   }
 
   .card-meal img {
-    height: 100px;
-    width: 100px;
+    height: 19vh;
+    width: 17vw;
     object-fit: cover;
     object-position: center;
   }
 
   .card-meal h2 {
     color: black;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: bold;
     margin-bottom: 4px;
   }
 
   .card-meal p {
-    font-size: 10px;
+    font-size: 13px;
     line-height: 1.4;
-    opacity: 0.8;
+    opacity: 0.9;
     margin-bottom: 0;
     margin-top: 0px;
   }
 
   .card-meal .card-meal-infos {
-    padding: 10px;
+    padding: 20px;
   }
 }
+
+/// GENERAL
 
 .card-meal-no-image {
   height: 100px;
@@ -199,6 +333,7 @@
     font-size: 0.7em !important;
     margin: 0 !important;
     font-weight: bolder;
+    opacity: 0.9;
   }
 }
 

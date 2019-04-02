@@ -22,9 +22,20 @@
 }
 
 .nav-left-icons .fa-home {
-  font-size: 23px;
-  margin-left: 45px;
-  color: white;
+    font-size: 23px;
+    color: white;
+  }
+
+@media only screen and (max-width: 600px) {
+  .nav-left-icons .fa-home {
+    margin-left: 30px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .nav-left-icons .fa-home {
+    margin-left: 45px;
+  }
 }
 
 .nav-left-icons .fas:hover {
