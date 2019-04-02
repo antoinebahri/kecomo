@@ -33,7 +33,7 @@ body {
 
 @media only screen and (min-width: 540px) {
   .banner {
-    background-image: url("banner.png");
+    background-image: image-url("banner.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -42,7 +42,7 @@ body {
 
 @media only screen and (max-width: 539px) {
   .banner {
-    background-image: url("banner-mobile.png");
+    background-image: image-url("banner-mobile.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
