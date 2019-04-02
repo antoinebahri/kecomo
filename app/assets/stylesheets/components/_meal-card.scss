@@ -12,6 +12,7 @@
     border-width: 0.5px;
     padding-bottom: 20px;
     margin-top: 4px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   .card-meal img {
@@ -55,6 +56,7 @@
     border-width: 0.5px;
     padding-bottom: 20px;
     margin-top: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   .card-meal img {
@@ -99,6 +101,7 @@
     padding-bottom: 20px;
     margin-top: 10px;
     margin-left: 10vw;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   .card-meal img {
@@ -143,6 +146,7 @@
     padding-bottom: 20px;
     margin-top: 10px;
     margin-left: 15vw;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   .card-meal img {
@@ -187,6 +191,7 @@
     padding-bottom: 20px;
     margin-top: 10px;
     margin-left: 16vw;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   .card-meal img {
@@ -251,8 +256,8 @@
 
 .card-meal-rank {
   position: absolute;
-  left: -8px;
-  top: -16px;
+  left: -7px;
+  top: -20px;
   color: white;
   padding: 8px 8px;
   border-radius: 6px;
@@ -268,8 +273,8 @@
 
 .card-meal-rank-1 {
   position: absolute;
-  left: -8px;
-  top: -16px;
+  left: -7px;
+  top: -20px;
   color: white;
   padding: 8px 8px;
   border-radius: 6px;
@@ -285,8 +290,8 @@
 
 .card-meal-rank-2 {
   position: absolute;
-  left: -8px;
-  top: -16px;
+  left: -7px;
+  top: -20px;
   color: white;
   padding: 8px 8px;
   border-radius: 6px;
@@ -302,8 +307,8 @@
 
 .card-meal-rank-3 {
   position: absolute;
-  left: -8px;
-  top: -16px;
+  left: -7px;
+  top: -20px;
   color: white;
   padding: 8px 8px;
   border-radius: 6px;
@@ -325,7 +330,7 @@
   width: 70px;
   padding: 2px;
   border-radius: 3px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   background: white;
   p {
     font-size: 0.7em !important;
