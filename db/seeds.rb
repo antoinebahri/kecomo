@@ -1036,6 +1036,13 @@ puts "-----------------------------------"
 
 # *************************************************
 
+puts "Remember INOU'S SCRIPT! Instructions in 'seeds.rb'"
+
+# INOU'S SCRIPT FOR PRODUCTION
+# ~ Will delete all meals causing trouble due to image-url when deploying on Heroku ~
+# Comment it for local development (as it will delete all meals).
+# Uncomment it for Heroku.
+=begin
 Meal.all.each do |meal|
   begin
    helper.image_path(meal.picture)
@@ -1043,4 +1050,4 @@ Meal.all.each do |meal|
    meal.awards.destroy_all && meal.destroy
   end
 end
-
+=end
