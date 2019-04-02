@@ -16,13 +16,17 @@
     margin-top: 25px;
 }
 
+.choose-details h2 {
+  font-size: 18px;
+  text-align: center;
+}
+
 .choose-details h4 {
   color: white;
   background-color: #440063;
   border-radius: 10px;
   margin-bottom: 5px;
   font-size: 11px;
-  width: 325px;
   height: auto;
   text-align: center;
   padding-bottom: 5px;
@@ -30,15 +34,18 @@
   font-weight: bold;
 }
 
+@media only screen and (min-width: 600px) {
+  .row-award {
+    margin: 5px 25px;
+  }
+}
+
 .row-award {
   font-family: Montserrat;
-  width: 325px;
   height: 65px;
   text-align: center;
   background: #13af9b;
-  margin-top: 5px;
   border-radius: 10px;
-  margin-bottom: 5px;
 }
 
 .row-vote {
@@ -70,11 +77,6 @@
   padding-top: 10px;
   color: #FFFFFF;
   font-size: 18px;
-}
-
-.choose-details h2 {
-  font-size: 18px;
-  text-align: center;
 }
 
 .button-award {
