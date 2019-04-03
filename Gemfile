@@ -15,6 +15,7 @@ gem 'redis'
 gem 'geocoder'
 
 gem 'httparty'
+gem 'letter_opener', group: :development
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
