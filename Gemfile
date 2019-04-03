@@ -15,6 +15,7 @@ gem 'redis'
 gem 'geocoder'
 
 gem 'httparty'
+gem 'letter_opener', group: :development
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
@@ -25,7 +26,7 @@ gem 'uglifier'
 gem 'webpacker', '~> 3.5'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
-
+gem 'postmark-rails'
 gem 'rails_12factor', group: :production
 
 group :development do
