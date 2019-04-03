@@ -26,7 +26,7 @@ gem 'uglifier'
 gem 'webpacker', '~> 3.5'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
-
+gem 'postmark-rails'
 gem 'rails_12factor', group: :production
 
 group :development do
