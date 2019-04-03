@@ -4,11 +4,15 @@
 
 #color-edit-delete {
   color: rgba(252, 8, 8, 0.87);
+  margin-right: 10px;
+  .fa-trash-alt {
+    font-size: 18px;
+  }
 }
 
 .profile-user {
   height: 175px;
-  border-bottom-style: solid;
+  border-bottom: 3px solid #212529;
   text-align: center;
 }
 
@@ -18,7 +22,7 @@
   font-weight: bold;
   line-height: normal;
   font-size: 18px;
-  color: #000000;
+  color: #212529;
 }
 
 .profile-user img {
@@ -34,8 +38,7 @@
   font-weight: bold;
   line-height: normal;
   font-size: 18px;
-
-  color: #000000;
+  color: #212529;
 }
 
 .profile-change-delete {
@@ -52,7 +55,6 @@
 }
 
 .card-meal-category-button-new {
-  // padding: 10px !important;
   align-items: center;
 }
 
@@ -68,6 +70,5 @@
   line-height: normal;
   font-size: 18px;
   padding-top: 10px;
-
-  color: #000000;
+  color: #212529;
 }
