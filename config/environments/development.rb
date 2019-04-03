@@ -61,8 +61,8 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   # A new tab will open in the browser to show mail just sent.
-  config.action_mailer.delivery_method = :letter_opener
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  #config.action_mailer.delivery_method = :letter_opener
+  #config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
 
 end
