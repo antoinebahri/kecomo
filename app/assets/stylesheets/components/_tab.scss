@@ -24,7 +24,39 @@
   }
 }
 
-.navbar-wagon {
+@media only screen and (max-width: 365px) and (max-height: 640px) {
+  .navbar-wagon {
+    .tabs-underlined {
+      display: flex;
+      align-items: center;
+      font-size: 11px;
+      justify-content: flex-end;
+      padding-top: 15px;
+      padding-right: 0px;
+      z-index: 2;
+      position: relative;
+      right: 0px;
+      top: 0px;
+      text-transform: uppercase;
+      font-weight: bolder;
+    }
+
+    .tabs-underlined .tab-underlined {
+      padding: 8px 10px;
+      color: white;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .tab-underlined:hover {
+      opacity: 1;
+      color: white;
+    }
+  }
+}
+
+@media only screen and (min-width: 366px) and (min-height: 641px) {
+  .navbar-wagon {
     .tabs-underlined {
     display: flex;
     align-items: center;
@@ -41,15 +73,16 @@
     letter-spacing: 1px;
   }
 
-  .tabs-underlined .tab-underlined {
-    padding: 8px 15px;
-    color: white;
-    cursor: pointer;
-    text-decoration: none;
-  }
+    .tabs-underlined .tab-underlined {
+      padding: 8px 15px;
+      color: white;
+      cursor: pointer;
+      text-decoration: none;
+    }
 
-  .tab-underlined:hover {
-    opacity: 1;
-    color: white;
+    .tab-underlined:hover {
+      opacity: 1;
+      color: white;
+    }
   }
 }
