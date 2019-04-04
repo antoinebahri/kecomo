@@ -1,14 +1,57 @@
-.log-in {
-  color: #167FFB;
-  text-decoration: none;
-  background-color: transparent;
-  padding-left: 0px;
+ .signin-form-wrapper {
+  margin-top: 50px;
 }
-
 
 .signin-form-wrapper h2 {
-  margin-top: 75px;
-  font-size: 35px;
-  text-align: center;
+  font-size: 25px;
+  margin-bottom: 25px;
 }
 
+.devise-link {
+  font-size: 13px;
+  color: #440063;
+}
+
+.devise-link:hover {
+  text-decoration: none;
+  color: #440063;
+  opacity: 0.8;
+}
+
+.form-actions {
+  margin-bottom: 20px;
+
+  .btn-info {
+    color: white;
+    background-color: #440063;
+    border-color: #440063;
+  }
+
+  .btn-info:hover {
+    color: white;
+    background-color: #6b006b;
+    border-color: #6b006b;
+  }
+
+  .btn-info:focus, .btn-info.focus {
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+  }
+
+  .btn-info.disabled, .btn-info:disabled {
+    background-color: #440063;
+    border-color: #440063;
+  }
+
+  .btn-info:active, .btn-info.active,
+  .show > .btn-info.dropdown-toggle {
+    background-color: #6b006b;
+    background-image: none;
+    border-color: #6b006b;
+  }
+}
+
+.signin-form-wrapper label {
+  color: #212529;
+  opacity: 0.8;
+  font-size: 15px;
+}

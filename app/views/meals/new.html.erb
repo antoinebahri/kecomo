@@ -1,23 +1,21 @@
 <div class="container">
   <div class="wrapper-new">
     <div class="form-new">
-      <div class="choose-details-blank-create-form">
+      <div class="details-create-form">
         <h1>Cannot find the meal you want to vote for? Create it!</h1>
-
-        <%= simple_form_for (@meal) do |f| %>
-          <div class="first-question">
-            <%= f.association :restaurant, :label => "In which restaurant is that meal you want to vote for?" %>
+        <div class="row">
+          <div class="col-10 offset-1 col-sm-8 offset-sm-2 col-md-6 offset-md-3">
+            <%= simple_form_for (@meal) do |f| %>
+              <%= f.association :restaurant, :label => "In which restaurant is that meal you want to vote for?" %>
+              <%= f.association :category, :label => "What category?" %>
+              <%= f.input :name, :label => "What's the name of that meal in the menu? (Please be specific!)" %>
+              <div class="button-action">
+                  <%= f.submit "Confirm", class: "btn btn-info" %>
+                <br>
+              </div>
+            <% end %>
           </div>
-
-          <%= f.association :category, :label => "What category?" %>
-
-          <%= f.input :name, :label => "What's the name of that meal in the menu? (Please be specific!)" %>
-
-          <div class="button-award-create-page">
-              <%= f.submit "Confirm", class: "main-button" %>
-            <br>
-          </div>
-        <% end %>
+        </div>
       </div>
     </div>
   </div>
