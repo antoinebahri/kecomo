@@ -1,7 +1,13 @@
 <%= render "shared/filter-bar" %>
 
-<% if @meals %>
+<% if @meals.present? %>
   <div class="container">
     <%= render 'shared/meal-card' %>
   </div>
+<% else %>
+    <div class="no-results">
+      <p> Sorry, there are no results for this search</p>
+    </div>
 <% end %>
+
+
