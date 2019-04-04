@@ -1,13 +1,19 @@
 #search-bar {
-  @media only screen and (min-width: 845px) {
+  @media only screen and (max-width: 365px) and (max-height: 570px) {
     input {
-      width: 350px;
+      width: 200px;
     }
   }
 
-  @media only screen and (max-width: 844px) {
+  @media only screen and (max-width: 844px) and (min-height: 571px) {
     input {
       width: 250px;
+    }
+  }
+
+  @media only screen and (min-width: 845px) {
+    input {
+      width: 350px;
     }
   }
 

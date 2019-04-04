@@ -41,11 +41,17 @@
 }
 
 .nav-left-icons .fa-home {
-    font-size: 23px;
-    color: white;
-  }
+  font-size: 23px;
+  color: white;
+}
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 365px) and (max-height: 640px) {
+  .nav-left-icons .fa-home {
+      margin-left: 20px;
+    }
+}
+
+@media only screen and (max-width: 600px) and (min-width: 366px) {
   .nav-left-icons .fa-home {
     margin-left: 30px;
   }
@@ -81,6 +87,8 @@
   margin-top: 10px;
   height: 60px;
   width: auto;
+  position: absolute;
+  top: 0px;
   color: white;
 }
 
