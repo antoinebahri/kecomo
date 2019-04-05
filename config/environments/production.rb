@@ -95,7 +95,9 @@ Rails.application.configure do
   # Mailer config for production
   config.action_mailer.delivery_method     = :postmark
   config.action_mailer.postmark_settings   = { api_key: ENV['POSTMARK_API_KEY'] }
-  config.action_mailer.default_url_options = { host: "kecomo.net" }
+  config.action_mailer.default_url_options = { host: "www.kecomo.net" }
+  config.action_mailer.asset_host = 'www.kecomo.net'
+
 
 
 end

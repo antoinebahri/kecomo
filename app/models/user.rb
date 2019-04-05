@@ -4,7 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :awards
-  after_create :send_welcome_email
+  # This is to activate mailing
+  # after_create :send_welcome_email
 
   def awarded_categories
     awards.map do |award|
@@ -14,7 +15,8 @@ class User < ApplicationRecord
 
   private
 
-  def send_welcome_email
-    UserMailer.welcome(self).deliver_now
-  end
+  # This is to activate mailing
+  # def send_welcome_email
+  #   UserMailer.welcome(self).deliver_now
+  # end
 end

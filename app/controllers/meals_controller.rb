@@ -55,7 +55,8 @@ class MealsController < ApplicationController
   def create
     @meal = Meal.new(meal_params)
     if @meal.save
-      MealMailer.creation_confirmation(current_user, @meal).deliver_now
+      # This is to activate mailing
+      # MealMailer.creation_confirmation(current_user, @meal).deliver_now
       redirect_to restaurant_meal_path(@meal.restaurant, @meal)
     else
       render :new
