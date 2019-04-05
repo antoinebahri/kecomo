@@ -9,7 +9,8 @@
             <%= f.input :email,
                         required: true,
                         autofocus: true,
-                        input_html: { autocomplete: "email" } %>
+                        input_html: { autocomplete: "email" },
+                        placeholder: 'user@kecomo.com' %>
           </div>
           <div class="form-actions">
             <%= f.button :submit, "Send me reset instructions, please!", class: "btn btn-info" %>
