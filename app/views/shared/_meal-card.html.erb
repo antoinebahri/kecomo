@@ -35,9 +35,9 @@
             <!-- meal.name -->
           <h2><%= link_to meal.name, category_meal_path(meal.category_id, meal.id) %></h2>
           <!-- meal.award.review -->
-          <p style="font-style: italic;"><%= meal.description %></p>
+          <p><%= meal.description %></p>
           <div class="card-meal-button-wrapper">
-            <div class="card-meal-restaurant-button" style="margin-right: 5px;">
+            <div class="card-meal-restaurant-button">
               <!-- meal.restaurant -->
               <p><%= link_to meal.restaurant.name, restaurant_path(meal.restaurant) %></p>
             </div>
@@ -131,7 +131,6 @@
                   <h2>at</h2> <h3><%= meal.restaurant.name %></h3>
                   <h2>as the best</h2> <h3><%= meal.category.name %></h3>
                   <h2>in</h2> <h3><%= meal.restaurant.city %></h3>
-                </h2>
               </div>
               <div class="user-thing">
                 <%# @meal = meal %>

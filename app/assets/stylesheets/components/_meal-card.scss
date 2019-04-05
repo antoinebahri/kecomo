@@ -1,18 +1,14 @@
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 365px) and (max-height: 570px) {
   .card-meal {
-    height: 12vh;
+    height: 13vh;
     width: 100vw;
     background: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    border-bottom-style: solid;
-    border-bottom-color: gray;
-    border-width: 0.5px;
-    padding-bottom: 20px;
-    margin-top: 4px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 3px 4px 4px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 2px;
   }
 
   .card-meal img {
@@ -20,6 +16,141 @@
     width: 100px;
     object-fit: cover;
     object-position: center;
+    border-radius: 2px;
+  }
+
+  .card-meal h2 {
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 0px;
+  }
+
+  .card-meal p {
+    font-size: 10px;
+    line-height: 1.4;
+    margin-bottom: 0;
+    margin-top: 0px;
+  }
+
+  .card-meal .card-meal-infos {
+    padding: 0px;
+  }
+
+  .card-meal-button-wrapper {
+    align-items: center;
+  }
+
+  .card-meal-restaurant-button {
+    color: #212529;
+    border: 1px solid #212529;
+    padding: 1px 4px;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    font-weight: bold;
+    width: fit-content;
+  }
+
+  .card-meal-category-button {
+    color: #212529;
+    border: 1px solid #212529;
+    padding: 1px 4px;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 1px;
+    width: fit-content;
+  }
+}
+
+@media only screen and (max-width: 365px) and (max-height: 640px) and (min-height: 571px) {
+  .card-meal {
+    height: 13vh;
+    width: 100vw;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    box-shadow: 3px 4px 4px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 2px;
+  }
+
+  .card-meal img {
+    height: 13vh;
+    width: 100px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 2px;
+  }
+
+  .card-meal h2 {
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 2px;
+  }
+
+  .card-meal p {
+    font-size: 10px;
+    line-height: 1.4;
+    margin-bottom: 0;
+    margin-top: 0px;
+  }
+
+  .card-meal .card-meal-infos {
+    padding: 2px;
+  }
+
+  .card-meal-button-wrapper {
+    align-items: center;
+  }
+
+  .card-meal-restaurant-button {
+    color: #212529;
+    border: 1px solid #212529;
+    padding: 2px 6px;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    font-weight: bold;
+    width: fit-content;
+  }
+
+  .card-meal-category-button {
+    color: #212529;
+    border: 1px solid #212529;
+    padding: 2px 6px;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 2px;
+    width: fit-content;
+  }
+}
+
+@media only screen and (max-width: 600px) and (min-width: 365px) {
+  .card-meal {
+    height: 13vh;
+    width: 100vw;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    box-shadow: 3px 4px 4px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 2px;
+  }
+
+  .card-meal img {
+    height: 13vh;
+    width: 100px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 2px;
   }
 
   .card-meal h2 {
@@ -32,31 +163,54 @@
   .card-meal p {
     font-size: 10px;
     line-height: 1.4;
-    opacity: 0.9;
     margin-bottom: 0;
     margin-top: 0px;
   }
 
   .card-meal .card-meal-infos {
-    padding: 10px;
+    padding: 8px;
+  }
+
+  .card-meal-button-wrapper {
+    margin-top: 4px;
+    align-items: center;
+  }
+
+  .card-meal-restaurant-button {
+    color: #212529;
+    border: 1px solid #212529;
+    padding: 2px 6px;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    font-weight: bold;
+    width: fit-content;
+  }
+
+  .card-meal-category-button {
+    color: #212529;
+    border: 1px solid #212529;
+    padding: 2px 6px;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 5px;
+    width: fit-content;
   }
 }
 
 @media only screen and (min-width: 600px) {
   .card-meal {
-    height: 13vh;
+    height: 15vh;
     width: 100vw;
     background: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    border-bottom-style: solid;
-    border-bottom-color: gray;
-    border-width: 0.5px;
-    padding-bottom: 20px;
-    margin-top: 10px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 3px 4px 4px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 2px;
   }
 
   .card-meal img {
@@ -64,6 +218,7 @@
     width: 100px;
     object-fit: cover;
     object-position: center;
+    border-radius: 2px;
   }
 
   .card-meal h2 {
@@ -76,7 +231,6 @@
   .card-meal p {
     font-size: 10px;
     line-height: 1.4;
-    opacity: 0.9;
     margin-bottom: 0;
     margin-top: 0px;
   }
@@ -84,24 +238,47 @@
   .card-meal .card-meal-infos {
     padding: 10px;
   }
+
+  .card-meal-button-wrapper {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+  }
+
+  .card-meal-restaurant-button {
+    color: #212529;
+    border: 1px solid #212529;
+    padding: 4px 6px;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+
+  .card-meal-category-button {
+    color: #212529;
+    border: 1px solid #212529;
+    padding: 4px 8px;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    font-weight: bold;
+  }
 }
 
 @media only screen and (min-width: 768px) {
   .card-meal {
-    height: 15vh;
+    height: 17vh;
     width: 60vw;
     background: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    border-bottom-style: solid;
-    border-bottom-color: gray;
-    border-width: 0.5px;
-    padding-bottom: 20px;
-    margin-top: 10px;
+    box-shadow: 3px 4px 4px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 2px;
     margin-left: 10vw;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   .card-meal img {
@@ -109,6 +286,7 @@
     width: 15vw;
     object-fit: cover;
     object-position: center;
+    border-radius: 2px;
   }
 
   .card-meal h2 {
@@ -121,7 +299,6 @@
   .card-meal p {
     font-size: 13px;
     line-height: 1.4;
-    opacity: 0.9;
     margin-bottom: 0;
     margin-top: 0px;
   }
@@ -129,24 +306,47 @@
   .card-meal .card-meal-infos {
     padding: 15px;
   }
+
+  .card-meal-button-wrapper {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+  }
+
+  .card-meal-restaurant-button {
+    color: #212529;
+    border: 1px solid #212529;
+    padding: 4px 6px;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+
+  .card-meal-category-button {
+    color: #212529;
+    border: 1px solid #212529;
+    padding: 4px 8px;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    font-weight: bold;
+  }
 }
 
 @media only screen and (min-width: 992px) {
   .card-meal {
-    height: 17vh;
+    height: 19vh;
     width: 50vw;
     background: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    border-bottom-style: solid;
-    border-bottom-color: gray;
-    border-width: 0.5px;
-    padding-bottom: 20px;
-    margin-top: 10px;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
     margin-left: 15vw;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   .card-meal img {
@@ -154,6 +354,7 @@
     width: 17vw;
     object-fit: cover;
     object-position: center;
+    border-radius: 2px;
   }
 
   .card-meal h2 {
@@ -166,32 +367,54 @@
   .card-meal p {
     font-size: 13px;
     line-height: 1.4;
-    opacity: 0.9;
     margin-bottom: 0;
     margin-top: 0px;
   }
 
   .card-meal .card-meal-infos {
     padding: 20px;
+  }
+
+  .card-meal-button-wrapper {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+  }
+
+  .card-meal-restaurant-button {
+    color: #212529;
+    border: 1px solid #212529;
+    padding: 4px 6px;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+
+  .card-meal-category-button {
+    color: #212529;
+    border: 1px solid #212529;
+    padding: 4px 8px;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    font-weight: bold;
   }
 }
 
 @media only screen and (min-width: 1200px) {
   .card-meal {
-    height: 17vh;
+    height: 19vh;
     width: 50vw;
     background: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    border-bottom-style: solid;
-    border-bottom-color: gray;
-    border-width: 0.5px;
-    padding-bottom: 20px;
-    margin-top: 10px;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
     margin-left: 16vw;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   .card-meal img {
@@ -199,6 +422,7 @@
     width: 17vw;
     object-fit: cover;
     object-position: center;
+    border-radius: 2px;
   }
 
   .card-meal h2 {
@@ -211,7 +435,6 @@
   .card-meal p {
     font-size: 13px;
     line-height: 1.4;
-    opacity: 0.9;
     margin-bottom: 0;
     margin-top: 0px;
   }
@@ -219,10 +442,36 @@
   .card-meal .card-meal-infos {
     padding: 20px;
   }
+
+  .card-meal-button-wrapper {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+  }
+
+  .card-meal-restaurant-button {
+    color: #212529;
+    border: 1px solid #212529;
+    padding: 4px 6px;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+
+  .card-meal-category-button {
+    color: #212529;
+    border: 1px solid #212529;
+    padding: 4px 8px;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    font-weight: bold;
+  }
 }
 
 /// GENERAL
-
 .card-meal-no-image {
   height: 100px;
   width: 100px;
@@ -231,11 +480,7 @@
 
 .card-meal a {
   text-decoration: none;
-  color: black;
-}
-
-.card-meal p a:hover {
-  opacity: 1;
+  color: #212529;
 }
 
 .card-meal-photo-info {
@@ -248,16 +493,10 @@
   align-items: center;
 }
 
-.card-meal-button-wrapper {
-  margin-top: 8px;
-  display: flex;
-  align-items: center;
-}
-
 .card-meal-rank {
   position: absolute;
   left: -7px;
-  top: -20px;
+  top: -10px;
   color: white;
   padding: 8px 8px;
   border-radius: 6px;
@@ -274,7 +513,7 @@
 .card-meal-rank-1 {
   position: absolute;
   left: -7px;
-  top: -20px;
+  top: -10px;
   color: white;
   padding: 8px 8px;
   border-radius: 6px;
@@ -291,7 +530,7 @@
 .card-meal-rank-2 {
   position: absolute;
   left: -7px;
-  top: -20px;
+  top: -10px;
   color: white;
   padding: 8px 8px;
   border-radius: 6px;
@@ -308,7 +547,7 @@
 .card-meal-rank-3 {
   position: absolute;
   left: -7px;
-  top: -20px;
+  top: -10px;
   color: white;
   padding: 8px 8px;
   border-radius: 6px;
@@ -343,28 +582,6 @@
 .card-meal-vote-img {
   height: 40px !important;
   width: 40px !important;
-}
-
-.card-meal-restaurant-button {
-  color: #212529;
-  opacity: 0.9;
-  border: 1px solid black;
-  padding: 4px 6px;
-  border-radius: 5px;
-  transition: opacity 0.3s ease;
-  text-align: center;
-  font-weight: bold;
-}
-
-.card-meal-category-button {
-  color: #212529;
-  opacity: 0.9;
-  border: 1px solid black;
-  padding: 4px 8px;
-  border-radius: 5px;
-  transition: opacity 0.3s ease;
-  text-align: center;
-  font-weight: bold;
 }
 
 .modal-dialog {

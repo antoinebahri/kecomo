@@ -49,7 +49,7 @@
 
 </head>
 
-<% if devise_controller? ||  current_page?(controller: 'pages', action: 'home') %>
+<% if public_page?(action_name) %>
   <body style="background-color: #fffde1">
   <%= render 'shared/navbar_transparent' %>
 <% else %>
