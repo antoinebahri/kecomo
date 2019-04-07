@@ -11,7 +11,7 @@
 }
 
 .profile-user {
-  height: 175px;
+  height: 220px;
   border-bottom: 3px solid #212529;
   text-align: center;
 }
@@ -30,6 +30,11 @@
   height: 100px;
   margin-top: 25px;
   margin-bottom: 5px;
+}
+
+.profile-user .fa-cog {
+  font-size: 30px;
+  margin: 5px;
 }
 
 .profile-header h1 {
