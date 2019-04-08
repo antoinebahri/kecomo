@@ -5,7 +5,10 @@
     <% else %>
       <%= image_tag current_user.picture, class: "avatar", id: "navbar-wagon-menu" %>
     <% end %>
-    <h2>  <%= @user.first_name %> </h2>
+    <h2><%= @user.first_name %> <%= @user.last_name %> </h2>
+    <%= link_to edit_user_registration_path do %>
+    <i class="fas fa-cog"></i>
+    <% end %>
   </div>
   <div class="profile-header">
     <h1>My votes:</h1>
